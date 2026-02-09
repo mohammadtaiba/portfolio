@@ -1,0 +1,41 @@
+<div class="page">
+  <div class="card card-pad">
+    <h1 style="margin:0 0 6px; font-size:24px;">Kontakt</h1>
+    <p class="small" style="margin:0;">Am besten kurz schreiben: Rolle / Projekt / Zeitraum / Links.</p>
+  </div>
+
+  <app-section title="Direkte Links">
+    <div class="grid cols-3">
+      <div class="card card-pad item">
+        <h3>E-Mail</h3>
+        <p>{{ profile.email }}</p>
+        <div class="actions">
+          <a class="btn primary" [href]="'mailto:' + profile.email">Mail schreiben</a>
+          <button class="btn" (click)="copy(profile.email, 'E-Mail')">Kopieren</button>
+        </div>
+      </div>
+
+      <div class="card card-pad item">
+        <h3>GitHub</h3>
+        <p class="small">{{ profile.links.github }}</p>
+        <div class="actions">
+          <a class="btn primary" [href]="profile.links.github" target="_blank" rel="noreferrer">Öffnen</a>
+          <button class="btn" (click)="copy(profile.links.github, 'GitHub')">Kopieren</button>
+        </div>
+      </div>
+
+      <div class="card card-pad item">
+        <h3>LinkedIn</h3>
+        <p class="small">{{ profile.links.linkedin }}</p>
+        <div class="actions">
+          <a class="btn primary" [href]="profile.links.linkedin" target="_blank" rel="noreferrer">Öffnen</a>
+          <button class="btn" (click)="copy(profile.links.linkedin, 'LinkedIn')">Kopieren</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card card-pad" *ngIf="copied" style="margin-top: 12px;">
+      <span>✅ Kopiert: {{ copied }}</span>
+    </div>
+  </app-section>
+</div>

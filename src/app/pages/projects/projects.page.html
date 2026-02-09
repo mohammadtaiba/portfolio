@@ -1,0 +1,56 @@
+<div class="page">
+  <div class="card card-pad">
+    <h1 style="margin:0 0 6px; font-size:24px;">Projekte</h1>
+    <p class="small" style="margin:0;">Hier zählen Impact, Entscheidungen und Ergebnisse. Halte es kurz, aber konkret.</p>
+
+    <div class="grid cols-2" style="margin-top:14px;">
+      <div>
+        <label class="small">Suche</label>
+        <input class="input" [(ngModel)]="q" placeholder="z. B. RAG, Angular, UX..." />
+      </div>
+      <div>
+        <label class="small">Filter</label>
+        <div class="tags" style="margin-top:8px;">
+          <button class="btn" *ngFor="let t of tags" (click)="setTag(t)" [class.primary]="t===tag">{{ t }}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-section title="Case Studies" subtitle="Problem -> Rolle -> Lösung -> Ergebnis">
+    <div class="list">
+      <div class="card card-pad item" *ngFor="let p of filtered">
+        <h3>{{ p.title }}</h3>
+        <p class="small">{{ p.subtitle }}</p>
+        <p>{{ p.description }}</p>
+
+        <div class="tags">
+          <span class="pill" *ngFor="let t of p.tags">{{ t }}</span>
+        </div>
+
+        <hr class="sep">
+
+        <div class="grid cols-2">
+          <div>
+            <div class="small" style="margin-bottom:6px;">Highlights</div>
+            <ul style="margin:0; padding-left: 18px; color: var(--muted); line-height: 1.6;">
+              <li *ngFor="let h of p.highlights">{{ h }}</li>
+            </ul>
+          </div>
+          <div>
+            <div class="small" style="margin-bottom:6px;">Links</div>
+            <div class="actions">
+              <a class="btn" *ngIf="p.links.repo" [href]="p.links.repo" target="_blank" rel="noreferrer">Repo</a>
+              <a class="btn" *ngIf="p.links.demo" [href]="p.links.demo" target="_blank" rel="noreferrer">Demo</a>
+              <span class="small" *ngIf="!p.links.repo && !p.links.demo">Füge hier Demo/Repo hinzu</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card card-pad" *ngIf="filtered.length === 0">
+        <p style="margin:0;">Keine Treffer. Versuch andere Tags oder Suchbegriffe.</p>
+      </div>
+    </div>
+  </app-section>
+</div>

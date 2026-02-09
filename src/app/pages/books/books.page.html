@@ -1,0 +1,24 @@
+<div class="page">
+  <div class="card card-pad">
+    <h1 style="margin:0 0 6px; font-size:24px;">Bücher</h1>
+    <p class="small" style="margin:0;">Nicht nur Titel - sondern was du daraus genutzt hast.</p>
+  </div>
+
+  <app-section title="Reading & Learnings" subtitle="Kurz + konkret + angewandt">
+    <div class="list">
+      <div class="card card-pad item" *ngFor="let b of books">
+        <h3>{{ b.title }}</h3>
+        <p class="small" *ngIf="b.author">{{ b.author }}</p>
+
+        <div class="small" style="margin-top:10px;">Key Takeaways</div>
+        <ul style="margin:8px 0 0; padding-left: 18px; color: var(--muted); line-height: 1.6;">
+          <li *ngFor="let t of b.takeaways">{{ t }}</li>
+        </ul>
+
+        <div class="small" *ngIf="b.appliedIn" style="margin-top:10px;">
+          <strong>Angewandt:</strong> <span style="color: var(--muted)">{{ b.appliedIn }}</span>
+        </div>
+      </div>
+    </div>
+  </app-section>
+</div>

@@ -1,0 +1,46 @@
+<div class="page">
+  <div class="hero card card-pad">
+    <div class="pill">Verfügbar für Praktikum / Werkstudent / Junior</div>
+    <h1>{{ profile.role }}</h1>
+    <p>{{ profile.shortPitch }}</p>
+
+    <div class="kpis">
+      <span class="pill">{{ profile.location }}</span>
+      <span class="pill">Angular + TypeScript</span>
+      <span class="pill">RAG / Embeddings</span>
+    </div>
+
+    <div class="actions">
+      <a class="btn primary" routerLink="/projects">Projekte ansehen</a>
+      <a class="btn" routerLink="/contact">Kontakt</a>
+      <a class="btn" routerLink="/cv">CV herunterladen</a>
+    </div>
+  </div>
+
+  <app-section title="Fokus" subtitle="Woran ich gerade arbeite und was ich gerne liefere">
+    <div class="grid cols-3">
+      <div class="card card-pad item" *ngFor="let f of profile.focus">
+        <h3>{{ f }}</h3>
+        <p class="small">Kurz, klar, produktionsnah.</p>
+      </div>
+    </div>
+  </app-section>
+
+  <app-section title="Top Projekte" subtitle="3 schnelle Beweise statt 20 halbe Projekte">
+    <div class="list">
+      <div class="card card-pad item" *ngFor="let p of featured">
+        <h3>{{ p.title }}</h3>
+        <p class="small">{{ p.subtitle }}</p>
+        <p>{{ p.description }}</p>
+        <div class="tags">
+          <span class="pill" *ngFor="let t of p.tags">{{ t }}</span>
+        </div>
+        <div class="actions" style="margin-top: 12px">
+          <a class="btn" routerLink="/projects">Details</a>
+          <a class="btn" *ngIf="p.links.repo" [href]="p.links.repo" target="_blank" rel="noreferrer">Repo</a>
+          <a class="btn" *ngIf="p.links.demo" [href]="p.links.demo" target="_blank" rel="noreferrer">Demo</a>
+        </div>
+      </div>
+    </div>
+  </app-section>
+</div>

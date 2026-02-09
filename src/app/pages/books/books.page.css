@@ -1,0 +1,21 @@
+.page{ padding: 6px 0; }
+.hero{ padding: 18px; }
+.hero h1{ margin: 0 0 8px; font-size: 26px; letter-spacing: .2px; }
+.hero p{ margin: 0; color: var(--muted); line-height: 1.55; }
+.hero .actions{ margin-top: 14px; display:flex; gap: 10px; flex-wrap: wrap; }
+.kpis{ margin-top: 16px; display:flex; gap: 8px; flex-wrap: wrap; }
+.card-pad{ padding: 18px; }
+.list{ display:grid; gap: 14px; }
+.item h3{ margin: 0; font-size: 16px; }
+.item p{ margin: 8px 0 0; color: var(--muted); line-height: 1.55; }
+.tags{ margin-top: 10px; display:flex; flex-wrap: wrap; gap: 8px; }
+.small{ color: var(--muted); font-size: 13px; }
+hr.sep{ border: none; border-top: 1px solid var(--border); margin: 14px 0; }
+.input{
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.04);
+  color: var(--text);
+}

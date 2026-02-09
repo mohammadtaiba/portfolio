@@ -1,0 +1,41 @@
+<div class="page">
+  <div class="card card-pad">
+    <h1 style="margin:0 0 6px; font-size:24px;">Lebenslauf (CV)</h1>
+    <p class="small" style="margin:0;">Hier steht ein kurzer Überblick. Der Download ist unten.</p>
+
+    <div class="actions" style="margin-top: 12px;">
+      <a class="btn primary" [href]="cvUrl" download>CV herunterladen (PDF)</a>
+      <a class="btn" routerLink="/contact">Kontakt</a>
+    </div>
+  </div>
+
+  <app-section title="Kurzprofil">
+    <div class="card card-pad">
+      <p style="margin:0; color: var(--muted); line-height: 1.7;">{{ cv.summary }}</p>
+    </div>
+  </app-section>
+
+  <app-section title="Erfahrung">
+    <div class="list">
+      <div class="card card-pad" *ngFor="let e of cv.experience">
+        <h3 style="margin:0 0 4px;">{{ e.title }}</h3>
+        <div class="small">{{ e.company }} · {{ e.period }}</div>
+        <ul style="margin:10px 0 0; padding-left: 18px; color: var(--muted); line-height: 1.6;">
+          <li *ngFor="let b of e.bullets">{{ b }}</li>
+        </ul>
+      </div>
+    </div>
+  </app-section>
+
+  <app-section title="Ausbildung">
+    <div class="list">
+      <div class="card card-pad" *ngFor="let e of cv.education">
+        <h3 style="margin:0 0 4px;">{{ e.title }}</h3>
+        <div class="small">{{ e.school }} · {{ e.period }}</div>
+        <ul style="margin:10px 0 0; padding-left: 18px; color: var(--muted); line-height: 1.6;">
+          <li *ngFor="let b of e.bullets">{{ b }}</li>
+        </ul>
+      </div>
+    </div>
+  </app-section>
+</div>
