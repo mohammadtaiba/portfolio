@@ -3,9 +3,12 @@
 This is a clean, recruiter-friendly portfolio website built with Angular (standalone components).
 
 ## Quick start
-1) Install Node.js (see Angular compatibility).  
-2) In this folder run:
+1) Install Node.js.
+```bash
+winget install OpenJS.NodeJS.LTS
+```
 
+2) Run:
 ```bash
 npm install
 npm start

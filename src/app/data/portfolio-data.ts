@@ -20,21 +20,24 @@ export type SkillGroup = {
 };
 
 export const PROFILE = {
-  name: 'ABU OMAR',
-  role: 'AI / Full-Stack Developer',
-  location: 'Thüringen, Deutschland',
-  email: 'you@example.com',
-  shortPitch: 'Ich baue robuste Web-Apps und KI-Chatbots, die in echten Workflows funktionieren - klar, schnell und wartbar.',
-  links: {
-    github: 'https://github.com/your-handle',
-    linkedin: 'https://www.linkedin.com/in/your-handle/',
-    website: 'https://your-domain.dev',
-  },
-  focus: [
-    'RAG-Chatbots (Embedding, Chunking, Vector DB)',
-    'Angular / TypeScript Frontend',
-    'Saubere UI/UX und klare Architektur',
-  ],
+    name: 'Mohammad Taiba',
+    role: 'Junior Full-Stack Developer (RAG-Chatbots)',
+    location: 'Erfurt, Deutschland',
+    email: 'mohammadtaiba55@gmail.com',
+    shortPitch:
+        'Ich baue robuste Web- und Desktop-Apps sowie KI-Chatbots, die in echten Workflows funktionieren - klar, schnell und wartbar.',
+    links: {
+        github: 'https://github.com/mohammadtaiba',
+        linkedin: 'https://www.linkedin.com/in/mohammad-taiba/',
+        website: 'https://mohammadtaiba.dev',
+    },
+
+    focus: [
+        'RAG-Chatbots (LangChain, Embeddings, Chunking, ChromaDB, Prompt Engineering)',
+        'Full-Stack Web (React/Next.js, Node.js/Express, Java Spring Boot)',
+        'Desktop-Apps (C/C++, Java)',
+        'APIs & Deployment (Docker, Git/GitLab CI/CD, Logging/Testing)',
+    ],
 };
 
 export const PROJECTS: Project[] = [
@@ -100,7 +103,7 @@ export const BOOKS: Book[] = [
 export const SKILL_GROUPS: SkillGroup[] = [
   { group: 'Sprachen', items: ['TypeScript', 'JavaScript', 'Python', 'SQL'] },
   { group: 'Frontend', items: ['Angular', 'HTML', 'CSS', 'Responsive UI', 'Accessibility'] },
-  { group: 'AI / LLM', items: ['RAG', 'Embeddings', 'Prompting', 'Vector DB (z. B. ChromaDB)'] },
+  { group: 'AI / LLM', items: ['RAG', 'Embeddings', 'Prompt-Engineering', 'Vector DB (ChromaDB)', 'Retrieval'] },
   { group: 'Tools', items: ['Git', 'Docker', 'Linux', 'REST APIs'] },
 ];
 
@@ -120,10 +123,16 @@ export const CV = {
   ],
   education: [
     {
-      title: 'B.Sc. Angewandte Informatik (Medieninformatik)',
-      school: 'Hochschule (Platzhalter)',
-      period: 'MM/YYYY - MM/YYYY',
+      title: 'Bachelor of Science in Angewandter Informatik - Medieninformatik',
+      school: 'Fachhochschule Erfurt',
+      period: '10/2022 - 03/2026',
       bullets: ['Schwerpunkte: Medieninformatik, Web, KI-nahe Themen'],
+    },
+    {
+      title: 'Fachoberschule Informationstechnik',
+      school: 'Andreas-Gordon-Schule, Erfurt',
+      period: '08/2020 - 07/2022',
+      bullets: ['Schwerpunkte: Informationstechnik'],
     },
   ],
 };
