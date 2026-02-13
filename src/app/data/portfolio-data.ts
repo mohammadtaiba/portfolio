@@ -21,29 +21,28 @@ export type SkillGroup = {
 
 export const PROFILE = {
     name: 'Mohammad Taiba',
-    role: 'Junior Full-Stack Developer (RAG-Chatbots)',
+    role: 'Junior Full-Stack Developer (Web & AI)',
     location: 'Erfurt, Deutschland',
     email: 'mohammadtaiba55@gmail.com',
     shortPitch:
-        'Ich baue robuste Web- und Desktop-Apps sowie KI-Chatbots, die in echten Workflows funktionieren - klar, schnell und wartbar.',
+        'Ich entwickle robuste Web- und Desktop-Anwendungen sowie RAG-Chatbots, die sauber integriert, performant und wartbar im Alltagseinsatz funktionieren.',
     links: {
         github: 'https://github.com/mohammadtaiba',
         linkedin: 'https://www.linkedin.com/in/mohammad-taiba/',
         website: 'https://mohammadtaiba.dev',
     },
-
     focus: [
-        'RAG-Chatbots (LangChain, Embeddings, Chunking, ChromaDB, Prompt Engineering)',
-        'Full-Stack Web (React/Next.js, Node.js/Express, Java Spring Boot)',
-        'Desktop-Apps (C/C++, Java)',
-        'APIs & Deployment (Docker, Git/GitLab CI/CD, Logging/Testing)',
+        'RAG-Chatbots: LangChain, ChromaDB, Embeddings, Chunking, Prompt Engineering',
+        'Full-Stack Web: React/Next.js, Node.js/Express, Java (Spring Boot)',
+        'Desktop-Entwicklung: C/C++, Java',
+        'APIs & Deployment: Docker, GitLab CI/CD, Logging, Testing',
     ],
 };
 
 export const PROJECTS: Project[] = [
   {
-    title: 'KI-Chatbot (RAG) fur interne Dokumente',
-    subtitle: 'Bachelorarbeit / Praktikum',
+    title: 'Praktikum als KI-Entwickler (RAG) fur interne Dokumente',
+    subtitle: 'RAG-Chat entwickelt für die Lehrer- und Schülerdatenbank (LUSD) bei der Firma topdev GmbH in Erfurt',
     description: 'Ein RAG-System mit semantischer Suche, Vektordatenbank und LLM-Anbindung fur domanenspezifische Antworten.',
     tags: ['AI', 'RAG', 'ChromaDB', 'Embeddings', 'TypeScript'],
     links: { repo: 'https://github.com/your-handle/rag-chatbot' },
@@ -54,15 +53,16 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
-    title: 'Portfolio Website (Angular)',
-    subtitle: 'Dieses Projekt',
-    description: 'Recruiter-freundliches Portfolio mit Case Studies, Skills, Bucher und CV Download.',
-    tags: ['Angular', 'Standalone', 'Router', 'UI'],
+    title: 'Portfolio-Webseite (Angular)',
+    subtitle: 'Eigenes Projekt',
+    description:
+      'Portfolio mit Angular Standalone + Router, modular aufgebaut und datengetrieben (Projekte/Skills/Bücher) inklusive CV-Download und Legal-Seiten.',
+    tags: ['Angular', 'Standalone', 'Router', 'TypeScript', 'UI'],
     links: { repo: 'https://github.com/your-handle/portfolio' },
     highlights: [
-      'Klare Navigation, schnelle Performance, responsives Design',
-      'Saubere Datenstruktur fur Projekte / Skills / Bucher',
-      'Impressum und Datenschutz als Seiten integriert',
+      'Standalone-Architektur mit Lazy Loading der Seiten (Router loadComponent)',
+      'Datenmodell + zentrale Content-Datei für einfache Pflege',
+      'Responsives UI, klare Navigation, Impressum & Datenschutz integriert',
     ],
   },
   {
@@ -80,24 +80,66 @@ export const PROJECTS: Project[] = [
 ];
 
 export const BOOKS: Book[] = [
-  {
-    title: 'Designing Data-Intensive Applications',
-    author: 'Martin Kleppmann',
-    takeaways: [
-      'Trade-offs: Konsistenz, Verfugbarkeit, Latenz',
-      'Denken in Workflows, nicht nur in Features',
-    ],
-    appliedIn: 'Architekturentscheidungen bei Chatbot-Systemen (Indexierung, Latenz, Zuverlassigkeit)',
-  },
-  {
-    title: 'Clean Code',
-    author: 'Robert C. Martin',
-    takeaways: [
-      'Kleine Funktionen, klare Namen, weniger Komplexitat',
-      'Tests und Refactoring als Routine',
-    ],
-    appliedIn: 'Strukturierung von Komponenten und Services, lesbarer Code fur Teams',
-  },
+    {
+        title: 'A Philosophy of Software Design',
+        author: 'John Ousterhout',
+        takeaways: [
+            'Komplexität reduzieren durch klare Abstraktionen und stabile Schnittstellen',
+            'Information Hiding als Standardprinzip',
+            'Deep Modules: hoher Nutzen bei kleiner API-Oberfläche',
+        ],
+        appliedIn: 'Modularisierung & saubere Schnittstellen',
+    },
+    {
+        title: 'The Clean Coder',
+        author: 'Robert C. Martin',
+        takeaways: [
+            'Professionalität: verlässlich liefern, klar kommunizieren, Verantwortung übernehmen',
+            'Realistische Schätzungen und sauberes Task-Splitting',
+            'Tests und Refactoring als Routine',
+        ],
+        appliedIn: 'Wartbarer Code, stabile Releases, klare Arbeitsweise im Projektalltag',
+    },
+    {
+        title: 'Lean Startup',
+        author: 'Eric Ries',
+        takeaways: [
+            'Build–Measure–Learn: iterativ liefern und anhand echter Nutzung verbessern',
+            'MVP: Risiken früh testen statt spät optimieren',
+            'Fokus auf messbare Ergebnisse statt Vanity Metrics',
+        ],
+        appliedIn: 'Schnelle Prototypen, strukturierte Iterationen und messbare Verbesserungen in Projekten',
+    },
+    {
+        title: 'Mastering CI/CD',
+        author: 'Tom Waller',
+        takeaways: [
+            'Automatisierte Pipelines: Build, Test, Deploy als Standardprozess',
+            'Reproduzierbare Builds durch Versionierung und Artefakte',
+            'Qualitätssicherung durch Checks, Logs und Fail-fast',
+        ],
+        appliedIn: 'GitLab CI/CD + Docker: reproduzierbare Builds, Tests und Deployments',
+    },
+    {
+        title: 'Building LLMs for Production',
+        author: 'Louis-François Bouchard',
+        takeaways: [
+            'Produktionsanforderungen: Latenz, Kosten, Skalierung, Zuverlässigkeit',
+            'Monitoring & Evaluation: Qualität messbar machen (Logs, Feedback-Loops)',
+            'Guardrails: robuste Fehlerpfade und Fallback-Strategien',
+        ],
+        appliedIn: 'RAG-Chatbot: Retrieval-Tuning, Logging, stabile Antwortpfade und Halluzinationsreduktion',
+    },
+    {
+        title: 'AI Prompt Engineering Bible',
+        author: 'Tomasz Dylik',
+        takeaways: [
+            'Prompt-Patterns: Kontext, Constraints und Output-Formate konsistent definieren',
+            'Few-shot Beispiele für stabilere Ergebnisse',
+            'Prompts systematisch testen statt “nach Gefühl”',
+        ],
+        appliedIn: 'Prompt-Templates, Relevanzprüfung und „No-Answer“-Fallback im RAG-System',
+    },
 ];
 
 export const SKILL_GROUPS: SkillGroup[] = [
