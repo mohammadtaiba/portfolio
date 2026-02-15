@@ -21,39 +21,65 @@ export type SkillGroup = {
 
 export const PROFILE = {
     name: 'Mohammad Taiba',
-    role: 'Junior Full-Stack Developer (Web & AI)',
-    location: 'Erfurt, Deutschland',
+    role: 'Junior Full-Stack Developer',
+    location: '📍 Erfurt, DE',
     email: 'mohammadtaiba55@gmail.com',
     shortPitch:
-        'Ich entwickle robuste Web- und Desktop-Anwendungen sowie RAG-Chatbots, die sauber integriert, performant und wartbar im Alltagseinsatz funktionieren.',
+        'Ich entwickle skalierbare Web- und Desktop-Anwendungen und integriere RAG-Chatbots in produktive Workflows – mit Fokus auf sauberer Architektur, Performance und Wartbarkeit.',
     links: {
         github: 'https://github.com/mohammadtaiba',
         linkedin: 'https://www.linkedin.com/in/mohammad-taiba/',
         website: 'https://mohammadtaiba.dev',
     },
     focus: [
-        'RAG-Chatbots: LangChain, ChromaDB, Embeddings, Chunking, Prompt Engineering',
-        'Full-Stack Web: React/Next.js, Node.js/Express, Java (Spring Boot)',
-        'Desktop-Entwicklung: C/C++, Java',
-        'APIs & Deployment: Docker, GitLab CI/CD, Logging, Testing',
+        {
+            title: 'Webanwendungen',
+            bullets: [
+                'MERN-Stack (MongoDB, Express, React, Node.js)',
+                'Angular',
+                'JavaScript',
+                'PHP · MySQL',
+                'HTML · CSS',
+            ],
+        },
+        {
+            title: 'RAG-Chatbots',
+            bullets: [
+                'Python',
+                'LangChain',
+                'ChromaDB',
+                'Streamlit',
+            ],
+        },
+        {
+            title: 'Backend-Services',
+            bullets: [
+                'Java · Spring Boot',
+                'REST-API',
+                'Docker',
+            ],
+        },
     ],
 };
 
 export const PROJECTS: Project[] = [
   {
-    title: 'Praktikum als KI-Entwickler (RAG) fur interne Dokumente',
-    subtitle: 'RAG-Chat entwickelt für die Lehrer- und Schülerdatenbank (LUSD) bei der Firma topdev GmbH in Erfurt',
-    description: 'Ein RAG-System mit semantischer Suche, Vektordatenbank und LLM-Anbindung fur domanenspezifische Antworten.',
-    tags: ['AI', 'RAG', 'ChromaDB', 'Embeddings', 'TypeScript'],
+    title: 'KI-Entwickler',
+    subtitle: 'Praktikum',
+    description: 'RAG-Chatbot, der internes Wissen per semantischer Suche zuverlässig als Antworten bereitstellt.',
+    tags: ['KI', 'Python', 'Streamlit', 'ChromaDB', 'Automatisierung'],
     links: { repo: 'https://github.com/your-handle/rag-chatbot' },
     highlights: [
-      'Chunking verbessert (Quellen + Overlap + Grobe)',
-      'Embedding-Modell gewechselt und Indexierung optimiert',
-      'Dokumente (auch Excel) sauber konvertiert und eingebettet',
+      'LUSD-Chatbot für Fach- und Anwenderfragen (Hessen)',
+      'Wissensbasis: Word/Excel/PDF + HTML-Hilfeseiten',
+      'Inhalte automatisiert nach Markdown konvertiert',
+      'RAG mit Vektordatenbank (Chunking/Embeddings/Retrieval)',
+      'Chunk-Größe & Overlap begründet festgelegt',
+      'Updates der Wissensbasis regelmäßig eingespielt',
     ],
   },
   {
-    title: 'Portfolio-Webseite (Angular)',
+    title: 'Portfolio-Webseite',
     subtitle: 'Eigenes Projekt',
     description:
       'Portfolio mit Angular Standalone + Router, modular aufgebaut und datengetrieben (Projekte/Skills/Bücher) inklusive CV-Download und Legal-Seiten.',
@@ -143,10 +169,13 @@ export const BOOKS: Book[] = [
 ];
 
 export const SKILL_GROUPS: SkillGroup[] = [
-  { group: 'Sprachen', items: ['TypeScript', 'JavaScript', 'Python', 'SQL'] },
+  { group: 'Programmiersprachen', items: ['Python', 'C/C++', 'Java', 'TypeScript', 'JavaScript', 'SQL'] },
   { group: 'Frontend', items: ['Angular', 'HTML', 'CSS', 'Responsive UI', 'Accessibility'] },
-  { group: 'AI / LLM', items: ['RAG', 'Embeddings', 'Prompt-Engineering', 'Vector DB (ChromaDB)', 'Retrieval'] },
+  { group: 'KI', items: ['RAG-Chatbots', 'Streamlit (UI)', 'Prompt-Engineering', 'ChromaDB (Vektordatenbank)'] },
   { group: 'Tools', items: ['Git', 'Docker', 'Linux', 'REST APIs'] },
+  { group: 'Softskills', items: [] },
+  { group: 'Sprachen', items: [] },
+
 ];
 
 export const CV = {
