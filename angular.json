@@ -22,7 +22,9 @@
             "assets": [
               "src/favicon.svg",
               "src/assets",
-              "src/robots.txt"
+              "src/robots.txt",
+              "src/_redirects",
+              "src/sitemap.xml"
             ],
             "styles": [
               "src/styles.css"

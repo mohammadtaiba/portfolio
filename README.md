@@ -1,33 +1,27 @@
-# Angular Portfolio (Standalone + Router)
+# Portfolio (Angular) 
 
-This is a clean, recruiter-friendly portfolio website built with Angular (standalone components).
+## Voraussetzungen
 
-## Quick start
-1) Install Node.js.
+1) Node.js (LTS) installieren:
 ```bash
 winget install OpenJS.NodeJS.LTS
 ```
 
-2) Run:
+2) Abhängigkeiten installieren:
 ```bash
 npm install
-npm start
 ```
 
-Open: http://localhost:4200
+## Dev-Server starten
 
-## Customize your content
-Edit:
-- `src/app/data/portfolio-data.ts`
+```bash
+npm start
+```
+Öffnen: http://localhost:4200
 
-Replace:
-- `src/assets/cv.pdf` (your real CV)
-- optional profile picture / images in `src/assets/`
+## Build (Production)
 
-## Build
 ```bash
 npm run build
 ```
-
-## Notes
-- Add your legal info in: `Impressum` and `Datenschutz` pages.
+Output: `dist/
