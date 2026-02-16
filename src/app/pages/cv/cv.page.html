@@ -1,13 +1,32 @@
 <div class="page">
-  <div class="card card-pad">
-    <h1 style="margin:0 0 6px; font-size:24px;">Lebenslauf (CV)</h1>
-    <p class="small" style="margin:0;">Hier steht ein kurzer Überblick. Der Download ist unten.</p>
+    <div class="card card-pad">
+        <div class="hero-grid">
+            <!-- LINKS: Text -->
+            <div class="hero-copy">
+                <h1 style="margin:0 0 6px; font-size:24px;">Lebenslauf</h1>
 
-    <div class="actions" style="margin-top: 12px;">
-      <a class="btn primary" [href]="cvUrl" download>CV herunterladen (PDF)</a>
-      <a class="btn" routerLink="/contact">Kontakt</a>
+                <div class="kpis" style="margin-top: 10px;">
+                    <span class="pill">{{ "Softwareentwickler" }}</span>
+                    <span class="pill">{{ profile.location }}</span>
+
+                </div>
+
+                <p class="small" style="margin:12px 0 0;">
+                    Hier können Sie meinen Lebenslauf herunterladen.
+                </p>
+
+                <div class="actions" style="margin-top: 12px;">
+                    <a class="btn primary" [href]="cvUrl" download>CV herunterladen (PDF)</a>
+                    <a class="btn" routerLink="/contact">Kontakt</a>
+                </div>
+            </div>
+
+            <!-- RECHTS: Foto (wie auf Home) -->
+            <div class="hero-media">
+                <img class="avatar" [src]="profile.photoUrl" alt="Portrait von {{ profile.name }}" />
+            </div>
+        </div>
     </div>
-  </div>
 
   <app-section title="Kurzprofil">
     <div class="card card-pad">

@@ -19,3 +19,59 @@ hr.sep{ border: none; border-top: 1px solid var(--border); margin: 14px 0; }
   background: rgba(255,255,255,.04);
   color: var(--text);
 }
+
+.hero-grid{
+    display: grid;
+    grid-template-columns: 1fr auto; /* links Text, rechts Foto */
+    gap: 25px;
+    align-items: start;
+}
+
+.hero-copy{
+    min-width: 0; /* wichtig, damit Text sauber umbrechen kann */
+}
+
+.hero-media{
+    justify-self: end; /* ganz rechts */
+    align-self: start; /* oben an Text ausrichten */
+}
+
+.avatar{
+    width: 128px;
+    aspect-ratio: 4 / 5;     /* statt fester Höhe */
+    height: 160px;
+
+    border-radius: 18px;
+    object-fit: cover;
+    object-position: 50% 30%; /* leicht nach oben, aber nicht zu stark */
+    border: 1px solid var(--border);
+    box-shadow: 0 12px 28px rgba(0,0,0,.35);
+}
+
+
+/* Desktop */
+@media (min-width: 900px){
+    .avatar{
+        width: 148px;
+        height: 180px;
+        border-radius: 22px;
+    }
+    .hero-media{
+        align-self: center;
+        margin-left: 40px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 820px){
+    .hero-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .hero-media{
+        order: 1;
+        justify-self: stretch;     /* volle Breite */
+        display: flex;             /* zentrieren */
+        justify-content: center;
+    }
+}

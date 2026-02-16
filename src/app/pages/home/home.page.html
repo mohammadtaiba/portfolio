@@ -1,20 +1,31 @@
 <div class="page">
     <div class="hero card card-pad">
-        <div class="pill">Verfügbar für IT-Stellen in der Softwareentwicklung</div>
-        <h1>{{ profile.role }}</h1>
-        <p>{{ profile.shortPitch }}</p>
+        <div class="hero-grid">
+            <!-- LINKS: Text -->
+            <div class="hero-copy">
+                <div class="pill">Verfügbar für IT-Stellen in der Softwareentwicklung</div>
+                <h1>{{ profile.role }}</h1>
+                <p>{{ profile.shortPitch }}</p>
 
-        <div class="kpis">
-            <span class="pill">{{ profile.location }}</span>
-        </div>
+                <div class="kpis">
+                    <span class="pill">{{ profile.location }}</span>
+                </div>
 
-        <div class="actions">
-            <a class="btn primary" routerLink="/projects">Projekte ansehen</a>
-            <a class="btn" routerLink="/contact">Kontakt</a>
-            <a class="btn" routerLink="/cv">CV herunterladen</a>
+                <div class="actions">
+                    <a class="btn primary" routerLink="/projects">Projekte ansehen</a>
+                    <a class="btn" routerLink="/contact">Kontakt</a>
+                    <a class="btn" routerLink="/cv">CV herunterladen</a>
+                </div>
+            </div>
+
+            <!-- RECHTS: Foto -->
+            <div class="hero-media">
+                <img class="avatar" [src]="profile.photoUrl" alt="Portrait von {{ profile.name }}" />
+            </div>
         </div>
     </div>
 
+    <!-- Rest bleibt gleich -->
     <app-section title="Wertbeitrag" subtitle="Was ich liefere und mit welchen Technologien">
         <div class="grid cols-3">
             <div class="card card-pad item" *ngFor="let f of profile.focus">

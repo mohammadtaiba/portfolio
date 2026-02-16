@@ -22,8 +22,9 @@ export type SkillGroup = {
 export const PROFILE = {
     name: 'Mohammad Taiba',
     role: 'Junior Full-Stack Developer',
-    location: '📍 Erfurt, DE',
+    location: 'Erfurt, Deutschland',
     email: 'mohammadtaiba55@gmail.com',
+    photoUrl: 'assets/profile.jpg',
     shortPitch:
         'Ich entwickle skalierbare Web- und Desktop-Anwendungen und integriere RAG-Chatbots in produktive Workflows – mit Fokus auf sauberer Architektur, Performance und Wartbarkeit.',
     links: {
