@@ -180,31 +180,78 @@ export const SKILL_GROUPS: SkillGroup[] = [
 ];
 
 export const CV = {
-  summary: '',
-  experience: [
-    {
-      title: 'Praktikum - Software / AI',
-      company: 'Firma (Platzhalter)',
-      period: 'MM/YYYY - MM/YYYY',
-      bullets: [
-        'KI-Chatbot mit RAG-Architektur umgesetzt',
-        'Dokumenten-Pipeline (Chunking + Embeddings) verbessert',
-        'UI/UX verfeinert und Fehler behoben',
-      ],
-    },
-  ],
-  education: [
-    {
-      title: 'Bachelor of Science in Angewandter Informatik - Medieninformatik',
-      school: 'Fachhochschule Erfurt',
-      period: '10/2022 - 03/2026',
-      bullets: ['Schwerpunkte: Medieninformatik, Web, KI-nahe Themen'],
-    },
-    {
-      title: 'Fachoberschule Informationstechnik',
-      school: 'Andreas-Gordon-Schule, Erfurt',
-      period: '08/2020 - 07/2022',
-      bullets: ['Schwerpunkte: Informationstechnik'],
-    },
-  ],
+    education: [
+        {
+            title: 'B.Sc. Angewandte Informatik',
+            school: 'Fachhochschule Erfurt',
+            period: '10/2022 – 03/2026',
+            bullets: [
+                { label: 'Vertiefungsrichtung', text: 'Medieninformatik' },
+                { label: 'Bachelorarbeit', text: 'Entwicklung eines RAG-Systems mit automatisierter Ingestion- und Aktualisierungspipeline' },
+                { label: 'Praktikum', text: 'Entwicklung eines RAG-Systems mit UI, automatisierter Ingestion-/Aktualisierungspipeline und Testautomatisierung (topdev GmbH)' },
+            ],
+        },
+        {
+            title: 'Fachoberschule Informationstechnik',
+            school: 'Andreas-Gordon-Schule, Erfurt',
+            period: '08/2020 – 07/2022',
+            bullets: [
+                { label: 'Schwerpunkt', text: 'Informationstechnik' },
+                { label: 'Praktikum', text: 'Mitarbeit an IT-Projekten, Tests, Support und technischer Dokumentation (Bechtle IT-Systemhaus)' },
+            ],
+        },
+    ],
+
+    experience: [
+        {
+            title: 'Praktikum als KI-Entwickler',
+            company: 'topdev GmbH, Erfurt',
+            period: '10/2025 – 02/2026',
+            bullets: [
+                { label: 'Entwicklung', text: 'RAG-Chatbot für Lehrer- und Schülerdatenbank (LUSD) zur Beantwortung von Fach- und Anwenderfragen' },
+                { label: 'RAG-Pipeline', text: 'Automatisierte Ingestion von Word-, Excel-, PDF- und HTML-Quellen inkl. Konvertierung nach Markdown' },
+                { label: 'Retrieval', text: 'Chunking/Embeddings und Aufbau einer Vektordatenbank für semantische Suche' },
+                { label: 'Qualitätssicherung', text: 'Prompt-Engineering sowie Logging/Monitoring und Evaluation (Testfälle, Review-Sets, Testautomatisierung) zur Ergebnisprüfung' },            ],
+        },
+        {
+            title: 'Studentische Hilfskraft im Sachverständigenbüro',
+            company: 'Sachverständigenbüro Torsten Peuckert, Erfurt',
+            period: '09/2024 – 12/2024',
+            bullets: [
+                { label: 'Organisation', text: 'Unterstützung bei administrativen und organisatorischen Aufgaben im Tagesgeschäft' },
+                { label: 'Dokumente', text: 'Dokumentenmanagement und strukturierte Ablage von Unterlagen' },
+                { label: 'Koordination', text: 'Termin- und Auftragskoordination sowie Datenpflege' },
+            ],
+        },
+        {
+            title: 'Studentische Hilfskraft im Service Order Desk',
+            company: 'Carrier Refrigeration eServices GmbH, Erfurt',
+            period: '09/2023 – 09/2024',
+            bullets: [
+                { label: 'Datenmanagement', text: 'Erfassung und strukturierte Aufbereitung von Kunden- und Auftragsdaten' },
+                { label: 'SAP MM', text: 'Verwaltung von Bestellanforderungen im SAP R/3 MM-Modul' },
+                { label: 'Auftragsabwicklung', text: 'Fristgerechte Abwicklung und buchhalterische Verbuchung von Aufträgen' },
+            ],
+        },
+        {
+            title: 'Aushilfe als IT-Administrator',
+            company: 'Beck + Heun GmbH, Erfurt',
+            period: '07/2021 – 08/2021',
+            bullets: [
+                { label: 'Automatisierung', text: 'Automatisierung administrativer Prozesse mittels PowerShell-Skripten' },
+                { label: 'Deployments', text: 'Unterstützung bei Planung und Durchführung von Software-Deployments' },
+                { label: 'Troubleshooting', text: 'Systematische Fehleranalyse und technisches Troubleshooting' },
+            ],
+        },
+        {
+            title: 'Praktikum als Systemadministrator',
+            company: 'Bechtle IT-Systemhaus Weimar',
+            period: '08/2020 – 07/2021',
+            bullets: [
+                { label: 'Rollouts', text: 'Mitwirkung bei IT-Projekten und Rollouts inkl. technischer Umsetzung' },
+                { label: 'Testing', text: 'Durchführung von Tests und Sicherstellung der Qualitätsstandards' },
+                { label: 'Support & Doku', text: 'Endanwender-Support und Erstellung technischer Dokumentationen' },
+            ],
+        },
+    ],
 };

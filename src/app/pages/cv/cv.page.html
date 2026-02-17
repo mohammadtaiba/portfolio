@@ -3,19 +3,18 @@
         <div class="hero-grid">
             <!-- LINKS: Text -->
             <div class="hero-copy">
-                <h1 style="margin:0 0 6px; font-size:24px;">Lebenslauf</h1>
+                <h1 style="margin:0 0 6px; font-size:24px;">Lebenslauf (CV)</h1>
+                <h2 style="margin:0 0 6px; font-size:20px;">Softwareentwickler</h2>
 
-                <div class="kpis" style="margin-top: 10px;">
-                    <span class="pill">{{ "Softwareentwickler" }}</span>
-                </div>
-
-                <p class="small" style="margin:12px 0 0;">
-                    Summary: Kurzprofil: 3-5 Zeilen uber deinen Fokus und was du lieferst.
-                </p>
+                <br>
 
                 <div class="actions" style="margin-top: 12px;">
                     <a class="btn primary" [href]="cvUrl" download>CV herunterladen (PDF)</a>
+                </div>
+                <div class="actions" style="margin-top: 12px;">
                     <a class="btn" routerLink="/contact">Kontakt</a>
+                    <a class="btn" routerLink="/skills">Skills</a>
+                    <a class="btn" routerLink="/projects">Projekte</a>
                 </div>
             </div>
 
@@ -28,27 +27,40 @@
         </div>
     </div>
 
+    <app-section title="Akademische Laufbahn">
+        <div class="list">
+            <div class="card card-pad" *ngFor="let e of cv.education">
+                <h3 style="margin:0 0 4px;">{{ e.title }}</h3>
+                <hr>
+                <div class="kpis" style="margin-top: 8px;">
+                    <span class="pill">{{ e.school }} │ {{ e.period }}</span>
+                </div>
+                <ul style="margin:10px 0 0; padding-left: 18px; color: var(--muted); line-height: 1.6;">
+                    <li *ngFor="let b of e.bullets">
+                        <strong>{{ b.label }}:</strong> {{ b.text }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </app-section>
+
   <app-section title="Berufserfahrung">
     <div class="list">
       <div class="card card-pad" *ngFor="let e of cv.experience">
         <h3 style="margin:0 0 4px;">{{ e.title }}</h3>
-        <div class="small">{{ e.company }} · {{ e.period }}</div>
-        <ul style="margin:10px 0 0; padding-left: 18px; color: var(--muted); line-height: 1.6;">
-          <li *ngFor="let b of e.bullets">{{ b }}</li>
-        </ul>
-      </div>
-    </div>
-  </app-section>
+          <hr>
+          <div class="kpis" style="margin-top: 8px;">
+              <span class="pill">{{ e.company }} │ {{ e.period }}</span>
+          </div>
 
-  <app-section title="Akademische Laufbahn">
-    <div class="list">
-      <div class="card card-pad" *ngFor="let e of cv.education">
-        <h3 style="margin:0 0 4px;">{{ e.title }}</h3>
-        <div class="small">{{ e.school }} · {{ e.period }}</div>
-        <ul style="margin:10px 0 0; padding-left: 18px; color: var(--muted); line-height: 1.6;">
-          <li *ngFor="let b of e.bullets">{{ b }}</li>
-        </ul>
+          <ul style="margin:10px 0 0; padding-left: 18px; color: var(--muted); line-height: 1.6;">
+              <li *ngFor="let b of e.bullets">
+                  <strong>{{ b.label }}:</strong> {{ b.text }}
+              </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </app-section>
-</div>
+    </app-section>
+
+
+  </div>
