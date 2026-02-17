@@ -4,18 +4,17 @@
             <!-- LINKS: Text -->
             <div class="hero-copy">
                 <h1 style="margin:0 0 6px; font-size:24px;">Lebenslauf (CV)</h1>
-                <h2 style="margin:0 0 6px; font-size:20px;">Softwareentwickler</h2>
-
-                <br>
+                <h2 style="margin:0 0 6px; font-size:20px;"> {{ profile.role }} </h2>
 
                 <div class="actions" style="margin-top: 12px;">
-                    <a class="btn primary" [href]="cvUrl" download>CV herunterladen (PDF)</a>
+                    <a style="margin-top:18px;" class="btn primary" [href]="cvUrl" download>CV herunterladen (PDF)</a>
                 </div>
-                <div class="actions" style="margin-top: 12px;">
-                    <a class="btn" routerLink="/projects">Projekte</a>
+                <div class="actions" style="margin-top: 12px; margin-right: 10px;">
+                <a class="btn" routerLink="/projects">Projekte</a>
                     <a class="btn" routerLink="/skills">Skills</a>
                     <a class="btn" routerLink="/contact">Kontakt</a>
                 </div>
+
             </div>
 
             <!-- RECHTS: Foto (wie auf Home) -->

@@ -4,12 +4,12 @@
             <!-- LINKS: Text -->
             <div class="hero-copy">
                 <div class="pill">Verfügbar für IT-Stellen in der Softwareentwicklung</div>
+                <br>
+                <br>
                 <h1>{{ profile.role }}</h1>
                 <p>{{ profile.shortPitch }}</p>
-
-                <div class="kpis">
-                    <span class="pill">{{ profile.location }}</span>
-                </div>
+                <div class="kpis"> <span class="pill">{{ profile.location }}</span> </div>
+                <br>
 
                 <div class="actions">
                     <a class="btn primary" routerLink="/projects">Projekte</a>
@@ -27,33 +27,26 @@
         </div>
     </div>
 
-    <!-- Rest bleibt gleich -->
     <app-section title="Wertbeitrag" subtitle="Was ich liefere und mit welchen Technologien">
-        <div class="grid cols-3">
+        <div class="grid cols-1">
             <div class="card card-pad item" *ngFor="let f of profile.focus">
                 <h3>{{ f.title }}</h3>
-                <ul class="small bullets">
-                    <li *ngFor="let b of f.bullets">{{ b }}</li>
-                </ul>
-            </div>
-        </div>
-    </app-section>
+                <div class="divider" aria-hidden="true"></div>
 
-    <app-section title="Top Projekte" subtitle="3 schnelle Beweise statt 20 halbe Projekte">
-        <div class="list">
-            <div class="card card-pad item" *ngFor="let p of featured">
-                <h3>{{ p.title }}</h3>
-                <div class="divider" aria-hidden="true"></div> <!-- Trennungslinie -->
-                <p class="small">{{ p.subtitle }}</p>
-                <p>{{ p.description }}</p>
-                <div class="tags">
-                    <span class="pill" *ngFor="let t of p.tags">{{ t }}</span>
-                </div>
-                <div class="actions" style="margin-top: 12px">
-                    <a class="btn" routerLink="/projects">Details</a>
-                    <a class="btn" *ngIf="p.links.repo" [href]="p.links.repo" target="_blank" rel="noreferrer">Repo</a>
-                    <a class="btn" *ngIf="p.links.demo" [href]="p.links.demo" target="_blank" rel="noreferrer">Demo</a>
-                </div>
+                <p style="margin-top:15px"><strong>{{ f.subtitle }}</strong></p>
+
+
+                <ul style="margin:8px 0 0; padding-left:25px; color: var(--muted); line-height:1.6;">
+                    <!-- Alles, was vor dem Doppelpunkt steht, wird in Fettschrift geschrieben. -->
+                    <li *ngFor="let b of f.bullets">
+                        <ng-container *ngIf="b.includes(':'); else plain">
+                            <strong>{{ b.split(':')[0] }}:</strong>
+                            {{ b.split(':').slice(1).join(':').trim() }}
+                        </ng-container>
+
+                        <ng-template #plain>{{ b }}</ng-template>
+                    </li>
+                </ul>
             </div>
         </div>
     </app-section>

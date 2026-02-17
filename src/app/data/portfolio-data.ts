@@ -1,3 +1,9 @@
+export type FocusItem = {
+    title: string;
+    subtitle?: string;
+    bullets: string[];
+};
+
 export type Project = {
   title: string;
   subtitle: string;
@@ -21,7 +27,7 @@ export type SkillGroup = {
 
 export const PROFILE = {
     name: 'Mohammad Taiba',
-    role: 'Junior Full-Stack Developer',
+    role: 'Junior Softwareentwickler (Full-Stack)',
     location: 'Erfurt, Deutschland',
     email: 'mohammadtaiba55@gmail.com',
     photoUrl: 'assets/profile.jpg',
@@ -32,19 +38,19 @@ export const PROFILE = {
         linkedin: 'https://www.linkedin.com/in/mohammad-taiba/',
         website: 'https://mohammadtaiba.dev',
     },
-    focus: [
+    focus: <FocusItem[]>[
         {
             title: 'Webanwendungen',
+            subtitle: 'Moderne Frontends und Full-Stack-Webapps mit sauberer UI und robuster Architektur.',
             bullets: [
-                'MERN-Stack (MongoDB, Express, React, Node.js)',
-                'Angular',
-                'JavaScript',
-                'PHP · MySQL',
-                'HTML · CSS',
+                'MERN-Full-Stack: MongoDB, Express, React, Node.js',
+                'Framework: Angular',
+                'Webentwicklung: PHP, JavaScript, MySQL, HTML & CSS',
             ],
         },
         {
-            title: 'RAG-Chatbots',
+            title: 'KI-Agent',
+            subtitle: 'RAG-Chatbots für lokale Wissenssuche und domänenspezifische Q&A (Retrieval-Augmented Generation).',
             bullets: [
                 'Python',
                 'LangChain',
@@ -54,9 +60,10 @@ export const PROFILE = {
         },
         {
             title: 'Backend-Services',
+            subtitle: 'Service-Entwicklung und API-Integration mit Fokus auf Stabilität, Wartbarkeit und Erweiterbarkeit.',
             bullets: [
                 'Java · Spring Boot',
-                'REST-API',
+                'REST-APIs',
                 'Docker',
             ],
         },
@@ -65,8 +72,8 @@ export const PROFILE = {
 
 export const PROJECTS: Project[] = [
   {
-    title: 'KI-Entwickler',
-    subtitle: 'Praktikum',
+    title: 'RAG-Chatbot',
+    subtitle: 'topdev GmbH',
     description: 'RAG-Chatbot, der internes Wissen per semantischer Suche zuverlässig als Antworten bereitstellt.',
     tags: ['KI', 'Python', 'Streamlit', 'ChromaDB', 'Automatisierung'],
     links: { repo: 'https://github.com/your-handle/rag-chatbot' },
@@ -170,13 +177,17 @@ export const BOOKS: Book[] = [
 ];
 
 export const SKILL_GROUPS: SkillGroup[] = [
-  { group: 'Programmiersprachen', items: ['Python', 'C/C++', 'Java', 'TypeScript', 'JavaScript', 'SQL'] },
-  { group: 'Frontend', items: ['Angular', 'HTML', 'CSS', 'Responsive UI', 'Accessibility'] },
-  { group: 'KI', items: ['RAG-Chatbots', 'Streamlit (UI)', 'Prompt-Engineering', 'ChromaDB (Vektordatenbank)'] },
-  { group: 'Tools', items: ['Git', 'Docker', 'Linux', 'REST APIs'] },
-  { group: 'Softskills', items: [] },
-  { group: 'Sprachen', items: [] },
+    { group: 'Programmiersprachen', items: ['Python', 'Java', 'TypeScript', 'JavaScript', 'C#', 'C/C++', 'PHP'] },
 
+    { group: 'Frontend', items: ['Angular', 'React', 'Next.js', 'HTML', 'CSS'] },
+    { group: 'Backend', items: ['Node.js', 'Express', 'Spring Boot', 'REST APIs'] },
+
+    { group: 'Datenbanken', items: ['MySQL', 'MariaDB', 'MongoDB', 'ChromaDB'] },
+    { group: 'KI & LLM', items: ['RAG', 'LangChain', 'Prompt Engineering', 'Streamlit'] },
+
+    { group: 'Tools', items: ['Git', 'Docker', 'GitLab CI/CD', 'Jira', 'MS Office'] },
+    { group: 'Softskills', items: ['Eigenverantwortung', 'Proaktivität', 'Problemlösung', 'Selbstorganisation', 'Teamarbeit'] },
+    { group: 'Sprachen', items: ['Deutsch (C1, fließend)', 'Englisch (B2)', 'Arabisch (Muttersprache)'] },
 ];
 
 export const CV = {
