@@ -83,4 +83,8 @@ hr.sep{ border: none; border-top: 1px solid var(--border); margin: 14px 0; }
         display: flex;             /* zentrieren */
         justify-content: center;
     }
+    .avatar{
+        width: calc(90% + 24px);
+        height: 100%;
+    }
 }

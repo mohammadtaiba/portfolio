@@ -12,9 +12,9 @@
                     <a class="btn primary" [href]="cvUrl" download>CV herunterladen (PDF)</a>
                 </div>
                 <div class="actions" style="margin-top: 12px;">
-                    <a class="btn" routerLink="/contact">Kontakt</a>
-                    <a class="btn" routerLink="/skills">Skills</a>
                     <a class="btn" routerLink="/projects">Projekte</a>
+                    <a class="btn" routerLink="/skills">Skills</a>
+                    <a class="btn" routerLink="/contact">Kontakt</a>
                 </div>
             </div>
 
@@ -31,7 +31,9 @@
         <div class="list">
             <div class="card card-pad" *ngFor="let e of cv.education">
                 <h3 style="margin:0 0 4px;">{{ e.title }}</h3>
-                <hr>
+
+                <div class="divider" aria-hidden="true"></div> <!-- Trennungslinie -->
+
                 <div class="kpis" style="margin-top: 8px;">
                     <span class="pill">{{ e.school }} │ {{ e.period }}</span>
                 </div>
@@ -48,7 +50,9 @@
     <div class="list">
       <div class="card card-pad" *ngFor="let e of cv.experience">
         <h3 style="margin:0 0 4px;">{{ e.title }}</h3>
-          <hr>
+
+          <div class="divider" aria-hidden="true"></div> <!-- Trennungslinie -->
+
           <div class="kpis" style="margin-top: 8px;">
               <span class="pill">{{ e.company }} │ {{ e.period }}</span>
           </div>

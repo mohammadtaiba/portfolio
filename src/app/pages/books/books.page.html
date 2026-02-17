@@ -8,7 +8,12 @@
     <div class="list">
       <div class="card card-pad item" *ngFor="let b of books">
         <h3>{{ b.title }}</h3>
-        <p class="small" *ngIf="b.author">{{ b.author }}</p>
+
+          <div class="divider" aria-hidden="true"></div> <!-- Trennungslinie -->
+
+          <div class="kpis" style="margin-top: 8px;">
+              <span class="pill">{{ b.author }}</span>
+          </div>
 
         <div class="small" style="margin-top:10px;">Key Takeaways</div>
         <ul style="margin:8px 0 0; padding-left: 18px; color: var(--muted); line-height: 1.6;">

@@ -12,9 +12,9 @@
                 </div>
 
                 <div class="actions">
-                    <a class="btn primary" routerLink="/projects">Projekte ansehen</a>
+                    <a class="btn primary" routerLink="/projects">Projekte</a>
+                    <a class="btn" routerLink="/cv">CV</a>
                     <a class="btn" routerLink="/contact">Kontakt</a>
-                    <a class="btn" routerLink="/cv">CV herunterladen</a>
                 </div>
             </div>
 
@@ -43,6 +43,7 @@
         <div class="list">
             <div class="card card-pad item" *ngFor="let p of featured">
                 <h3>{{ p.title }}</h3>
+                <div class="divider" aria-hidden="true"></div> <!-- Trennungslinie -->
                 <p class="small">{{ p.subtitle }}</p>
                 <p>{{ p.description }}</p>
                 <div class="tags">
