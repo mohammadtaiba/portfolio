@@ -7,12 +7,10 @@
 
                 <div class="kpis" style="margin-top: 10px;">
                     <span class="pill">{{ "Softwareentwickler" }}</span>
-                    <span class="pill">{{ profile.location }}</span>
-
                 </div>
 
                 <p class="small" style="margin:12px 0 0;">
-                    Hier können Sie meinen Lebenslauf herunterladen.
+                    Summary: Kurzprofil: 3-5 Zeilen uber deinen Fokus und was du lieferst.
                 </p>
 
                 <div class="actions" style="margin-top: 12px;">
@@ -23,16 +21,12 @@
 
             <!-- RECHTS: Foto (wie auf Home) -->
             <div class="hero-media">
-                <img class="avatar" [src]="profile.photoUrl" alt="Portrait von {{ profile.name }}" />
+                <div class="avatar-frame">
+                    <img class="avatar" [src]="profile.photoUrl" alt="Portrait von {{ profile.name }}" />
+                </div>
             </div>
         </div>
     </div>
-
-  <app-section title="Kurzprofil">
-    <div class="card card-pad">
-      <p style="margin:0; color: var(--muted); line-height: 1.7;">{{ cv.summary }}</p>
-    </div>
-  </app-section>
 
   <app-section title="Berufserfahrung">
     <div class="list">

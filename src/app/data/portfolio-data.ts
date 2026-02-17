@@ -180,7 +180,7 @@ export const SKILL_GROUPS: SkillGroup[] = [
 ];
 
 export const CV = {
-  summary: 'Kurzprofil: 3-5 Zeilen uber deinen Fokus und was du lieferst.',
+  summary: '',
   experience: [
     {
       title: 'Praktikum - Software / AI',
