@@ -8,9 +8,11 @@ export type Project = {
   title: string;
   description: string;
   tags: string[];
-  links: { demo?: string; repo?: string };
   highlights: string[];
+  demo?: string;
+  repo?: string;
   imageUrl?: string;
+  archiUrl?: string;
 };
 
 export type Book = {
@@ -75,7 +77,6 @@ export const PROJECTS: Project[] = [
         title: 'RAG-Chatbot │ topdev GmbH, Erufrt',
         description: 'KI-Agent, der internes Wissen per semantischer Suche zuverlässig als Antworten bereitstellt.',
         tags: ['Python', 'Streamlit (UI)', 'ChromaDB',],
-        links: { demo: 'https://lusd-ki-bot.topdev.de/' },
         highlights: [
           'RAG-Chatbot für die LUSD (Lehrer- und Schülerdatenbank) zur Beantwortung von Fach- und Anwenderfragen entwickelt',
           'Interaktive Weboberfläche mit Streamlit umgesetzt',
@@ -85,13 +86,13 @@ export const PROJECTS: Project[] = [
           'Logging und Monitoring zur Nachvollziehbarkeit und Stabilität integriert',
           'Zugriffsschutz über Authentifizierung realisiert',
         ],
-        imageUrl: 'assets/projects/lusd-chatbot.png',
+        demo: 'https://lusd-ki-bot.topdev.de/',
+        imageUrl: 'assets/projects/lusd_chatbot.png',
     },
     {
         title: 'Persönliche Webseite │ Eigenes Projekt',
         description: 'Professionelles Portfolio zur Präsentation von Projekten, Skills, Büchern und Lebenslauf.',
         tags: ['Angular', 'TypeScript', 'CSS', 'HTML'],
-        links: { demo: 'https://mohammad-taiba.netlify.app/' },
         highlights: [
             'Portfolio als Angular SPA mit Standalone-Komponenten und Router umgesetzt',
             'Routing-Struktur mit Lazy Loading pro Seite via Router `loadComponent` implementiert',
@@ -99,18 +100,21 @@ export const PROJECTS: Project[] = [
             'Projektübersicht mit Suche und Tag-Filter implementiert',
             'Responsives Layout, klare Navigation (Desktop + Mobile Menü) und konsistentes UI-Styling umgesetzt',
         ],
+        demo: 'https://mohammad-taiba.netlify.app/',
+        imageUrl: 'assets/projects/portfolio.png',
     }
 ,
     {
         title: 'RAG-Chatbot │ Bachelorarbeit',
         description: 'Ersetze das durch dein drittes starkes Projekt (mit Impact und Ergebnissen).',
         tags: ['Python', 'Streamlit (UI)', 'ChromaDB',],
-        links: { demo: 'https://example.com' },
         highlights: [
           'Problem -> Losung -> Ergebnis (mit Metriken)',
           'Technische Entscheidungen kurz begrunden',
           'Screenshots / GIFs / Demo Link',
         ],
+        imageUrl: 'assets/projects/bachelor_chatbot.png',
+        archiUrl: 'assets/projects/bachelor_architektur.png',
     },
 ];
 

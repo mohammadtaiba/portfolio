@@ -1,50 +1,51 @@
 <header class="topbar">
-  <div class="container topbar-inner">
-    <a class="brand" routerLink="/">
-        <span class="brand-dot"></span>
-        <span class="brand-name">{{ profile.name }}</span>
-        <span class="brand-sub">Portfolio</span>
-    </a>
+    <div class="container topbar-inner">
+        <a class="brand" routerLink="/">
+            <span class="brand-dot"></span>
+            <span class="brand-name">{{ profile.name }}</span>
+            <span class="brand-sub">Portfolio</span>
+        </a>
 
-    <nav class="nav-desktop" aria-label="Hauptnavigation">
-      <a routerLink="/projects" routerLinkActive="active">Projekte</a>
-      <a routerLink="/skills" routerLinkActive="active">Skills</a>
-      <a routerLink="/books" routerLinkActive="active">Bücher</a>
-      <a routerLink="/cv" routerLinkActive="active">CV</a>
-<!--      <a routerLink="/about" routerLinkActive="active">Über mich</a>-->
-      <a routerLink="/contact" routerLinkActive="active">Kontakt</a>
-    </nav>
+        <nav class="nav-desktop" aria-label="Hauptnavigation">
+            <a routerLink="/projects" routerLinkActive="active">Projekte</a>
+            <a routerLink="/skills" routerLinkActive="active">Skills</a>
+            <a routerLink="/books" routerLinkActive="active">Bücher</a>
+            <a routerLink="/cv" routerLinkActive="active">CV</a>
+            <!--      <a routerLink="/about" routerLinkActive="active">Über mich</a>-->
+            <a routerLink="/contact" routerLinkActive="active">Kontakt</a>
+        </nav>
 
-    <details id="mobileMenu" class="nav-mobile">
-      <summary class="btn" aria-label="Menü öffnen">Menü</summary>
-      <div class="mobile-panel card">
-        <a routerLink="/projects">Projekte</a>
-        <a routerLink="/skills">Skills</a>
-        <a routerLink="/books">Bücher</a>
-        <a routerLink="/cv">CV</a>
-<!--        <a routerLink="/about">Über mich</a>-->
-        <a routerLink="/contact">Kontakt</a>
-      </div>
-    </details>
-  </div>
+        <details id="mobileMenu" class="nav-mobile">
+            <summary class="btn" aria-label="Menü öffnen">Menü</summary>
+            <div class="mobile-panel card">
+                <a routerLink="/projects">Projekte</a>
+                <a routerLink="/skills">Skills</a>
+                <a routerLink="/books">Bücher</a>
+                <a routerLink="/cv">CV</a>
+                <!--        <a routerLink="/about">Über mich</a>-->
+                <a routerLink="/contact">Kontakt</a>
+            </div>
+        </details>
+    </div>
 </header>
 
 <main class="main">
-  <div class="container">
-    <router-outlet />
-  </div>
+    <div class="container">
+        <router-outlet/>
+    </div>
 </main>
 
 <footer class="footer">
-  <div class="container footer-inner">
-    <div class="muted">
-      © {{ profile.name }} · <a routerLink="/impressum">Impressum</a> · <a routerLink="/datenschutz">Datenschutz</a>
-    </div>
+    <div class="container footer-inner">
+        <div class="muted">
+            © {{ profile.name }} · <a routerLink="/impressum">Impressum</a> · <a
+                routerLink="/datenschutz">Datenschutz</a>
+        </div>
 
-    <div class="footer-links">
-      <a [href]="profile.links.github" target="_blank" rel="noreferrer">GitHub</a>
-      <a [href]="profile.links.linkedin" target="_blank" rel="noreferrer">LinkedIn</a>
-      <a [href]="'mailto:' + profile.email">E-Mail</a>
+        <div class="footer-links">
+            <a [href]="profile.links.github" target="_blank" rel="noreferrer">GitHub</a>
+            <a [href]="profile.links.linkedin" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a [href]="'mailto:' + profile.email">E-Mail</a>
+        </div>
     </div>
-  </div>
 </footer>

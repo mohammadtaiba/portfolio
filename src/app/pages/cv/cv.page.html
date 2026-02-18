@@ -10,7 +10,7 @@
                     <a style="margin-top:18px;" class="btn primary" [href]="cvUrl" download>CV herunterladen (PDF)</a>
                 </div>
                 <div class="actions" style="margin-top: 12px; margin-right: 10px;">
-                <a class="btn" routerLink="/projects">Projekte</a>
+                    <a class="btn" routerLink="/projects">Projekte</a>
                     <a class="btn" routerLink="/skills">Skills</a>
                     <a class="btn" routerLink="/contact">Kontakt</a>
                 </div>
@@ -20,7 +20,7 @@
             <!-- RECHTS: Foto (wie auf Home) -->
             <div class="hero-media">
                 <div class="avatar-frame">
-                    <img class="avatar" [src]="profile.photoUrl" alt="Portrait von {{ profile.name }}" />
+                    <img class="avatar" [src]="profile.photoUrl" alt="Portrait von {{ profile.name }}"/>
                 </div>
             </div>
         </div>
@@ -45,25 +45,25 @@
         </div>
     </app-section>
 
-  <app-section title="Berufserfahrung">
-    <div class="list">
-      <div class="card card-pad" *ngFor="let e of cv.experience">
-        <h3 style="margin:0 0 4px;">{{ e.title }}</h3>
+    <app-section title="Berufserfahrung">
+        <div class="list">
+            <div class="card card-pad" *ngFor="let e of cv.experience">
+                <h3 style="margin:0 0 4px;">{{ e.title }}</h3>
 
-          <div class="divider" aria-hidden="true"></div> <!-- Trennungslinie -->
+                <div class="divider" aria-hidden="true"></div> <!-- Trennungslinie -->
 
-          <div class="kpis" style="margin-top: 8px;">
-              <span class="pill">{{ e.company }} │ {{ e.period }}</span>
-          </div>
+                <div class="kpis" style="margin-top: 8px;">
+                    <span class="pill">{{ e.company }} │ {{ e.period }}</span>
+                </div>
 
-          <ul style="margin:10px 0 0; padding-left: 18px; color: var(--muted); line-height: 1.6;">
-              <li *ngFor="let b of e.bullets">
-                  <strong>{{ b.label }}:</strong> {{ b.text }}
-              </li>
-          </ul>
+                <ul style="margin:10px 0 0; padding-left: 18px; color: var(--muted); line-height: 1.6;">
+                    <li *ngFor="let b of e.bullets">
+                        <strong>{{ b.label }}:</strong> {{ b.text }}
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
     </app-section>
 
 
-  </div>
+</div>

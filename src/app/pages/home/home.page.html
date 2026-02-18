@@ -8,8 +8,7 @@
                 <br>
                 <h1>{{ profile.role }}</h1>
                 <p>{{ profile.shortPitch }}</p>
-                <div class="kpis"> <span class="pill">{{ profile.location }}</span> </div>
-                <br>
+                <div class="kpis"><span class="pill">{{ profile.location }}</span></div>
 
                 <div class="actions">
                     <a class="btn primary" routerLink="/projects">Projekte</a>
@@ -21,7 +20,7 @@
             <!-- RECHTS: Foto -->
             <div class="hero-media">
                 <div class="avatar-frame">
-                    <img class="avatar" [src]="profile.photoUrl" alt="Portrait von {{ profile.name }}" />
+                    <img class="avatar" [src]="profile.photoUrl" alt="Portrait von {{ profile.name }}"/>
                 </div>
             </div>
         </div>

@@ -1,78 +1,68 @@
 <div class="page">
 
-  <div class="card card-pad">
-    <h1 style="margin:0 0 6px; font-size:24px;">Projekte</h1>
-    <p class="small" style="margin:0;"></p>
-    <div class="grid cols-2" style="margin-top:14px;">
-          <div>
-              <label class="small">Suche</label>
+    <div class="card card-pad">
+        <h1 style="margin:0 0 6px; font-size:24px;">Projekte</h1>
+        <p class="small" style="margin:0;"></p>
+        <div class="grid cols-2" style="margin-top:14px;">
+            <div>
+                <label class="small">Suche</label>
 
-              <div style="display:flex; gap:8px; align-items:center;">
-                  <input class="input" [(ngModel)]="q" placeholder="z. B. KI, Angular, Python..." />
-                  <button class="btn" type="button" *ngIf="q.trim()" (click)="clearQuery()">✕</button>
-              </div>
-          </div>
-          <div>
-              <label class="small">Filter</label>
-
-              <div class="tags" style="margin-top:8px;">
-                  <button
-                          class="btn"
-                          type="button"
-                          *ngFor="let t of tags"
-                          (click)="setTag(t)"
-                          [class.primary]="t===tag">
-                      {{ t }}
-                  </button>
-
-                  <button
-                          class="btn"
-                          type="button"
-                          *ngIf="hasActiveFilters"
-                          (click)="resetFilters()">
-                      🔃 Zurücksetzen
-                  </button>
-              </div>
-          </div>
-      </div>
-  </div>
-
-  <app-section title="" subtitle="">
-    <div class="list">
-      <div class="card card-pad item" *ngFor="let p of filtered">
-        <h3>{{ p.title }}</h3>
-
-        <p>{{ p.description }}</p>
-
-        <div class="tags"> <span class="pill" *ngFor="let t of p.tags">{{ t }}</span> </div>
-
-        <hr class="sep">
-
-        <div class="small" style="margin-bottom:6px;">Highlights</div>
-        <ul style="margin:0; padding-left: 18px; color: var(--muted); line-height: 1.6;">
-          <li *ngFor="let h of p.highlights">{{ h }}</li>
-        </ul>
-
-          <div class="actions project-actions" style="margin-top:6px;">
-              <a class="btn" *ngIf="p.links.repo" [href]="p.links.repo" target="_blank" rel="noreferrer">Repo ansehen</a>
-              <a class="btn" *ngIf="p.links.demo" [href]="p.links.demo" target="_blank" rel="noreferrer">Demo ansehen</a>
-<!--              <a class="btn" *ngIf="p.imageUrl" [href]="p.imageUrl" target="_blank" rel="noreferrer">Screenshot</a>-->
-              <button class="btn" type="button" *ngIf="p.imageUrl"
-                      (click)="openLightbox(p.imageUrl, p.title)">
-                  Screenshot
-              </button>
-
-
-          </div>
-
-
-      </div>
-
-      <div class="card card-pad" *ngIf="filtered.length === 0">
-        <p style="margin:0;">Keine Treffer. Versuch andere Tags oder Suchbegriffe.</p>
-      </div>
+                <div style="display:flex; gap:8px; align-items:center; margin-top:8px">
+                    <input class="input" [(ngModel)]="q" placeholder="z. B. KI, Angular, Python..."/>
+                    <button class="btn" type="button" *ngIf="q.trim()" (click)="clearQuery()">❌</button>
+                </div>
+            </div>
+            <div>
+                <label class="small">Filter</label>
+                <div class="tags" style="margin-top:8px;">
+                    <button
+                            class="btn"
+                            type="button"
+                            *ngFor="let t of tags"
+                            (click)="setTag(t)"
+                            [class.primary]="t===tag">
+                        {{ t }}
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
-  </app-section>
+
+    <app-section title="" subtitle="">
+        <div class="list">
+            <div class="card card-pad item" *ngFor="let p of filtered">
+                <h3>{{ p.title }}</h3>
+
+                <p>{{ p.description }}</p>
+
+                <div class="tags"><span class="pill" *ngFor="let t of p.tags">{{ t }}</span></div>
+
+                <hr class="sep">
+
+                <div class="small" style="margin-bottom:6px;">Highlights</div>
+                <ul style="margin:0; padding-left: 18px; color: var(--muted); line-height: 1.6;">
+                    <li *ngFor="let h of p.highlights">{{ h }}</li>
+                </ul>
+
+                <div class="actions project-actions" style="margin-top:6px;">
+                    <a class="btn" *ngIf="p.repo" [href]="p.repo" target="_blank" rel="noreferrer noopener">Repo</a>
+                    <a class="btn" *ngIf="p.demo" [href]="p.demo" target="_blank" rel="noreferrer noopener">Demo</a>
+
+                    <button class="btn" type="button" *ngIf="p.imageUrl" (click)="openLightbox(p.imageUrl, p.title)">
+                        Screenshot
+                    </button>
+                    <button class="btn" type="button" *ngIf="p.archiUrl" (click)="openLightbox(p.archiUrl, p.title)">
+                        Architektur
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="card card-pad" *ngIf="filtered.length === 0">
+                <p style="margin:0;">Keine Treffer. Versuch andere Tags oder Suchbegriffe.</p>
+            </div>
+        </div>
+    </app-section>
 
     <!-- Screenshot anzeigen -->
     <div class="lightbox" *ngIf="lightboxUrl" (click)="closeLightbox()">
@@ -85,6 +75,4 @@
             <img class="lightbox-img" [src]="lightboxUrl" [alt]="lightboxTitle + ' – Screenshot'">
         </div>
     </div>
-
-
 </div>
