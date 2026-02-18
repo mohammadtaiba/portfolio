@@ -45,9 +45,6 @@ export class ProjectsPage {
             return;
         }
         this.tag = t;
-
-        // Optional: Wenn du willst, dass beim Tag-Klick auch die Suche geleert wird:
-        // this.q = '';
     }
 
     clearQuery() {
@@ -58,4 +55,20 @@ export class ProjectsPage {
         this.q = '';
         this.tag = 'Alle';
     }
+
+    lightboxUrl: string | null = null;
+    lightboxTitle = '';
+
+    openLightbox(url: string | undefined, title: string) {
+        if (!url) return;
+        this.lightboxUrl = url;
+        this.lightboxTitle = title;
+    }
+
+
+    closeLightbox() {
+        this.lightboxUrl = null;
+        this.lightboxTitle = '';
+    }
+
 }

@@ -90,19 +90,24 @@ a:focus-visible{
 }
 
 .btn{
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 14px;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,.06);
-  color: var(--text);
-  cursor: pointer;
-  text-decoration: none;
-  box-shadow: none;
-  transition: transform .08s ease, background .08s ease, border-color .08s ease;
+    font: inherit;          /* wichtig: macht <a> und <button> identisch */
+    font-size: 14px;        /* optional: wenn du es überall gleich willst */
+    line-height: 1;         /* optional: verhindert unterschiedliche Baselines */
+
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,.06);
+    color: var(--text);
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: none;
+    transition: transform .08s ease, background .08s ease, border-color .08s ease;
 }
+
 .btn:active{ transform: translateY(1px); }
 
 .btn.primary{
@@ -157,4 +162,12 @@ a:focus-visible{
 @media (min-width: 760px){
   .grid.cols-2{ grid-template-columns: repeat(2, 1fr); }
   .grid.cols-3{ grid-template-columns: repeat(3, 1fr); }
+}
+
+
+.actions{
+    display: flex;
+    margin-top: 12px;
+    gap: 10px;
+    flex-wrap: wrap;
 }

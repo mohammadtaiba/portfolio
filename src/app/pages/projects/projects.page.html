@@ -1,15 +1,14 @@
 <div class="page">
+
   <div class="card card-pad">
     <h1 style="margin:0 0 6px; font-size:24px;">Projekte</h1>
-    <p class="small" style="margin:0;">Hier zählen Impact, Entscheidungen und Ergebnisse. Halte es kurz, aber konkret.</p>
-
-
-      <div class="grid cols-2" style="margin-top:14px;">
+    <p class="small" style="margin:0;"></p>
+    <div class="grid cols-2" style="margin-top:14px;">
           <div>
               <label class="small">Suche</label>
 
               <div style="display:flex; gap:8px; align-items:center;">
-                  <input class="input" [(ngModel)]="q" placeholder="z. B. RAG, Angular, UX..." />
+                  <input class="input" [(ngModel)]="q" placeholder="z. B. KI, Angular, Python..." />
                   <button class="btn" type="button" *ngIf="q.trim()" (click)="clearQuery()">✕</button>
               </div>
           </div>
@@ -54,19 +53,38 @@
           <li *ngFor="let h of p.highlights">{{ h }}</li>
         </ul>
 
-        <div class="pill">
-            <div class="small" style="margin-bottom:16px;"></div>
-            <div class="actions" style="font-size:14px;">
-                <a *ngIf="p.links.repo" [href]="p.links.repo" target="_blank" rel="noreferrer">Repo ansehen</a>
-                <a *ngIf="p.links.demo" [href]="p.links.demo" target="_blank" rel="noreferrer">Demo ansehen</a>
-            </div>
-        </div>
+          <div class="actions project-actions" style="margin-top:6px;">
+              <a class="btn" *ngIf="p.links.repo" [href]="p.links.repo" target="_blank" rel="noreferrer">Repo ansehen</a>
+              <a class="btn" *ngIf="p.links.demo" [href]="p.links.demo" target="_blank" rel="noreferrer">Demo ansehen</a>
+<!--              <a class="btn" *ngIf="p.imageUrl" [href]="p.imageUrl" target="_blank" rel="noreferrer">Screenshot</a>-->
+              <button class="btn" type="button" *ngIf="p.imageUrl"
+                      (click)="openLightbox(p.imageUrl, p.title)">
+                  Screenshot
+              </button>
+
+
+          </div>
+
+
       </div>
 
       <div class="card card-pad" *ngIf="filtered.length === 0">
         <p style="margin:0;">Keine Treffer. Versuch andere Tags oder Suchbegriffe.</p>
       </div>
     </div>
-
   </app-section>
+
+    <!-- Screenshot anzeigen -->
+    <div class="lightbox" *ngIf="lightboxUrl" (click)="closeLightbox()">
+        <div class="lightbox-inner" (click)="$event.stopPropagation()">
+            <div class="lightbox-bar">
+                <div class="small">{{ lightboxTitle }}</div>
+                <button type="button" class="lightbox-close" (click)="closeLightbox()">✕</button>
+            </div>
+
+            <img class="lightbox-img" [src]="lightboxUrl" [alt]="lightboxTitle + ' – Screenshot'">
+        </div>
+    </div>
+
+
 </div>
