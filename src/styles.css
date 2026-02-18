@@ -50,8 +50,39 @@ body::before{
             linear-gradient(to bottom, rgba(11,18,32,0) 0%, rgba(11,18,32,0) 55%, rgba(11,18,32,1) 90%);
 }
 
-a{ color: inherit; text-decoration: none; }
-a:hover{ text-decoration: underline; text-underline-offset: 3px; }
+/* Base: alle Links ohne Standard-Underline */
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+/* GLOBAL Hover-Effekt für alle normalen Links */
+a:not(.btn):not(.brand){
+    background-image: linear-gradient(var(--brand), var(--brand));
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 0% 2px;
+    transition: background-size .15s ease, color .15s ease;
+    padding-bottom: 2px;
+}
+
+a:not(.btn):not(.brand):hover{
+    color: var(--brand);
+    background-size: 100% 2px;
+}
+
+/* Buttons und Brand bleiben ohne Underline */
+.btn:hover,
+.brand:hover{
+    text-decoration: none;
+}
+
+/* Keyboard-Fokus */
+a:focus-visible{
+    outline: 2px solid rgba(110,231,255,.45);
+    outline-offset: 3px;
+    border-radius: 8px;
+}
 
 .container{
   width: min(1100px, calc(100% - 32px));
@@ -72,16 +103,33 @@ a:hover{ text-decoration: underline; text-underline-offset: 3px; }
   box-shadow: none;
   transition: transform .08s ease, background .08s ease, border-color .08s ease;
 }
-.btn:hover{
-  background: rgba(255,255,255,.10);
-  border-color: rgba(255,255,255,.18);
-  text-decoration: none;
-}
 .btn:active{ transform: translateY(1px); }
 
 .btn.primary{
   background: linear-gradient(135deg, rgba(110,231,255,.25), rgba(255,255,255,.08));
   border-color: rgba(110,231,255,.35);
+}
+
+
+.btn{
+    transition: transform .12s ease, background .12s ease, border-color .12s ease, box-shadow .12s ease, color .12s ease;
+}
+
+.btn:hover{
+    transform: translateY(-1px);
+    background: rgba(110,231,255,.10);
+    border-color: rgba(110,231,255,.45);
+    box-shadow: 0 12px 28px rgba(0,0,0,.35), 0 0 0 3px rgba(110,231,255,.12);
+    text-decoration: none;
+}
+
+.btn:active{
+    transform: translateY(0);
+}
+
+.btn.primary:hover{
+    background: linear-gradient(135deg, rgba(110,231,255,.33), rgba(255,255,255,.10));
+    border-color: rgba(110,231,255,.65);
 }
 
 .card{

@@ -49,7 +49,7 @@ export const PROFILE = {
             ],
         },
         {
-            title: 'KI-Agent',
+            title: 'KI-Agents',
             subtitle: 'RAG-Chatbots für lokale Wissenssuche und domänenspezifische Q&A (Retrieval-Augmented Generation).',
             bullets: [
                 'Python',
@@ -76,14 +76,15 @@ export const PROJECTS: Project[] = [
     subtitle: 'topdev GmbH',
     description: 'RAG-Chatbot, der internes Wissen per semantischer Suche zuverlässig als Antworten bereitstellt.',
     tags: ['KI', 'Python', 'Streamlit', 'ChromaDB', 'Automatisierung'],
-    links: { repo: 'https://github.com/your-handle/rag-chatbot' },
+    links: { demo: 'https://lusd-ki-bot.topdev.de/' },
     highlights: [
-      'LUSD-Chatbot für Fach- und Anwenderfragen (Hessen)',
-      'Wissensbasis: Word/Excel/PDF + HTML-Hilfeseiten',
-      'Inhalte automatisiert nach Markdown konvertiert',
-      'RAG mit Vektordatenbank (Chunking/Embeddings/Retrieval)',
-      'Chunk-Größe & Overlap begründet festgelegt',
-      'Updates der Wissensbasis regelmäßig eingespielt',
+      'RAG-Chatbot für die LUSD (Lehrer- und Schülerdatenbank) zur Beantwortung von Fach- und Anwenderfragen entwickelt',
+      'Interaktive Weboberfläche mit Streamlit umgesetzt',
+      'Ingestion- und Update-Pipeline auf Basis von LangChain automatisiert',
+      'Dokumentquellen (Word, Excel, PDF, HTML) konsolidiert, nach Markdown überführt und in einer Vektordatenbank für Retrieval indexiert',
+      'Qualitätssicherung durch automatisierte Tests mit Pytest',
+      'Logging und Monitoring zur Nachvollziehbarkeit und Stabilität integriert',
+      'Zugriffsschutz über Authentifizierung realisiert',
     ],
   },
   {
@@ -92,7 +93,7 @@ export const PROJECTS: Project[] = [
     description:
       'Portfolio mit Angular Standalone + Router, modular aufgebaut und datengetrieben (Projekte/Skills/Bücher) inklusive CV-Download und Legal-Seiten.',
     tags: ['Angular', 'Standalone', 'Router', 'TypeScript', 'UI'],
-    links: { repo: 'https://github.com/your-handle/portfolio' },
+    links: { demo: 'https://mohammad-taiba.netlify.app/' },
     highlights: [
       'Standalone-Architektur mit Lazy Loading der Seiten (Router loadComponent)',
       'Datenmodell + zentrale Content-Datei für einfache Pflege',

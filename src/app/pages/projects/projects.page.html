@@ -17,33 +17,29 @@
     </div>
   </div>
 
-  <app-section title="Case Studies" subtitle="Problem -> Rolle -> Lösung -> Ergebnis">
+  <app-section title="" subtitle="">
     <div class="list">
       <div class="card card-pad item" *ngFor="let p of filtered">
         <h3>{{ p.title }}</h3>
-        <p class="small">{{ p.subtitle }}</p>
+        <div class="tags"> <span class="pill">{{ p.subtitle }}</span> </div>
+
         <p>{{ p.description }}</p>
 
-        <div class="tags">
-          <span class="pill" *ngFor="let t of p.tags">{{ t }}</span>
-        </div>
+        <div class="tags"> <span class="pill" *ngFor="let t of p.tags">{{ t }}</span> </div>
 
         <hr class="sep">
 
-        <div class="grid cols-2">
-          <div>
-            <div class="small" style="margin-bottom:6px;">Highlights</div>
-            <ul style="margin:0; padding-left: 18px; color: var(--muted); line-height: 1.6;">
-              <li *ngFor="let h of p.highlights">{{ h }}</li>
-            </ul>
-          </div>
-          <div>
-            <div class="small" style="margin-bottom:6px;">Links</div>
-            <div class="actions">
-              <a class="btn" *ngIf="p.links.repo" [href]="p.links.repo" target="_blank" rel="noreferrer">Repo</a>
-              <a class="btn" *ngIf="p.links.demo" [href]="p.links.demo" target="_blank" rel="noreferrer">Demo</a>
+        <div class="small" style="margin-bottom:6px;">Highlights</div>
+        <ul style="margin:0; padding-left: 18px; color: var(--muted); line-height: 1.6;">
+          <li *ngFor="let h of p.highlights">{{ h }}</li>
+        </ul>
+
+        <div class="pill">
+            <div class="small" style="margin-bottom:16px;"></div>
+            <div class="actions" style="font-size:14px;">
+                <a *ngIf="p.links.repo" [href]="p.links.repo" target="_blank" rel="noreferrer">Repo ansehen</a>
+                <a *ngIf="p.links.demo" [href]="p.links.demo" target="_blank" rel="noreferrer">Demo ansehen</a>
             </div>
-          </div>
         </div>
       </div>
 
@@ -51,5 +47,6 @@
         <p style="margin:0;">Keine Treffer. Versuch andere Tags oder Suchbegriffe.</p>
       </div>
     </div>
+
   </app-section>
 </div>

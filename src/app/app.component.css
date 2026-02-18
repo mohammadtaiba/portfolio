@@ -100,3 +100,22 @@
   .nav-desktop{ display: inline-flex; }
   .nav-mobile{ display: none; }
 }
+
+
+/* Link deko */
+.brand-name{position: relative;}
+.brand-name::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -3px;
+    height: 2px;
+    background: var(--brand);
+    transform: scaleX(0);
+    transform-origin: left;
+    opacity: 0;
+    transition: transform .15s ease, opacity .15s ease;
+}
+.brand:hover .brand-name::after{transform: scaleX(1); opacity: 1;}
+.brand{text-decoration: none; background-image: none;}
