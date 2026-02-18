@@ -5,26 +5,26 @@ export type FocusItem = {
 };
 
 export type Project = {
-  title: string;
-  description: string;
-  tags: string[];
-  highlights: string[];
-  demo?: string;
-  repo?: string;
-  imageUrl?: string;
-  archiUrl?: string;
+    title: string;
+    description: string;
+    tags: string[];
+    highlights: string[];
+    demo?: string;
+    repo?: string;
+    imageUrl?: string;
+    archiUrl?: string;
 };
 
 export type Book = {
-  title: string;
-  author?: string;
-  takeaways: string[];
-  appliedIn?: string;
+    title: string;
+    author?: string;
+    takeaways: string[];
+    appliedIn?: string;
 };
 
 export type SkillGroup = {
-  group: string;
-  items: string[];
+    group: string;
+    items: string[];
 };
 
 export const PROFILE = {
@@ -74,17 +74,17 @@ export const PROFILE = {
 
 export const PROJECTS: Project[] = [
     {
-        title: 'RAG-Chatbot │ topdev GmbH, Erufrt',
-        description: 'KI-Agent, der internes Wissen per semantischer Suche zuverlässig als Antworten bereitstellt.',
-        tags: ['Python', 'Streamlit (UI)', 'ChromaDB',],
+        title: 'KI-Agent │ topdev GmbH, Erufrt',
+        description: 'RAG-Chatbot, der internes Wissen per semantischer Suche zuverlässig als Antworten bereitstellt.',
+        tags: ['Python', 'LangChain', 'Streamlit (UI)', 'ChromaDB',],
         highlights: [
-          'RAG-Chatbot für die LUSD (Lehrer- und Schülerdatenbank) zur Beantwortung von Fach- und Anwenderfragen entwickelt',
-          'Interaktive Weboberfläche mit Streamlit umgesetzt',
-          'Ingestion- und Update-Pipeline auf Basis von LangChain automatisiert',
-          'Dokumentquellen (Word, Excel, PDF, HTML) konsolidiert, nach Markdown überführt und in einer Vektordatenbank für Retrieval indexiert',
-          'Qualitätssicherung durch automatisierte Tests mit Pytest',
-          'Logging und Monitoring zur Nachvollziehbarkeit und Stabilität integriert',
-          'Zugriffsschutz über Authentifizierung realisiert',
+            'RAG-Chatbot für die LUSD (Lehrer- und Schülerdatenbank) zur Beantwortung von Fach- und Anwenderfragen entwickelt',
+            'Interaktive Weboberfläche mit Streamlit umgesetzt',
+            'Ingestion- und Update-Pipeline auf Basis von LangChain automatisiert',
+            'Dokumentquellen (Word, Excel, PDF, HTML) konsolidiert, nach Markdown überführt und in einer Vektordatenbank für Retrieval indexiert',
+            'Qualitätssicherung durch automatisierte Tests mit Pytest',
+            'Logging und Monitoring zur Nachvollziehbarkeit und Stabilität integriert',
+            'Zugriffsschutz über Authentifizierung realisiert',
         ],
         demo: 'https://lusd-ki-bot.topdev.de/',
         imageUrl: 'assets/projects/lusd_chatbot.png',
@@ -103,15 +103,18 @@ export const PROJECTS: Project[] = [
         demo: 'https://mohammad-taiba.netlify.app/',
         imageUrl: 'assets/projects/portfolio.png',
     }
-,
+    ,
     {
-        title: 'RAG-Chatbot │ Bachelorarbeit',
-        description: 'Ersetze das durch dein drittes starkes Projekt (mit Impact und Ergebnissen).',
-        tags: ['Python', 'Streamlit (UI)', 'ChromaDB',],
+        title: 'KI-Agent │ Bachelorarbeit',
+        description:
+            'GPT-basierter RAG-Chatbot zur Analyse von Nachhaltigkeitsberichten (DNK) mit automatisierter Dokumentenaufnahme und kontinuierlich aktualisierter Vektor-Wissensbasis.',
+        tags: ['Python', 'LangChain', 'Streamlit (UI)', 'ChromaDB', 'Ollama'],
         highlights: [
-          'Problem -> Losung -> Ergebnis (mit Metriken)',
-          'Technische Entscheidungen kurz begrunden',
-          'Screenshots / GIFs / Demo Link',
+            'RAG-Chatbot: ChromaDB-Retrieval + GPT-Antworten',
+            'Ingestion-Datenpipeline: Scraping (PDF/Webseiten) → Markdown → Cleaning → Index',
+            'Interaktive Weboberfläche mit Streamlit umgesetzt',
+            'Logging und Monitoring zur Nachvollziehbarkeit und Stabilität integriert',
+            'Evaluation als qualitativer Testprozess (Relevanz, Nachvollziehbarkeit, Konsistenz, Verständlichkeit) sowie Embedder-Vergleich und Chunking-Vergleich'
         ],
         imageUrl: 'assets/projects/bachelor_chatbot.png',
         archiUrl: 'assets/projects/bachelor_architektur.png',
@@ -182,17 +185,20 @@ export const BOOKS: Book[] = [
 ];
 
 export const SKILL_GROUPS: SkillGroup[] = [
-    { group: 'Programmiersprachen', items: ['Python', 'Java', 'TypeScript', 'JavaScript', 'C#', 'C/C++', 'PHP'] },
+    {group: 'Programmiersprachen', items: ['Python', 'Java', 'TypeScript', 'JavaScript', 'C#', 'C/C++', 'PHP']},
 
-    { group: 'Frontend', items: ['Angular', 'React', 'Next.js', 'HTML', 'CSS'] },
-    { group: 'Backend', items: ['Node.js', 'Express', 'Spring Boot', 'REST APIs'] },
+    {group: 'Frontend', items: ['Angular', 'React', 'Next.js', 'HTML', 'CSS']},
+    {group: 'Backend', items: ['Node.js', 'Express', 'Spring Boot', 'REST APIs']},
 
-    { group: 'Datenbanken', items: ['MySQL', 'MariaDB', 'MongoDB', 'ChromaDB'] },
-    { group: 'KI & LLM', items: ['RAG', 'LangChain', 'Prompt Engineering', 'Streamlit'] },
+    {group: 'Datenbanken', items: ['MySQL', 'MariaDB', 'MongoDB', 'ChromaDB']},
+    {group: 'KI & LLM', items: ['RAG', 'LangChain', 'Prompt Engineering', 'Streamlit']},
 
-    { group: 'Tools', items: ['Git', 'Docker', 'GitLab CI/CD', 'Jira', 'MS Office'] },
-    { group: 'Softskills', items: ['Eigenverantwortung', 'Proaktivität', 'Problemlösung', 'Selbstorganisation', 'Teamarbeit'] },
-    { group: 'Sprachen', items: ['Deutsch (C1, fließend)', 'Englisch (B2)', 'Arabisch (Muttersprache)'] },
+    {group: 'Tools', items: ['Git', 'Docker', 'GitLab CI/CD', 'Jira', 'MS Office']},
+    {
+        group: 'Softskills',
+        items: ['Eigenverantwortung', 'Proaktivität', 'Problemlösung', 'Selbstorganisation', 'Teamarbeit']
+    },
+    {group: 'Sprachen', items: ['Deutsch (C1, fließend)', 'Englisch (B2)', 'Arabisch (Muttersprache)']},
 ];
 
 export const CV = {
@@ -202,9 +208,15 @@ export const CV = {
             school: 'Fachhochschule Erfurt',
             period: '10/2022 – 03/2026',
             bullets: [
-                { label: 'Vertiefungsrichtung', text: 'Medieninformatik' },
-                { label: 'Bachelorarbeit', text: 'Entwicklung eines RAG-Systems mit automatisierter Ingestion- und Aktualisierungspipeline' },
-                { label: 'Praktikum', text: 'Entwicklung eines RAG-Systems mit UI, automatisierter Ingestion-/Aktualisierungspipeline und Testautomatisierung (topdev GmbH)' },
+                {label: 'Vertiefungsrichtung', text: 'Medieninformatik'},
+                {
+                    label: 'Bachelorarbeit',
+                    text: 'Entwicklung eines RAG-Systems mit automatisierter Ingestion- und Aktualisierungspipeline'
+                },
+                {
+                    label: 'Praktikum',
+                    text: 'Entwicklung eines RAG-Systems mit UI, automatisierter Ingestion-/Aktualisierungspipeline und Testautomatisierung (topdev GmbH)'
+                },
             ],
         },
         {
@@ -212,8 +224,11 @@ export const CV = {
             school: 'Andreas-Gordon-Schule, Erfurt',
             period: '08/2020 – 07/2022',
             bullets: [
-                { label: 'Schwerpunkt', text: 'Informationstechnik' },
-                { label: 'Praktikum', text: 'Mitarbeit an IT-Projekten, Tests, Support und technischer Dokumentation (Bechtle IT-Systemhaus)' },
+                {label: 'Schwerpunkt', text: 'Informationstechnik'},
+                {
+                    label: 'Praktikum',
+                    text: 'Mitarbeit an IT-Projekten, Tests, Support und technischer Dokumentation (Bechtle IT-Systemhaus)'
+                },
             ],
         },
     ],
@@ -224,19 +239,34 @@ export const CV = {
             company: 'topdev GmbH, Erfurt',
             period: '10/2025 – 02/2026',
             bullets: [
-                { label: 'Entwicklung', text: 'RAG-Chatbot für Lehrer- und Schülerdatenbank (LUSD) zur Beantwortung von Fach- und Anwenderfragen' },
-                { label: 'RAG-Pipeline', text: 'Automatisierte Ingestion von Word-, Excel-, PDF- und HTML-Quellen inkl. Konvertierung nach Markdown' },
-                { label: 'Retrieval', text: 'Chunking/Embeddings und Aufbau einer Vektordatenbank für semantische Suche' },
-                { label: 'Qualitätssicherung', text: 'Prompt-Engineering sowie Logging/Monitoring und Evaluation (Testfälle, Review-Sets, Testautomatisierung) zur Ergebnisprüfung' },            ],
+                {
+                    label: 'Entwicklung',
+                    text: 'RAG-Chatbot für Lehrer- und Schülerdatenbank (LUSD) zur Beantwortung von Fach- und Anwenderfragen'
+                },
+                {
+                    label: 'RAG-Pipeline',
+                    text: 'Automatisierte Ingestion von Word-, Excel-, PDF- und HTML-Quellen inkl. Konvertierung nach Markdown'
+                },
+                {
+                    label: 'Retrieval',
+                    text: 'Chunking/Embeddings und Aufbau einer Vektordatenbank für semantische Suche'
+                },
+                {
+                    label: 'Qualitätssicherung',
+                    text: 'Prompt-Engineering sowie Logging/Monitoring und Evaluation (Testfälle, Review-Sets, Testautomatisierung) zur Ergebnisprüfung'
+                },],
         },
         {
             title: 'Studentische Hilfskraft im Sachverständigenbüro',
             company: 'Sachverständigenbüro Torsten Peuckert, Erfurt',
             period: '09/2024 – 12/2024',
             bullets: [
-                { label: 'Organisation', text: 'Unterstützung bei administrativen und organisatorischen Aufgaben im Tagesgeschäft' },
-                { label: 'Dokumente', text: 'Dokumentenmanagement und strukturierte Ablage von Unterlagen' },
-                { label: 'Koordination', text: 'Termin- und Auftragskoordination sowie Datenpflege' },
+                {
+                    label: 'Organisation',
+                    text: 'Unterstützung bei administrativen und organisatorischen Aufgaben im Tagesgeschäft'
+                },
+                {label: 'Dokumente', text: 'Dokumentenmanagement und strukturierte Ablage von Unterlagen'},
+                {label: 'Koordination', text: 'Termin- und Auftragskoordination sowie Datenpflege'},
             ],
         },
         {
@@ -244,9 +274,15 @@ export const CV = {
             company: 'Carrier Refrigeration eServices GmbH, Erfurt',
             period: '09/2023 – 09/2024',
             bullets: [
-                { label: 'Datenmanagement', text: 'Erfassung und strukturierte Aufbereitung von Kunden- und Auftragsdaten' },
-                { label: 'SAP MM', text: 'Verwaltung von Bestellanforderungen im SAP R/3 MM-Modul' },
-                { label: 'Auftragsabwicklung', text: 'Fristgerechte Abwicklung und buchhalterische Verbuchung von Aufträgen' },
+                {
+                    label: 'Datenmanagement',
+                    text: 'Erfassung und strukturierte Aufbereitung von Kunden- und Auftragsdaten'
+                },
+                {label: 'SAP MM', text: 'Verwaltung von Bestellanforderungen im SAP R/3 MM-Modul'},
+                {
+                    label: 'Auftragsabwicklung',
+                    text: 'Fristgerechte Abwicklung und buchhalterische Verbuchung von Aufträgen'
+                },
             ],
         },
         {
@@ -254,9 +290,12 @@ export const CV = {
             company: 'Beck + Heun GmbH, Erfurt',
             period: '07/2021 – 08/2021',
             bullets: [
-                { label: 'Automatisierung', text: 'Automatisierung administrativer Prozesse mittels PowerShell-Skripten' },
-                { label: 'Deployments', text: 'Unterstützung bei Planung und Durchführung von Software-Deployments' },
-                { label: 'Troubleshooting', text: 'Systematische Fehleranalyse und technisches Troubleshooting' },
+                {
+                    label: 'Automatisierung',
+                    text: 'Automatisierung administrativer Prozesse mittels PowerShell-Skripten'
+                },
+                {label: 'Deployments', text: 'Unterstützung bei Planung und Durchführung von Software-Deployments'},
+                {label: 'Troubleshooting', text: 'Systematische Fehleranalyse und technisches Troubleshooting'},
             ],
         },
         {
@@ -264,9 +303,9 @@ export const CV = {
             company: 'Bechtle IT-Systemhaus Weimar',
             period: '08/2020 – 07/2021',
             bullets: [
-                { label: 'Rollouts', text: 'Mitwirkung bei IT-Projekten und Rollouts inkl. technischer Umsetzung' },
-                { label: 'Testing', text: 'Durchführung von Tests und Sicherstellung der Qualitätsstandards' },
-                { label: 'Support & Doku', text: 'Endanwender-Support und Erstellung technischer Dokumentationen' },
+                {label: 'Rollouts', text: 'Mitwirkung bei IT-Projekten und Rollouts inkl. technischer Umsetzung'},
+                {label: 'Testing', text: 'Durchführung von Tests und Sicherstellung der Qualitätsstandards'},
+                {label: 'Support & Doku', text: 'Endanwender-Support und Erstellung technischer Dokumentationen'},
             ],
         },
     ],
