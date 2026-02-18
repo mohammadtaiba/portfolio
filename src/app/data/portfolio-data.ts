@@ -6,7 +6,6 @@ export type FocusItem = {
 
 export type Project = {
   title: string;
-  subtitle: string;
   description: string;
   tags: string[];
   links: { demo?: string; repo?: string };
@@ -72,8 +71,7 @@ export const PROFILE = {
 
 export const PROJECTS: Project[] = [
   {
-    title: 'RAG-Chatbot',
-    subtitle: 'topdev GmbH',
+    title: 'RAG-Chatbot │ topdev GmbH, Erufrt',
     description: 'RAG-Chatbot, der internes Wissen per semantischer Suche zuverlässig als Antworten bereitstellt.',
     tags: ['KI', 'Python', 'Streamlit', 'ChromaDB', 'Automatisierung'],
     links: { demo: 'https://lusd-ki-bot.topdev.de/' },
@@ -88,8 +86,7 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
-    title: 'Portfolio-Webseite',
-    subtitle: 'Eigenes Projekt',
+    title: 'Portfolio-Webseite │ Eigenes Projekt',
     description:
       'Portfolio mit Angular Standalone + Router, modular aufgebaut und datengetrieben (Projekte/Skills/Bücher) inklusive CV-Download und Legal-Seiten.',
     tags: ['Angular', 'Standalone', 'Router', 'TypeScript', 'UI'],
@@ -101,8 +98,7 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
-    title: 'Projekt 3 (Platzhalter)',
-    subtitle: 'Web / UX',
+    title: 'Projekt 3 (Platzhalter) │ Web / UX',
     description: 'Ersetze das durch dein drittes starkes Projekt (mit Impact und Ergebnissen).',
     tags: ['Web', 'UX', 'Performance'],
     links: { demo: 'https://example.com' },

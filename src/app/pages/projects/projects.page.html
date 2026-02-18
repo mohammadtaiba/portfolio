@@ -3,25 +3,45 @@
     <h1 style="margin:0 0 6px; font-size:24px;">Projekte</h1>
     <p class="small" style="margin:0;">Hier zählen Impact, Entscheidungen und Ergebnisse. Halte es kurz, aber konkret.</p>
 
-    <div class="grid cols-2" style="margin-top:14px;">
-      <div>
-        <label class="small">Suche</label>
-        <input class="input" [(ngModel)]="q" placeholder="z. B. RAG, Angular, UX..." />
+
+      <div class="grid cols-2" style="margin-top:14px;">
+          <div>
+              <label class="small">Suche</label>
+
+              <div style="display:flex; gap:8px; align-items:center;">
+                  <input class="input" [(ngModel)]="q" placeholder="z. B. RAG, Angular, UX..." />
+                  <button class="btn" type="button" *ngIf="q.trim()" (click)="clearQuery()">✕</button>
+              </div>
+          </div>
+          <div>
+              <label class="small">Filter</label>
+
+              <div class="tags" style="margin-top:8px;">
+                  <button
+                          class="btn"
+                          type="button"
+                          *ngFor="let t of tags"
+                          (click)="setTag(t)"
+                          [class.primary]="t===tag">
+                      {{ t }}
+                  </button>
+
+                  <button
+                          class="btn"
+                          type="button"
+                          *ngIf="hasActiveFilters"
+                          (click)="resetFilters()">
+                      🔃 Zurücksetzen
+                  </button>
+              </div>
+          </div>
       </div>
-      <div>
-        <label class="small">Filter</label>
-        <div class="tags" style="margin-top:8px;">
-          <button class="btn" *ngFor="let t of tags" (click)="setTag(t)" [class.primary]="t===tag">{{ t }}</button>
-        </div>
-      </div>
-    </div>
   </div>
 
   <app-section title="" subtitle="">
     <div class="list">
       <div class="card card-pad item" *ngFor="let p of filtered">
         <h3>{{ p.title }}</h3>
-        <div class="tags"> <span class="pill">{{ p.subtitle }}</span> </div>
 
         <p>{{ p.description }}</p>
 
