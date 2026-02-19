@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { SectionComponent } from '../../shared/section.component';
-import { PROFILE, PROJECTS } from '../../data/portfolio-data';
+import { PROFILE} from '../../data/portfolio-data';
 
 @Component({
   standalone: true,
@@ -12,5 +12,4 @@ import { PROFILE, PROJECTS } from '../../data/portfolio-data';
 })
 export class HomePage {
   profile = PROFILE;
-  featured = PROJECTS.slice(0, 3);
 }

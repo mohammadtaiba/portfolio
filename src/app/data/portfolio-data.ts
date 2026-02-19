@@ -72,11 +72,100 @@ export const PROFILE = {
     ],
 };
 
-export const PROJECTS: Project[] = [
+export const WEBSITE_PROJECTS: Project[] = [
     {
-        title: 'KI-Agent │ topdev GmbH, Erufrt',
+        title: 'Portfolio │ Eigenes Projekt',
+        description: 'Professionelles Portfolio zur Präsentation von Projekten, Skills, Büchern und Lebenslauf.',
+        tags: ['Angular', 'TypeScript', 'CSS', 'HTML', 'Netlify', 'Routing'],
+        highlights: [
+            'Portfolio als Angular SPA mit Standalone-Komponenten und Router umgesetzt',
+            'Routing-Struktur mit Lazy Loading pro Seite via Router `loadComponent` implementiert',
+            'Datenmodell für Projekte/Skills/Bücher definiert und zentral gepflegt (eine Content-Datei)',
+            'Projektübersicht mit Suche und Tag-Filter implementiert',
+            'Responsives Layout, klare Navigation (Desktop + Mobile Menü) und konsistentes UI-Styling umgesetzt',
+        ],
+        demo: 'https://mohammad-taiba.netlify.app/',
+        imageUrl: 'assets/projects/portfolio.png',
+    },
+    {
+        title: 'Finance Dashboard │ FH-Projekt (selbstständig)',
+        description:
+            'Full‑Stack Finanz-Dashboard mit React/MUI Frontend und Express/MongoDB Backend; REST + GraphQL API, Swagger-Doku, Redux Toolkit Query und Charts (Recharts).',
+        tags: [
+            'MERN (MongoDB, Express, React, Node.js)',
+            'TypeScript',
+            'Recharts',
+            'GraphQL',
+            'Apollo Server',
+            'Swagger',
+            'Docker',
+        ],
+        highlights: [
+            'Dashboard für KPIs, Produkte und Transaktionen mit Tabellen + Diagrammen umgesetzt',
+            'REST Endpoints (/kpi, /product, /transaction) + GraphQL API für Transaktionen integriert',
+            'Swagger UI /api-docs inkl. swagger-jsdoc Route-Annotierungen',
+            'Data Layer mit MongoDB + Seed-Daten für reproduzierbare Demos',
+            'Frontend: RTK Query für REST + Apollo Client für GraphQL (Queries/Mutations)',
+        ],
+        repo: 'https://github.com/mohammadtaiba/indexlive',
+        imageUrl: 'assets/projects/indexlive.png',
+    },
+    {
+        title: 'Data‑Science-Projekt – BTC vs XAU │ FH-Projekt (selbstständig)',
+        description:
+            'Data‑Science-Projekt zum Vergleich von Bitcoin- und Gold-Preisverläufen – Statistische Tests, technische Indikatoren und publizierte Doku-Seite via MkDocs Material.',
+        tags: [
+            'Python',
+            'Jupyter',
+            'Pandas',
+            'NumPy',
+            'Matplotlib',
+            'Seaborn',
+            'Scikit-learn',
+            'Technical Analysis',
+            'MkDocs (Material)',
+        ],
+        highlights: [
+            'CRISP‑DM-basierte Analyse (Volatilität, Risiko, Muster) für BTC vs XAU',
+            'Technische Indikatoren integriert (Moving Averages, RSI, MACD, u.a.)',
+            'Hypothesentests & Visualisierungen zur Ableitung datengetriebener Insights',
+            'Reproduzierbarkeit: requirements.txt + Notebooks als zentrale Artefakte',
+            'Dokumentations-Website mit MkDocs Material inkl. Export-Pipeline (nbconvert → HTML/PDF)',
+        ],
+        repo: 'https://github.com/mohammadtaiba/DataVision',
+        imageUrl: 'assets/projects/datavision.png',
+    },
+    {
+        title: 'Online‑Shop für PC‑Games │ FH-Teamprojekt',
+        description:
+            'PHP/MySQL Webshop-Prototyp mit Rollenmodell, Login/Session-Handling, Warenkorb (Gast + User) und Checkout/Bestellhistorie.',
+        tags: [
+            'PHP',
+            'MySQL',
+            'HTML',
+            'CSS',
+            'JavaScript',
+            'MVC',
+            'Routing',
+            'Sessions',
+        ],
+        highlights: [
+            'Rollen- und Rechtekonzept umgesetzt (z.B. create_game/change_user/delete_user)',
+            'Warenkorb: Gast-Cart in Session + persistenter User-Cart in DB, inkl. Cart-Migration beim Login',
+            'Checkout-Flow mit Order Persistierung (order_data + order_items) und Cart-Clearing',
+            'Serverseitige Controller/Model-Struktur (MVC-orientiert) für Shop-Use-Cases',
+            'UI: klare Navigation und Shop-Struktur als funktionsfähiger Prototype',
+        ],
+        repo: 'https://github.com/mohammadtaiba/Games-galaxy-store',
+        imageUrl: 'assets/projects/games_galaxy.png',
+    },
+];
+
+export const KI_PROJECTS: Project[] = [
+    {
+        title: 'RAG-Chatbot │ topdev GmbH, Erfurt',
         description: 'RAG-Chatbot, der internes Wissen per semantischer Suche zuverlässig als Antworten bereitstellt.',
-        tags: ['Python', 'LangChain', 'Streamlit (UI)', 'ChromaDB',],
+        tags: ['Python', 'LangChain', 'Streamlit (UI)', 'ChromaDB', 'Pipeline-Automatisierung', 'API', 'Docker', 'Monitoring', 'Auth'],
         highlights: [
             'RAG-Chatbot für die LUSD (Lehrer- und Schülerdatenbank) zur Beantwortung von Fach- und Anwenderfragen entwickelt',
             'Interaktive Weboberfläche mit Streamlit umgesetzt',
@@ -90,34 +179,47 @@ export const PROJECTS: Project[] = [
         imageUrl: 'assets/projects/lusd_chatbot.png',
     },
     {
-        title: 'Persönliche Webseite │ Eigenes Projekt',
-        description: 'Professionelles Portfolio zur Präsentation von Projekten, Skills, Büchern und Lebenslauf.',
-        tags: ['Angular', 'TypeScript', 'CSS', 'HTML'],
-        highlights: [
-            'Portfolio als Angular SPA mit Standalone-Komponenten und Router umgesetzt',
-            'Routing-Struktur mit Lazy Loading pro Seite via Router `loadComponent` implementiert',
-            'Datenmodell für Projekte/Skills/Bücher definiert und zentral gepflegt (eine Content-Datei)',
-            'Projektübersicht mit Suche und Tag-Filter implementiert',
-            'Responsives Layout, klare Navigation (Desktop + Mobile Menü) und konsistentes UI-Styling umgesetzt',
-        ],
-        demo: 'https://mohammad-taiba.netlify.app/',
-        imageUrl: 'assets/projects/portfolio.png',
-    }
-    ,
-    {
-        title: 'KI-Agent │ Bachelorarbeit',
+        title: 'RAG-Chatbot │ Bachelorarbeit',
         description:
             'GPT-basierter RAG-Chatbot zur Analyse von Nachhaltigkeitsberichten (DNK) mit automatisierter Dokumentenaufnahme und kontinuierlich aktualisierter Vektor-Wissensbasis.',
-        tags: ['Python', 'LangChain', 'Streamlit (UI)', 'ChromaDB', 'Ollama'],
+        tags: ['Python', 'LangChain', 'Streamlit (UI)', 'ChromaDB', 'Pipeline-Automatisierung', 'Scraping', 'Evaluation'],
         highlights: [
             'RAG-Chatbot: ChromaDB-Retrieval + GPT-Antworten',
             'Ingestion-Datenpipeline: Scraping (PDF/Webseiten) → Markdown → Cleaning → Index',
             'Interaktive Weboberfläche mit Streamlit umgesetzt',
-            'Logging und Monitoring zur Nachvollziehbarkeit und Stabilität integriert',
             'Evaluation als qualitativer Testprozess (Relevanz, Nachvollziehbarkeit, Konsistenz, Verständlichkeit) sowie Embedder-Vergleich und Chunking-Vergleich'
         ],
         imageUrl: 'assets/projects/bachelor_chatbot.png',
         archiUrl: 'assets/projects/bachelor_architektur.png',
+    },
+];
+
+export const BACKEND_PROJECTS: Project[] = [
+    {
+        title: 'Fahrzeugverkauf & -vermietung │ FH-Projekt',
+        description:
+            'Jakarta EE Backend mit JAX-RS REST API, JPA/Hibernate Persistence und OpenAPI/Swagger UI – inklusive Docker/WildFly Deployment als WAR.',
+        tags: [
+            'Java',
+            'Jakarta EE (JAX-RS)',
+            'JPA / Hibernate',
+            'H2',
+            'OpenAPI (Swagger)',
+            'REST API',
+            'Docker',
+            'WildFly',
+            'JUnit',
+            'Routing'
+        ],
+        highlights: [
+            'REST API unter /api umgesetzt und OpenAPI-Spezifikation via OpenApiResource bereitgestellt',
+            'Customer- und Contract-Domain implementiert (CRUD, Soft-Delete bei Customers, Filter-Endpoints für Contracts)',
+            'Persistence über Hibernate + H2 In-Memory DB (schnell lauffähig für Demos/Tests)',
+            'Containerisierung: Maven Build → WAR (mmra.war) → Deployment in WildFly',
+            'Automatisierte Tests für zentrale Ressourcen (JPA + JUnit)',
+        ],
+        repo: 'https://github.com/mohammadtaiba/03_autoverwaltung',
+        imageUrl: 'assets/projects/carhub360.png',
     },
 ];
 

@@ -2,58 +2,61 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { SectionComponent } from '../../shared/section.component';
-import { PROJECTS, Project } from '../../data/portfolio-data';
+import { WEBSITE_PROJECTS, KI_PROJECTS, BACKEND_PROJECTS, Project } from '../../data/portfolio-data';
+
+type SectionKey = 'web' | 'ki' | 'backend';
 
 @Component({
-  standalone: true,
-  imports: [CommonModule, FormsModule, SectionComponent],
-  templateUrl: './projects.page.html',
-  styleUrl: './projects.page.css',
+    standalone: true,
+    imports: [CommonModule, FormsModule, SectionComponent],
+    templateUrl: './projects.page.html',
+    styleUrl: './projects.page.css',
 })
 export class ProjectsPage {
-    all = PROJECTS;
+    all: Project[] = [...WEBSITE_PROJECTS, ...KI_PROJECTS, ...BACKEND_PROJECTS];
+
     q = '';
-    tag = 'Alle';
+    section: SectionKey | null = null; // null = alle Bereiche
 
-    get tags(): string[] {
-        const set = new Set<string>();
-        this.all.forEach(p => p.tags.forEach(t => set.add(t)));
-        return ['Alle', ...Array.from(set).sort((a,b) => a.localeCompare(b))];
-    }
-
-    get hasActiveFilters(): boolean {
-        return this.q.trim().length > 0 || this.tag !== 'Alle';
-    }
-
-    get filtered(): Project[] {
+    private applySearch(list: Project[]): Project[] {
         const q = this.q.trim().toLowerCase();
-        return this.all.filter(p => {
-            const matchesText =
-                !q || (p.title + ' ' + p.description + ' ' + p.tags.join(' '))
-                    .toLowerCase()
-                    .includes(q);
-
-            const matchesTag = this.tag === 'Alle' || p.tags.includes(this.tag);
-            return matchesText && matchesTag;
+        return list.filter(p => {
+            const haystack = (p.title + ' ' + p.description + ' ' + p.tags.join(' ')).toLowerCase();
+            return !q || haystack.includes(q);
         });
     }
 
-    // Klick auf denselben Tag -> Filter wird entfernt (zurück auf "Alle")
-    setTag(t: string) {
-        if (t === 'Alle' || t === this.tag) {
-            this.tag = 'Alle';
-            return;
-        }
-        this.tag = t;
+    get filteredWebsite(): Project[] {
+        return this.applySearch(WEBSITE_PROJECTS);
+    }
+
+    get filteredKi(): Project[] {
+        return this.applySearch(KI_PROJECTS);
+    }
+
+    get filteredBackend(): Project[] {
+        return this.applySearch(BACKEND_PROJECTS);
+    }
+
+    // 3 Buttons: Klick toggelt (aktiv -> wieder aus)
+    setSection(s: SectionKey) {
+        this.section = this.section === s ? null : s;
     }
 
     clearQuery() {
         this.q = '';
     }
 
-    resetFilters() {
-        this.q = '';
-        this.tag = 'Alle';
+    get noResults(): boolean {
+        if (this.section === 'web') return this.filteredWebsite.length === 0;
+        if (this.section === 'ki') return this.filteredKi.length === 0;
+        if (this.section === 'backend') return this.filteredBackend.length === 0;
+
+        return (
+            this.filteredWebsite.length === 0 &&
+            this.filteredKi.length === 0 &&
+            this.filteredBackend.length === 0
+        );
     }
 
     lightboxUrl: string | null = null;
@@ -65,10 +68,8 @@ export class ProjectsPage {
         this.lightboxTitle = title;
     }
 
-
     closeLightbox() {
         this.lightboxUrl = null;
         this.lightboxTitle = '';
     }
-
 }

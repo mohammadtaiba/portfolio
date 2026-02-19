@@ -37,11 +37,11 @@
 
 <footer class="footer">
     <div class="container footer-inner">
-        <div class="muted">
-            © {{ profile.name }} · <a routerLink="/impressum">Impressum</a> · <a
-                routerLink="/datenschutz">Datenschutz</a>
+        <div class="muted"> ©
+            <a routerLink="/"> {{ profile.name }}</a>
+            ·
+            <a routerLink="/contact"> kontakt </a>
         </div>
-
         <div class="footer-links">
             <a [href]="profile.links.github" target="_blank" rel="noreferrer">GitHub</a>
             <a [href]="profile.links.linkedin" target="_blank" rel="noreferrer">LinkedIn</a>
