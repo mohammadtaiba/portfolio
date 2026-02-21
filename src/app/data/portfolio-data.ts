@@ -13,6 +13,9 @@ export type Project = {
     repo?: string;
     imageUrl?: string;
     archiUrl?: string;
+    siteMapUrl?: string;
+    flussdiagrammUrl?: string;
+    erModellUrl?: string;
 };
 
 export type Book = {
@@ -29,7 +32,7 @@ export type SkillGroup = {
 
 export const PROFILE = {
     name: 'Mohammad Taiba',
-    role: 'Junior Softwareentwickler (Full-Stack)',
+    role: 'Softwareentwickler (Full-Stack)',
     location: 'Erfurt, Deutschland',
     email: 'mohammadtaiba55@gmail.com',
     photoUrl: 'assets/profile.jpg',
@@ -80,9 +83,9 @@ export const WEBSITE_PROJECTS: Project[] = [
         highlights: [
             'Portfolio als Angular SPA mit Standalone-Komponenten und Router umgesetzt',
             'Routing-Struktur mit Lazy Loading pro Seite via Router `loadComponent` implementiert',
-            'Datenmodell für Projekte/Skills/Bücher definiert und zentral gepflegt (eine Content-Datei)',
+            'Datenmodell für Projekte/Skills/Bücher definiert und zentral gepflegt',
             'Projektübersicht mit Suche und Tag-Filter implementiert',
-            'Responsives Layout, klare Navigation (Desktop + Mobile Menü) und konsistentes UI-Styling umgesetzt',
+            'Responsives Layout, klare Navigation (Desktop + Mobile Menü)',
         ],
         demo: 'https://mohammad-taiba.netlify.app/',
         imageUrl: 'assets/projects/portfolio.png',
@@ -90,14 +93,12 @@ export const WEBSITE_PROJECTS: Project[] = [
     {
         title: 'Finance Dashboard │ FH-Projekt (selbstständig)',
         description:
-            'Full‑Stack Finanz-Dashboard mit React/MUI Frontend und Express/MongoDB Backend; REST + GraphQL API, Swagger-Doku, Redux Toolkit Query und Charts (Recharts).',
+            'Entwicklung einer Finanzverwaltungsanwendung, mit der Nutzer Transaktionen, Produkte und wichtige Leistungskennzahlen (KPIs) in einer modernen Weblösung mit Frontend und Backend verwalten können.',
         tags: [
             'MERN (MongoDB, Express, React, Node.js)',
+            'GraphQL API',
+            'RESTful API',
             'TypeScript',
-            'Recharts',
-            'GraphQL',
-            'Apollo Server',
-            'Swagger',
             'Docker',
         ],
         highlights: [
@@ -109,11 +110,12 @@ export const WEBSITE_PROJECTS: Project[] = [
         ],
         repo: 'https://github.com/mohammadtaiba/indexlive',
         imageUrl: 'assets/projects/indexlive.png',
+        archiUrl: 'assets/projects/Architektur_indexlive.png'
     },
     {
-        title: 'Data‑Science-Projekt – BTC vs XAU │ FH-Projekt (selbstständig)',
+        title: 'Data‑Science-Projekt │ FH-Projekt (selbstständig)',
         description:
-            'Data‑Science-Projekt zum Vergleich von Bitcoin- und Gold-Preisverläufen – Statistische Tests, technische Indikatoren und publizierte Doku-Seite via MkDocs Material.',
+            'Das Projekt verfolgt das Ziel, das Preisverhalten und die Volatilität von Bitcoin im Vergleich zu Gold zu analysieren, um Rückschlüsse auf Stabilität, Risiko und Anlageverhalten zu ziehen.',
         tags: [
             'Python',
             'Jupyter',
@@ -123,14 +125,15 @@ export const WEBSITE_PROJECTS: Project[] = [
             'Seaborn',
             'Scikit-learn',
             'Technical Analysis',
-            'MkDocs (Material)',
+            'MkDocs',
         ],
         highlights: [
             'CRISP‑DM-basierte Analyse (Volatilität, Risiko, Muster) für BTC vs XAU',
-            'Technische Indikatoren integriert (Moving Averages, RSI, MACD, u.a.)',
-            'Hypothesentests & Visualisierungen zur Ableitung datengetriebener Insights',
-            'Reproduzierbarkeit: requirements.txt + Notebooks als zentrale Artefakte',
-            'Dokumentations-Website mit MkDocs Material inkl. Export-Pipeline (nbconvert → HTML/PDF)',
+            'Bewertung von Marktverhalten mithilfe technischer Indikatoren (Moving Averages, RSI, MACD, u.a.)',
+            'Deskriptive Analyse und analytische Untersuchung ',
+            'Statistische Hypothesentests',
+            'Visualisierung von Mustern, Preisverläufen und technischen Signalen',
+            'Dokumentations-Website mit MkDocs Material inkl. Export-Pipeline',
         ],
         repo: 'https://github.com/mohammadtaiba/DataVision',
         imageUrl: 'assets/projects/datavision.png',
@@ -138,7 +141,7 @@ export const WEBSITE_PROJECTS: Project[] = [
     {
         title: 'Online‑Shop für PC‑Games │ FH-Teamprojekt',
         description:
-            'PHP/MySQL Webshop-Prototyp mit Rollenmodell, Login/Session-Handling, Warenkorb (Gast + User) und Checkout/Bestellhistorie.',
+            'Entwicklung eines Online-Shops für Videospiele, spezialisiert auf PC-Spiele.',
         tags: [
             'PHP',
             'MySQL',
@@ -150,44 +153,47 @@ export const WEBSITE_PROJECTS: Project[] = [
             'Sessions',
         ],
         highlights: [
-            'Rollen- und Rechtekonzept umgesetzt (z.B. create_game/change_user/delete_user)',
-            'Warenkorb: Gast-Cart in Session + persistenter User-Cart in DB, inkl. Cart-Migration beim Login',
-            'Checkout-Flow mit Order Persistierung (order_data + order_items) und Cart-Clearing',
+            'Wunschliste, Warenkorb und Einkaufsverlauf',
+            'Spiele hinzufügen, sortieren/filtern nach Kategorie',
+            'Suchfunktion nach Name, Platform und Beschreibung',
+            'Checkout mit verschiedenen Bezahloptionen',
             'Serverseitige Controller/Model-Struktur (MVC-orientiert) für Shop-Use-Cases',
+            'Benutzerliste mit Löschfunktion',
             'UI: klare Navigation und Shop-Struktur als funktionsfähiger Prototype',
         ],
         repo: 'https://github.com/mohammadtaiba/Games-galaxy-store',
         imageUrl: 'assets/projects/games_galaxy.png',
+        siteMapUrl: 'assets/projects/Sitemap_games_galaxy.png',
+        erModellUrl: 'assets/projects/ER-Modell_games_galaxy.png',
+        flussdiagrammUrl: 'assets/projects/Flussdiagramm_games_galaxy.png',
     },
 ];
 
 export const KI_PROJECTS: Project[] = [
     {
         title: 'RAG-Chatbot │ topdev GmbH, Erfurt',
-        description: 'RAG-Chatbot, der internes Wissen per semantischer Suche zuverlässig als Antworten bereitstellt.',
+        description: 'Entwicklung eines RAG-Chatbots für die Lehrer- und Schülerdatenbank (LUSD), der interne Informationen per semantischer Suche zuverlässig beantwortet.',
         tags: ['Python', 'LangChain', 'Streamlit (UI)', 'ChromaDB', 'Pipeline-Automatisierung', 'API', 'Docker', 'Monitoring', 'Auth'],
         highlights: [
-            'RAG-Chatbot für die LUSD (Lehrer- und Schülerdatenbank) zur Beantwortung von Fach- und Anwenderfragen entwickelt',
-            'Interaktive Weboberfläche mit Streamlit umgesetzt',
-            'Ingestion- und Update-Pipeline auf Basis von LangChain automatisiert',
-            'Dokumentquellen (Word, Excel, PDF, HTML) konsolidiert, nach Markdown überführt und in einer Vektordatenbank für Retrieval indexiert',
-            'Qualitätssicherung durch automatisierte Tests mit Pytest',
-            'Logging und Monitoring zur Nachvollziehbarkeit und Stabilität integriert',
-            'Zugriffsschutz über Authentifizierung realisiert',
+            'Interaktive Streamlit-Weboberfläche umgesetzt',
+            'LangChain-Pipeline automatisiert (Dokumentquellen: Word, Excel, PDF, HTML → Markdown-Konvertierung → Indexierung in einer Vektordatenbank)',
+            'Qualitätssicherung mit Pytest-Tests',
+            'Logging & Monitoring integriert',
+            'Zugriffsschutz durch Authentifizierung',
         ],
         demo: 'https://lusd-ki-bot.topdev.de/',
         imageUrl: 'assets/projects/lusd_chatbot.png',
     },
     {
         title: 'RAG-Chatbot │ Bachelorarbeit',
-        description:
-            'GPT-basierter RAG-Chatbot zur Analyse von Nachhaltigkeitsberichten (DNK) mit automatisierter Dokumentenaufnahme und kontinuierlich aktualisierter Vektor-Wissensbasis.',
+        description: 'GPT-basierter RAG-Chatbot zur Analyse von Nachhaltigkeitsberichten – automatisierte Dokumentenaufnahme und aktuelle Vektor-Wissensbasis für präzises Retrieval.',
         tags: ['Python', 'LangChain', 'Streamlit (UI)', 'ChromaDB', 'Pipeline-Automatisierung', 'Scraping', 'Evaluation'],
         highlights: [
-            'RAG-Chatbot: ChromaDB-Retrieval + GPT-Antworten',
-            'Ingestion-Datenpipeline: Scraping (PDF/Webseiten) → Markdown → Cleaning → Index',
-            'Interaktive Weboberfläche mit Streamlit umgesetzt',
-            'Evaluation als qualitativer Testprozess (Relevanz, Nachvollziehbarkeit, Konsistenz, Verständlichkeit) sowie Embedder-Vergleich und Chunking-Vergleich'
+            'Automatisierte Ingestion aus URLs und Uploads mit Umwandlung nach Markdown und Bereinigung.',
+            'Inhalte werden sinnvoll in Abschnitte geteilt.',
+            'Abschnitte werden vektorisiert und in einer stets aktuellen Wissensdatenbank gespeichert.',
+            'Antwortqualität durch verschiedenen Strategien (Retrieval, Prompt, Chunking ...) verbessert.',
+            'Interaktive Weboberfläche mit Streamlit umgesetzt.'
         ],
         imageUrl: 'assets/projects/bachelor_chatbot.png',
         archiUrl: 'assets/projects/bachelor_architektur.png',
@@ -196,27 +202,27 @@ export const KI_PROJECTS: Project[] = [
 
 export const BACKEND_PROJECTS: Project[] = [
     {
-        title: 'Fahrzeugverkauf & -vermietung │ FH-Projekt',
+        title: 'Fahrzeugverkauf & -vermietung │ FH-Teamprojekt',
         description:
-            'Jakarta EE Backend mit JAX-RS REST API, JPA/Hibernate Persistence und OpenAPI/Swagger UI – inklusive Docker/WildFly Deployment als WAR.',
+            'Backend für einen Autohandel mit Verkauf und Vermietung.',
         tags: [
             'Java',
             'Jakarta EE (JAX-RS)',
             'JPA / Hibernate',
             'H2',
+            'Routing',
+            'JUnit',
             'OpenAPI (Swagger)',
-            'REST API',
+            'RESTful API',
             'Docker',
             'WildFly',
-            'JUnit',
-            'Routing'
         ],
         highlights: [
-            'REST API unter /api umgesetzt und OpenAPI-Spezifikation via OpenApiResource bereitgestellt',
-            'Customer- und Contract-Domain implementiert (CRUD, Soft-Delete bei Customers, Filter-Endpoints für Contracts)',
-            'Persistence über Hibernate + H2 In-Memory DB (schnell lauffähig für Demos/Tests)',
-            'Containerisierung: Maven Build → WAR (mmra.war) → Deployment in WildFly',
-            'Automatisierte Tests für zentrale Ressourcen (JPA + JUnit)',
+            'Backend-Schnittstellen für Kunden und Verträge umgesetzt.',
+            'Kernfunktionen wie Anlegen, Ändern, Löschen und Filtern integriert.',
+            'Datenhaltung stabil umgesetzt und für Demos/Tests schnell startbar gemacht.',
+            'Anwendung containerisiert  und automatisiert bereitgestellt.',
+            'Automatisierte Tests für zentrale Ressourcen mit JUnit und JPA'
         ],
         repo: 'https://github.com/mohammadtaiba/03_autoverwaltung',
         imageUrl: 'assets/projects/carhub360.png',

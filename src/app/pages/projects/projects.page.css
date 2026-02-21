@@ -96,3 +96,81 @@ hr.sep{ border: none; border-top: 1px solid var(--border); margin: 14px 0; }
     color: var(--muted);
     opacity: .9;
 }
+
+/* ----------------------------------------------------------------------------------------------------------*/
+/* Alle Projekt-Buttons hervorheben (Repo/Demo/Screenshot/...) */
+/* ----------------------------------------------------------------------------------------------------------*/
+.project-actions .btn{
+    border: 1px solid rgba(59,130,246,.65);
+    background: linear-gradient(180deg, rgba(59,130,246,.35), rgba(59,130,246,.18));
+    box-shadow: 0 12px 30px rgba(59,130,246,.22);
+}
+
+
+/* ----------------------------------------------------------------------------------------------------------*/
+/* Filter-Buttons: anderer Look als .project-actions */
+/* ----------------------------------------------------------------------------------------------------------*/
+.section-filter .btn{
+    border: 1px solid rgba(255,255,255,.18);
+    background: rgba(255,255,255,.04);
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-weight: 600;
+    transition: background .15s ease, border-color .15s ease, transform .15s ease, box-shadow .15s ease;
+}
+
+.section-filter .btn:hover{
+    background: rgba(255,255,255,.08);
+    transform: translateY(-1px);
+}
+
+/* aktiver Filter (Angular setzt class="primary") */
+.section-filter .btn.primary{
+    border-color: rgba(168,85,247,.75); /* andere Accent-Farbe (lila) */
+    background: rgba(168,85,247,.18);
+    box-shadow: 0 10px 26px rgba(168,85,247,.20);
+}
+
+/* optional: Count optisch absetzen */
+.section-filter .count{
+    margin-left: 8px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.18);
+    background: rgba(0,0,0,.25);
+    font-size: .85em;
+}
+
+/* Responsive Layout für die Filter-Buttons */
+.section-filter{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* optional: damit Text nicht unschön umbricht */
+.section-filter .btn{
+    white-space: nowrap;
+}
+
+/* Mobile: Buttons untereinander und volle Breite */
+@media (max-width: 640px){
+    .section-filter{
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .section-filter .btn{
+        width: 100%;
+        display: flex;
+        justify-content: space-between; /* Text links, Count rechts */
+        align-items: center;
+    }
+
+    .section-filter .count{
+        margin-left: 12px;
+    }
+}
+
+
