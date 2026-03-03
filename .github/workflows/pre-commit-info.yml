@@ -2,20 +2,19 @@ name: Pre-commit Checks
 description: Automatische Checks vor jedem Commit
 
 on:
-  workflow_dispatch:
+    workflow_dispatch:
 
 jobs:
-  setup-info:
-    name: Pre-commit Setup Info
-    runs-on: ubuntu-latest
-    steps:
-      - name: Info
-        run: |
-          echo "🎯 Pre-commit Hooks Setup"
-          echo ""
-          echo "Um Code Quality Checks lokal vor jedem Commit auszuführen:"
-          echo "1. npm install --save-dev husky lint-staged"
-          echo "2. npx husky init"
-          echo ""
-          echo "Diese Workflow-Datei ist nur informativ."
-
+    setup-info:
+        name: Pre-commit Setup Info
+        runs-on: ubuntu-latest
+        steps:
+            - name: Info
+              run: |
+                  echo "🎯 Pre-commit Hooks Setup"
+                  echo ""
+                  echo "Um Code Quality Checks lokal vor jedem Commit auszuführen:"
+                  echo "1. npm install --save-dev husky lint-staged"
+                  echo "2. npx husky init"
+                  echo ""
+                  echo "Diese Workflow-Datei ist nur informativ."

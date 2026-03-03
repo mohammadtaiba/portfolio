@@ -69,4 +69,3 @@ Konfiguration: `eslint.config.js` im Root
 ### Prettier
 
 Konfiguration: `.prettierrc.json` im Root
-

@@ -33,4 +33,3 @@
 ## 🔗 Verwandte Issues
 
 <!-- z.B. Fixes #123, Closes #456 -->
-

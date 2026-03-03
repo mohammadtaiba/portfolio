@@ -96,24 +96,25 @@ npm run lint
 ## 💡 Empfehlungen
 
 1. **Führe zuerst aus:**
-   ```bash
-   npm run format
-   npm run lint:fix
-   ```
+
+    ```bash
+    npm run format
+    npm run lint:fix
+    ```
 
 2. **Prüfe dann:**
-   ```bash
-   npm run format:check
-   npm run lint
-   npm run build
-   ```
+
+    ```bash
+    npm run format:check
+    npm run lint
+    npm run build
+    ```
 
 3. **Commite die Änderungen:**
-   ```bash
-   git add .
-   git commit -m "chore: setup code quality checks and format code"
-   git push
-   ```
+    ```bash
+    git add .
+    git commit -m "chore: setup code quality checks and format code"
+    git push
+    ```
 
 Die GitHub Actions werden dann automatisch bei jedem Push ausgeführt! 🎉
-

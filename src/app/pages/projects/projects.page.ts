@@ -1,8 +1,8 @@
-import {Component} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {FormsModule} from '@angular/forms';
-import {SectionComponent} from '../../shared/section.component';
-import {KI_PROJECTS, Project, WEBSITE_PROJECTS} from '../../data/portfolio-data';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { SectionComponent } from '../../shared/section.component';
+import { KI_PROJECTS, Project, WEBSITE_PROJECTS } from '../../data/portfolio-data';
 
 type SectionKey = 'web' | 'ki';
 

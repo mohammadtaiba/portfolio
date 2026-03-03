@@ -1,30 +1,29 @@
 version: 2
 updates:
-  # Enable npm dependency updates
-  - package-ecosystem: "npm"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-      day: "monday"
-      time: "19:00"
-    open-pull-requests-limit: 10
-    reviewers:
-      - "moham"
-    labels:
-      - "dependencies"
-      - "npm"
-    commit-message:
-      prefix: "chore"
-      include: "scope"
+    # Enable npm dependency updates
+    - package-ecosystem: 'npm'
+      directory: '/'
+      schedule:
+          interval: 'weekly'
+          day: 'monday'
+          time: '19:00'
+      open-pull-requests-limit: 10
+      reviewers:
+          - 'moham'
+      labels:
+          - 'dependencies'
+          - 'npm'
+      commit-message:
+          prefix: 'chore'
+          include: 'scope'
 
-  # Enable GitHub Actions updates
-  - package-ecosystem: "github-actions"
-    directory: "/"
-    schedule:
-      interval: "monthly"
-    labels:
-      - "dependencies"
-      - "github-actions"
-    commit-message:
-      prefix: "ci"
-
+    # Enable GitHub Actions updates
+    - package-ecosystem: 'github-actions'
+      directory: '/'
+      schedule:
+          interval: 'monthly'
+      labels:
+          - 'dependencies'
+          - 'github-actions'
+      commit-message:
+          prefix: 'ci'
