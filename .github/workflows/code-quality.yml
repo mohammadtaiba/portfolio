@@ -18,7 +18,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20.19.0'
+          node-version: '20'
           cache: 'npm'
 
       - name: Install Dependencies
@@ -44,7 +44,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [ 18, 20.19.0 ]
+        node-version: [ 20 ]
 
     steps:
       - name: Checkout Code
@@ -81,7 +81,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20.19.0'
+          node-version: '20'
 
       - name: Run npm audit
         run: npm audit --audit-level=moderate
