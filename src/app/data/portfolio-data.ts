@@ -68,7 +68,7 @@ export const PROFILE = {
         'Schwer wartbarer Code ohne saubere Architektur, Tests und Standards',
         'Fehlende Schnittstellen/Integrationen (REST APIs)',
         'Kein stabiler Deployment-Prozess (CI/CD) und kein Monitoring im Betrieb',
-        'Manuelle, fehleranfällige Prozesse statt automatisierter Workflows'
+        'Manuelle, fehleranfällige Prozesse statt automatisierter Workflows',
       ],
     },
     {

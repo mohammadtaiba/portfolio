@@ -3,7 +3,7 @@
   top: 0;
   z-index: 20;
   backdrop-filter: blur(10px);
-    background: rgba(11, 18, 32, 0.7);
+  background: rgba(11, 18, 32, 0.7);
   border-bottom: 1px solid var(--border);
 }
 
@@ -16,13 +16,13 @@
 }
 
 .brand {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: 700;
-    letter-spacing: 0.3px;
-    text-decoration: none;
-    background-image: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  background-image: none;
 }
 
 .brand-dot {
@@ -30,7 +30,7 @@
   height: 10px;
   border-radius: 999px;
   background: var(--brand);
-    box-shadow: 0 0 22px rgba(110, 231, 255, 0.55);
+  box-shadow: 0 0 22px rgba(110, 231, 255, 0.55);
 }
 
 .brand-sub {
@@ -41,7 +41,7 @@
   border: 1px solid var(--border);
   padding: 4px 8px;
   border-radius: 999px;
-    background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .nav-desktop {
@@ -59,17 +59,17 @@
 
 .nav-desktop a.active {
   color: var(--text);
-    border-color: rgba(110, 231, 255, 0.25);
-    background: rgba(110, 231, 255, 0.1);
+  border-color: rgba(110, 231, 255, 0.25);
+  background: rgba(110, 231, 255, 0.1);
   text-decoration: none;
 }
 
 .nav-mobile summary {
-    list-style: none;
+  list-style: none;
 }
 
 .nav-mobile summary::-webkit-details-marker {
-    display: none;
+  display: none;
 }
 
 .mobile-panel {
@@ -87,20 +87,20 @@
 }
 
 .mobile-panel a:hover {
-    border-color: rgba(255, 255, 255, 0.16);
-    background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.06);
   text-decoration: none;
   color: var(--text);
 }
 
 .main {
-    padding: 28px 0 44px;
-    min-height: calc(100vh - 140px);
+  padding: 28px 0 44px;
+  min-height: calc(100vh - 140px);
 }
 
 .footer {
   border-top: 1px solid var(--border);
-    background: rgba(11, 18, 32, 0.65);
+  background: rgba(11, 18, 32, 0.65);
   padding: 18px 0;
 }
 
@@ -119,39 +119,39 @@
 }
 
 .muted {
-    color: var(--muted);
+  color: var(--muted);
 }
 
 @media (min-width: 960px) {
-    .nav-desktop {
-        display: inline-flex;
-    }
+  .nav-desktop {
+    display: inline-flex;
+  }
 
-    .nav-mobile {
-        display: none;
-    }
+  .nav-mobile {
+    display: none;
+  }
 }
 
 /* Link deko */
 .brand-name {
-    position: relative;
+  position: relative;
 }
 .brand-name::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -3px;
-    height: 2px;
-    background: var(--brand);
-    transform: scaleX(0);
-    transform-origin: left;
-    opacity: 0;
-    transition: transform 0.15s ease,
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  height: 2px;
+  background: var(--brand);
+  transform: scaleX(0);
+  transform-origin: left;
+  opacity: 0;
+  transition: transform 0.15s ease,
     opacity 0.15s ease;
 }
 
 .brand:hover .brand-name::after {
-    transform: scaleX(1);
-    opacity: 1;
+  transform: scaleX(1);
+  opacity: 1;
 }

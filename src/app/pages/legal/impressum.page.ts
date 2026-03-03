@@ -37,36 +37,36 @@ import {CommonModule} from '@angular/common';
                 </p>
 
                 <!-- Umsatzsteuer-ID – Falls vorhanden:
-                        <hr class="sep">
-                        <h3 style="margin:0 0 8px;">Umsatzsteuer-ID</h3>
-                        <p style="margin:0; color: var(--muted); line-height:1.7;">
-                          DE...
-                        </p>
-                        -->
+                                <hr class="sep">
+                                <h3 style="margin:0 0 8px;">Umsatzsteuer-ID</h3>
+                                <p style="margin:0; color: var(--muted); line-height:1.7;">
+                                  DE...
+                                </p>
+                                -->
             </div>
         </div>
     `,
     styles: [
         `
-            .page {
-                padding: 6px 0;
-            }
+      .page {
+        padding: 6px 0;
+      }
 
-            .card-pad {
-                padding: 18px;
-            }
+      .card-pad {
+        padding: 18px;
+      }
 
-            hr.sep {
-                border: none;
-                border-top: 1px solid var(--border);
-                margin: 14px 0;
-            }
+      hr.sep {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 14px 0;
+      }
 
-            .small {
-                color: var(--muted);
-                font-size: 13px;
-            }
-        `,
+      .small {
+        color: var(--muted);
+        font-size: 13px;
+      }
+    `,
     ],
 })
 export class ImpressumPage {}

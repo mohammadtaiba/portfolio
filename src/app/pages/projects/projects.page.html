@@ -21,7 +21,8 @@
                             *ngIf="q.trim()"
                             (click)="clearQuery()"
                             aria-label="Suche löschen"
-                    >❌
+                    >
+                        ❌
                     </button>
                 </div>
             </div>
@@ -30,7 +31,12 @@
             <div>
                 <span class="small" id="filter-label">Filter</span>
 
-                <div class="section-filter" style="margin-top: 8px" role="group" aria-labelledby="filter-label">
+                <div
+                        class="section-filter"
+                        style="margin-top: 8px"
+                        role="group"
+                        aria-labelledby="filter-label"
+                >
                     <button
                             class="btn"
                             type="button"
