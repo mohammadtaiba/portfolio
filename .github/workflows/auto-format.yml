@@ -11,39 +11,15 @@ jobs:
     format-check:
         runs-on: ubuntu-latest
         steps:
-            - name: Checkout Code
-              uses: actions/checkout@v4
-              with:
-                  ref: ${{ github.head_ref }}
-                  token: ${{ secrets.GITHUB_TOKEN }}
+          - uses: actions/checkout@v4
 
-            - name: Setup Node.js
-              uses: actions/setup-node@v4
+          - uses: actions/setup-node@v4
               with:
                   node-version: '20'
                   cache: 'npm'
 
-            - name: Install Dependencies
-              run: npm ci
+          - run: npm ci
 
-          # 1) Erst check (darf fehlschlagen, damit wir auto-fix auslösen können)
+          # Check (bei Dependabot soll es rot sein, wenn nicht formatiert)
             - name: Check Formatting
-              id: fmt
               run: npm run format:check
-              continue-on-error: true
-
-          # 2) Auto-fix nur bei NICHT-Dependabot
-            - name: Auto-fix (only non-Dependabot)
-              if: steps.fmt.outcome == 'failure' && github.actor != 'dependabot[bot]'
-              run: |
-                  npm run format
-                git config user.name "github-actions[bot]"
-                git config user.email "github-actions[bot]@users.noreply.github.com"
-                  git add -A
-                git diff --staged --quiet || git commit -m "style: auto-format"
-                git push
-
-          # 3) Wenn Dependabot und Check ist failure -> Job soll FAILEN (damit du es siehst)
-            - name: Fail if formatting is wrong (Dependabot)
-              if: steps.fmt.outcome == 'failure' && github.actor == 'dependabot[bot]'
-              run: exit 1
