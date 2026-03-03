@@ -80,7 +80,12 @@
 
                         <div class="small" style="margin-bottom: 6px">Highlights</div>
                         <ul
-                            style="margin: 0; padding-left: 18px; color: var(--muted); line-height: 1.6"
+                            style="
+                                margin: 0;
+                                padding-left: 18px;
+                                color: var(--muted);
+                                line-height: 1.6;
+                            "
                         >
                             @for (h of p.highlights; track $index) {
                                 <li>{{ h }}</li>
@@ -175,7 +180,12 @@
                         <hr class="sep" />
                         <div class="small" style="margin-bottom: 6px">Highlights</div>
                         <ul
-                            style="margin: 0; padding-left: 18px; color: var(--muted); line-height: 1.6"
+                            style="
+                                margin: 0;
+                                padding-left: 18px;
+                                color: var(--muted);
+                                line-height: 1.6;
+                            "
                         >
                             @for (h of p.highlights; track $index) {
                                 <li>{{ h }}</li>
@@ -264,10 +274,16 @@
             <div class="lightbox-inner">
                 <div class="lightbox-bar">
                     <div class="small">{{ lightboxTitle }}</div>
-                    <button type="button" class="lightbox-close" (click)="closeLightbox()">✕</button>
+                    <button type="button" class="lightbox-close" (click)="closeLightbox()">
+                        ✕
+                    </button>
                 </div>
 
-                <img class="lightbox-img" [src]="lightboxUrl" [alt]="lightboxTitle + ' - Screenshot'" />
+                <img
+                    class="lightbox-img"
+                    [src]="lightboxUrl"
+                    [alt]="lightboxTitle + ' - Screenshot'"
+                />
             </div>
         </div>
     }
