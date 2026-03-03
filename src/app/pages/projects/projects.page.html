@@ -9,18 +9,18 @@
 
                 <div style="display: flex; gap: 8px; align-items: center; margin-top: 8px">
                     <input
-                            id="project-search"
-                            class="input"
-                            [(ngModel)]="q"
-                            placeholder="z. B. KI, Angular, Python..."
-                            aria-label="Projekte durchsuchen"
+                        id="project-search"
+                        class="input"
+                        [(ngModel)]="q"
+                        placeholder="z. B. KI, Angular, Python..."
+                        aria-label="Projekte durchsuchen"
                     />
                     <button
-                            class="btn"
-                            type="button"
-                            *ngIf="q.trim()"
-                            (click)="clearQuery()"
-                            aria-label="Suche löschen"
+                        class="btn"
+                        type="button"
+                        *ngIf="q.trim()"
+                        (click)="clearQuery()"
+                        aria-label="Suche löschen"
                     >
                         ❌
                     </button>
@@ -32,27 +32,27 @@
                 <span class="small" id="filter-label">Filter</span>
 
                 <div
-                        class="section-filter"
-                        style="margin-top: 8px"
-                        role="group"
-                        aria-labelledby="filter-label"
+                    class="section-filter"
+                    style="margin-top: 8px"
+                    role="group"
+                    aria-labelledby="filter-label"
                 >
                     <button
-                            class="btn"
-                            type="button"
-                            (click)="setSection('web')"
-                            [class.primary]="section === 'web'"
-                            aria-pressed="{{ section === 'web' }}"
+                        class="btn"
+                        type="button"
+                        (click)="setSection('web')"
+                        [class.primary]="section === 'web'"
+                        aria-pressed="{{ section === 'web' }}"
                     >
                         Webanwendungen <span class="count">{{ filteredWebsite.length }}</span>
                     </button>
 
                     <button
-                            class="btn"
-                            type="button"
-                            (click)="setSection('ki')"
-                            [class.primary]="section === 'ki'"
-                            aria-pressed="{{ section === 'ki' }}"
+                        class="btn"
+                        type="button"
+                        (click)="setSection('ki')"
+                        [class.primary]="section === 'ki'"
+                        aria-pressed="{{ section === 'ki' }}"
                     >
                         KI-Agents <span class="count">{{ filteredKi.length }}</span>
                     </button>
@@ -74,7 +74,7 @@
                     <span class="pill" *ngFor="let t of p.tags">{{ t }}</span>
                 </div>
 
-                <hr class="sep"/>
+                <hr class="sep" />
 
                 <div class="small" style="margin-bottom: 6px">Highlights</div>
                 <ul style="margin: 0; padding-left: 18px; color: var(--muted); line-height: 1.6">
@@ -82,50 +82,60 @@
                 </ul>
 
                 <div class="actions project-actions" style="margin-top: 6px">
-                    <a class="btn" *ngIf="p.repo" [href]="p.repo" target="_blank" rel="noreferrer noopener"
-                    >Repo</a
+                    <a
+                        class="btn"
+                        *ngIf="p.repo"
+                        [href]="p.repo"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        >Repo</a
                     >
-                    <a class="btn" *ngIf="p.demo" [href]="p.demo" target="_blank" rel="noreferrer noopener"
-                    >Demo</a
+                    <a
+                        class="btn"
+                        *ngIf="p.demo"
+                        [href]="p.demo"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        >Demo</a
                     >
 
                     <button
-                            class="btn"
-                            type="button"
-                            *ngIf="p.imageUrl"
-                            (click)="openLightbox(p.imageUrl, p.title)"
+                        class="btn"
+                        type="button"
+                        *ngIf="p.imageUrl"
+                        (click)="openLightbox(p.imageUrl, p.title)"
                     >
                         Screenshot
                     </button>
                     <button
-                            class="btn"
-                            type="button"
-                            *ngIf="p.archiUrl"
-                            (click)="openLightbox(p.archiUrl, p.title)"
+                        class="btn"
+                        type="button"
+                        *ngIf="p.archiUrl"
+                        (click)="openLightbox(p.archiUrl, p.title)"
                     >
                         Architektur
                     </button>
                     <button
-                            class="btn"
-                            type="button"
-                            *ngIf="p.siteMapUrl"
-                            (click)="openLightbox(p.siteMapUrl, p.title)"
+                        class="btn"
+                        type="button"
+                        *ngIf="p.siteMapUrl"
+                        (click)="openLightbox(p.siteMapUrl, p.title)"
                     >
                         Sitemap
                     </button>
                     <button
-                            class="btn"
-                            type="button"
-                            *ngIf="p.flussdiagrammUrl"
-                            (click)="openLightbox(p.flussdiagrammUrl, p.title)"
+                        class="btn"
+                        type="button"
+                        *ngIf="p.flussdiagrammUrl"
+                        (click)="openLightbox(p.flussdiagrammUrl, p.title)"
                     >
                         Flussdiagramm
                     </button>
                     <button
-                            class="btn"
-                            type="button"
-                            *ngIf="p.erModellUrl"
-                            (click)="openLightbox(p.erModellUrl, p.title)"
+                        class="btn"
+                        type="button"
+                        *ngIf="p.erModellUrl"
+                        (click)="openLightbox(p.erModellUrl, p.title)"
                     >
                         ER-Modell
                     </button>
@@ -143,55 +153,65 @@
                 <div class="tags">
                     <span class="pill" *ngFor="let t of p.tags">{{ t }}</span>
                 </div>
-                <hr class="sep"/>
+                <hr class="sep" />
                 <div class="small" style="margin-bottom: 6px">Highlights</div>
                 <ul style="margin: 0; padding-left: 18px; color: var(--muted); line-height: 1.6">
                     <li *ngFor="let h of p.highlights">{{ h }}</li>
                 </ul>
                 <div class="actions project-actions" style="margin-top: 6px">
-                    <a class="btn" *ngIf="p.repo" [href]="p.repo" target="_blank" rel="noreferrer noopener"
-                    >Repo</a
+                    <a
+                        class="btn"
+                        *ngIf="p.repo"
+                        [href]="p.repo"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        >Repo</a
                     >
-                    <a class="btn" *ngIf="p.demo" [href]="p.demo" target="_blank" rel="noreferrer noopener"
-                    >Demo</a
+                    <a
+                        class="btn"
+                        *ngIf="p.demo"
+                        [href]="p.demo"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        >Demo</a
                     >
                     <button
-                            class="btn"
-                            type="button"
-                            *ngIf="p.imageUrl"
-                            (click)="openLightbox(p.imageUrl, p.title)"
+                        class="btn"
+                        type="button"
+                        *ngIf="p.imageUrl"
+                        (click)="openLightbox(p.imageUrl, p.title)"
                     >
                         Screenshot
                     </button>
                     <button
-                            class="btn"
-                            type="button"
-                            *ngIf="p.archiUrl"
-                            (click)="openLightbox(p.archiUrl, p.title)"
+                        class="btn"
+                        type="button"
+                        *ngIf="p.archiUrl"
+                        (click)="openLightbox(p.archiUrl, p.title)"
                     >
                         Architektur
                     </button>
                     <button
-                            class="btn"
-                            type="button"
-                            *ngIf="p.siteMapUrl"
-                            (click)="openLightbox(p.siteMapUrl, p.title)"
+                        class="btn"
+                        type="button"
+                        *ngIf="p.siteMapUrl"
+                        (click)="openLightbox(p.siteMapUrl, p.title)"
                     >
                         Sitemap
                     </button>
                     <button
-                            class="btn"
-                            type="button"
-                            *ngIf="p.flussdiagrammUrl"
-                            (click)="openLightbox(p.flussdiagrammUrl, p.title)"
+                        class="btn"
+                        type="button"
+                        *ngIf="p.flussdiagrammUrl"
+                        (click)="openLightbox(p.flussdiagrammUrl, p.title)"
                     >
                         Flussdiagramm
                     </button>
                     <button
-                            class="btn"
-                            type="button"
-                            *ngIf="p.erModellUrl"
-                            (click)="openLightbox(p.erModellUrl, p.title)"
+                        class="btn"
+                        type="button"
+                        *ngIf="p.erModellUrl"
+                        (click)="openLightbox(p.erModellUrl, p.title)"
                     >
                         ER-Modell
                     </button>
@@ -212,7 +232,7 @@
                 <button type="button" class="lightbox-close" (click)="closeLightbox()">✕</button>
             </div>
 
-            <img class="lightbox-img" [src]="lightboxUrl" [alt]="lightboxTitle + ' – Screenshot'"/>
+            <img class="lightbox-img" [src]="lightboxUrl" [alt]="lightboxTitle + ' – Screenshot'" />
         </div>
     </div>
 </div>

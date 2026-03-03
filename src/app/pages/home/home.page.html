@@ -4,8 +4,8 @@
             <!-- LINKS: Text -->
             <div class="hero-copy">
                 <div class="pill">Verfügbar für IT-Stellen in der Softwareentwicklung</div>
-                <br/>
-                <br/>
+                <br />
+                <br />
                 <h1>{{ profile.role }}</h1>
                 <p>{{ profile.shortPitch }}</p>
                 <div class="kpis">
@@ -22,7 +22,11 @@
             <!-- RECHTS: Foto -->
             <div class="hero-media">
                 <div class="avatar-frame">
-                    <img class="avatar" [src]="profile.photoUrl" alt="Portrait von {{ profile.name }}"/>
+                    <img
+                        class="avatar"
+                        [src]="profile.photoUrl"
+                        alt="Portrait von {{ profile.name }}"
+                    />
                 </div>
             </div>
         </div>
@@ -38,7 +42,14 @@
                     <strong>Typische Probleme und Herausforderungen, die ich löse: </strong>
                 </p>
 
-                <ul style="margin: 8px 0 0; padding-left: 25px; color: var(--muted); line-height: 1.6">
+                <ul
+                    style="
+                        margin: 8px 0 0;
+                        padding-left: 25px;
+                        color: var(--muted);
+                        line-height: 1.6;
+                    "
+                >
                     <li *ngFor="let b of f.bullets">
                         <ng-container *ngIf="b.includes(':'); else plain">
                             <strong>{{ b.split(':')[0] }}:</strong>
@@ -48,7 +59,14 @@
                     </li>
                 </ul>
 
-                <p style="margin-top: 15px; white-space: pre-line; color: var(--muted); line-height: 1.6">
+                <p
+                    style="
+                        margin-top: 15px;
+                        white-space: pre-line;
+                        color: var(--muted);
+                        line-height: 1.6;
+                    "
+                >
                     <strong>Lösung:</strong> {{ f.subtitle }}
                 </p>
             </div>

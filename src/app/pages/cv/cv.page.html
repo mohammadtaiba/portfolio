@@ -8,7 +8,7 @@
 
                 <div class="actions" style="margin-top: 12px">
                     <a style="margin-top: 18px" class="btn primary" [href]="cvUrl" download
-                    >CV herunterladen (PDF)</a
+                        >CV herunterladen (PDF)</a
                     >
                 </div>
                 <div class="actions" style="margin-top: 12px; margin-right: 10px">
@@ -21,7 +21,11 @@
             <!-- RECHTS: Foto (wie auf Home) -->
             <div class="hero-media">
                 <div class="avatar-frame">
-                    <img class="avatar" [src]="profile.photoUrl" alt="Portrait von {{ profile.name }}"/>
+                    <img
+                        class="avatar"
+                        [src]="profile.photoUrl"
+                        alt="Portrait von {{ profile.name }}"
+                    />
                 </div>
             </div>
         </div>
@@ -38,7 +42,14 @@
                 <div class="kpis" style="margin-top: 8px">
                     <span class="pill">{{ e.school }} │ {{ e.period }}</span>
                 </div>
-                <ul style="margin: 10px 0 0; padding-left: 18px; color: var(--muted); line-height: 1.6">
+                <ul
+                    style="
+                        margin: 10px 0 0;
+                        padding-left: 18px;
+                        color: var(--muted);
+                        line-height: 1.6;
+                    "
+                >
                     <li *ngFor="let b of e.bullets">
                         <strong>{{ b.label }}:</strong> {{ b.text }}
                     </li>
@@ -59,7 +70,14 @@
                     <span class="pill">{{ e.company }} │ {{ e.period }}</span>
                 </div>
 
-                <ul style="margin: 10px 0 0; padding-left: 18px; color: var(--muted); line-height: 1.6">
+                <ul
+                    style="
+                        margin: 10px 0 0;
+                        padding-left: 18px;
+                        color: var(--muted);
+                        line-height: 1.6;
+                    "
+                >
                     <li *ngFor="let b of e.bullets">
                         <strong>{{ b.label }}:</strong> {{ b.text }}
                     </li>

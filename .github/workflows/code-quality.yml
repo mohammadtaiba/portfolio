@@ -1,94 +1,94 @@
 name: Code Quality Checks
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
 
 permissions:
-  contents: read
+    contents: read
 
 jobs:
-  code-quality:
-    name: Code Quality & Linting
-    runs-on: ubuntu-latest
+    code-quality:
+        name: Code Quality & Linting
+        runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
+        steps:
+            - name: Checkout Code
+              uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '20'
+                  cache: 'npm'
 
-      - name: Install Dependencies
-        run: npm ci
+            - name: Install Dependencies
+              run: npm ci
 
-      - name: Check Code Formatting
-        run: npm run format:check
+            - name: Check Code Formatting
+              run: npm run format:check
 
-      - name: Run Linting
-        run: npm run lint
+            - name: Run Linting
+              run: npm run lint
 
-      - name: Build Project
-        run: npm run build
+            - name: Build Project
+              run: npm run build
 
-      - name: Check TypeScript Compilation
-        run: npx tsc --noEmit
+            - name: Check TypeScript Compilation
+              run: npx tsc --noEmit
 
-  build-test:
-    name: Build & Test
-    runs-on: ubuntu-latest
+    build-test:
+        name: Build & Test
+        runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [ '20' ]
+        strategy:
+            matrix:
+                node-version: ['20']
 
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
+        steps:
+            - name: Checkout Code
+              uses: actions/checkout@v4
 
-      - name: Setup Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+            - name: Setup Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v4
+              with:
+                  node-version: ${{ matrix.node-version }}
+                  cache: 'npm'
 
-      - name: Install Dependencies
-        run: npm ci
+            - name: Install Dependencies
+              run: npm ci
 
-      - name: Build Project
-        run: npm run build -- --configuration production
+            - name: Build Project
+              run: npm run build -- --configuration production
 
-      - name: Upload Build Artifacts
-        if: matrix.node-version == '20'
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-artifacts
-          path: dist/
-          retention-days: 7
+            - name: Upload Build Artifacts
+              if: matrix.node-version == '20'
+              uses: actions/upload-artifact@v4
+              with:
+                  name: build-artifacts
+                  path: dist/
+                  retention-days: 7
 
-  dependency-check:
-    name: Dependency Security Check
-    runs-on: ubuntu-latest
+    dependency-check:
+        name: Dependency Security Check
+        runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
+        steps:
+            - name: Checkout Code
+              uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '20'
+                  cache: 'npm'
 
-      - name: Run npm audit (non-blocking)
-        run: npm audit --audit-level=high
-        continue-on-error: true
+            - name: Run npm audit (non-blocking)
+              run: npm audit --audit-level=high
+              continue-on-error: true
 
-      - name: Check for outdated packages (non-blocking)
-        run: npm outdated
-        continue-on-error: true
+            - name: Check for outdated packages (non-blocking)
+              run: npm outdated
+              continue-on-error: true

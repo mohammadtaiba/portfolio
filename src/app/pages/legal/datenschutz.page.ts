@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
     standalone: true,
@@ -16,27 +16,27 @@ import {CommonModule} from '@angular/common';
             <div class="card card-pad" style="margin-top: 14px;">
                 <h3 style="margin:0 0 8px;">1. Verantwortlicher</h3>
                 <p style="margin:0; color: var(--muted); line-height:1.7;">
-                    Mohammad Taiba<br/>
-                    Nordhäuser Str. 78<br/>
-                    99089 Erfurt<br/>
-                    Deutschland<br/>
+                    Mohammad Taiba<br />
+                    Nordhäuser Str. 78<br />
+                    99089 Erfurt<br />
+                    Deutschland<br />
                     E-Mail: mohammadtaiba55@gmail.com
                 </p>
 
-                <hr class="sep"/>
+                <hr class="sep" />
 
                 <h3 style="margin:0 0 8px;">2. Hosting</h3>
                 <p style="margin:0; color: var(--muted); line-height:1.7;">
-                    Platzhalter: Nenne hier deinen Hoster (z. B. Vercel/Netlify) und beschreibe kurz, welche
-                    Daten verarbeitet werden.
+                    Platzhalter: Nenne hier deinen Hoster (z. B. Vercel/Netlify) und beschreibe
+                    kurz, welche Daten verarbeitet werden.
                 </p>
 
-                <hr class="sep"/>
+                <hr class="sep" />
 
                 <h3 style="margin:0 0 8px;">3. Kontaktaufnahme</h3>
                 <p style="margin:0; color: var(--muted); line-height:1.7;">
-                    Wenn du ein Kontaktformular einbaust, musst du hier genauer werden. Aktuell: nur Links
-                    (E-Mail, GitHub, LinkedIn).
+                    Wenn du ein Kontaktformular einbaust, musst du hier genauer werden. Aktuell: nur
+                    Links (E-Mail, GitHub, LinkedIn).
                 </p>
             </div>
         </div>
@@ -64,5 +64,4 @@ import {CommonModule} from '@angular/common';
         `,
     ],
 })
-export class DatenschutzPage {
-}
+export class DatenschutzPage {}

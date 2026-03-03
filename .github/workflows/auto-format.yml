@@ -1,48 +1,47 @@
 name: Format Check & Auto-Fix
 
 on:
-  pull_request:
-    branches: [ main, master, develop ]
+    pull_request:
+        branches: [main, master, develop]
 
 jobs:
-  format-check:
-    name: Check Code Formatting
-    runs-on: ubuntu-latest
+    format-check:
+        name: Check Code Formatting
+        runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.head_ref }}
-          token: ${{ secrets.GITHUB_TOKEN }}
+        steps:
+            - name: Checkout Code
+              uses: actions/checkout@v4
+              with:
+                  ref: ${{ github.head_ref }}
+                  token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '20'
+                  cache: 'npm'
 
-      - name: Install Dependencies
-        run: npm ci
+            - name: Install Dependencies
+              run: npm ci
 
-      - name: Check Formatting
-        id: format-check
-        run: npm run format:check
-        continue-on-error: true
+            - name: Check Formatting
+              id: format-check
+              run: npm run format:check
+              continue-on-error: true
 
-      - name: Auto-fix Formatting (if failed)
-        if: steps.format-check.outcome == 'failure'
-        run: |
-          npm run format
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add -A
-          git diff --staged --quiet || git commit -m "style: auto-format code with prettier"
+            - name: Auto-fix Formatting (if failed)
+              if: steps.format-check.outcome == 'failure'
+              run: |
+                  npm run format
+                  git config --local user.email "github-actions[bot]@users.noreply.github.com"
+                  git config --local user.name "github-actions[bot]"
+                  git add -A
+                  git diff --staged --quiet || git commit -m "style: auto-format code with prettier"
 
-      - name: Push Changes
-        if: steps.format-check.outcome == 'failure'
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.head_ref }}
-
+            - name: Push Changes
+              if: steps.format-check.outcome == 'failure'
+              uses: ad-m/github-push-action@master
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  branch: ${{ github.head_ref }}

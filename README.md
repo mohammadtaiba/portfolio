@@ -1,16 +1,18 @@
-# Portfolio (Angular) 
+# Portfolio (Angular)
 
 [![Code Quality Checks](https://github.com/moham/portfolio/actions/workflows/code-quality.yml/badge.svg)](https://github.com/moham/portfolio/actions/workflows/code-quality.yml)
 [![Format Check](https://github.com/moham/portfolio/actions/workflows/auto-format.yml/badge.svg)](https://github.com/moham/portfolio/actions/workflows/auto-format.yml)
 
 ## Voraussetzungen
 
-1) Node.js (LTS) installieren:
+1. Node.js (LTS) installieren:
+
 ```bash
 winget install OpenJS.NodeJS.LTS
 ```
 
-2) Abhängigkeiten installieren:
+2. Abhängigkeiten installieren:
+
 ```bash
 npm install
 ```
@@ -20,6 +22,7 @@ npm install
 ```bash
 npm start
 ```
+
 Öffnen: http://localhost:4200
 
 ## Build (Production)
@@ -60,4 +63,3 @@ npm run format:check
 - ✅ TypeScript Compilation Checks
 - ✅ Dependency Security Audits
 - ✅ Dependabot für automatische Updates
-
