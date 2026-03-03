@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { SectionComponent } from '../../shared/section.component';
-import { SKILL_GROUPS } from '../../data/portfolio-data';
+import {Component} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {SectionComponent} from '../../shared/section.component';
+import {SKILL_GROUPS} from '../../data/portfolio-data';
 
 @Component({
   standalone: true,

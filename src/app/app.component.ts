@@ -1,7 +1,7 @@
-import { Component, inject } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterOutlet, NavigationEnd, Router } from '@angular/router';
-import { CommonModule } from '@angular/common';
-import { PROFILE } from './data/portfolio-data';
+import {Component, inject} from '@angular/core';
+import {NavigationEnd, Router, RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
+import {CommonModule} from '@angular/common';
+import {PROFILE} from './data/portfolio-data';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +12,7 @@ import { PROFILE } from './data/portfolio-data';
 })
 export class AppComponent {
   profile = PROFILE;
-  private router = inject(Router);
+  private readonly router = inject(Router);
 
   constructor() {
     // close mobile menu on navigation

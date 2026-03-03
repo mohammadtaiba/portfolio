@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {Component, Input} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
 @Component({
   selector: 'app-section',
@@ -14,12 +14,25 @@ import { CommonModule } from '@angular/common';
       <ng-content />
     </section>
   `,
-  styles: [`
-    .section{ margin: 18px 0 26px; }
-    .head{ margin-bottom: 12px; }
-    h2{ margin: 0; font-size: 18px; letter-spacing: .2px; }
-    .sub{ margin: 6px 0 0; color: var(--muted); }
-  `],
+  styles: [
+    `
+      .section {
+        margin: 18px 0 26px;
+      }
+      .head {
+        margin-bottom: 12px;
+      }
+      h2 {
+        margin: 0;
+        font-size: 18px;
+        letter-spacing: 0.2px;
+      }
+      .sub {
+        margin: 6px 0 0;
+        color: var(--muted);
+      }
+    `,
+  ],
 })
 export class SectionComponent {
   @Input() title = '';

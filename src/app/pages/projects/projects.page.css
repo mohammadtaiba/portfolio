@@ -1,38 +1,189 @@
-.page{ padding: 6px 0; }
-.hero{ padding: 18px; }
-.hero h1{ margin: 0 0 8px; font-size: 26px; letter-spacing: .2px; }
-.hero p{ margin: 0; color: var(--muted); line-height: 1.55; }
-.hero .actions{ margin-top: 14px; display:flex; gap: 10px; flex-wrap: wrap; }
-.kpis{ margin-top: 16px; display:flex; gap: 8px; flex-wrap: wrap; }
-.card-pad{ padding: 18px; }
-.list{ display:grid; gap: 14px; }
-.item h3{ margin: 0; font-size: 16px; }
-.item p{ margin: 8px 0 0; color: var(--muted); line-height: 1.55; }
-.tags{ margin-top: 10px; display:flex; flex-wrap: wrap; gap: 8px; }
-.small{ color: var(--muted); font-size: 13px; }
-hr.sep{ border: none; border-top: 1px solid var(--border); margin: 14px 0; }
-.input{
-  width: 100%;
-  padding: 10px 12px;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,.04);
-  color: var(--text);
+/* ============================================================================
+   LAYOUT & CONTAINER
+   ============================================================================ */
+
+.page {
+    padding: 6px 0;
 }
 
-/* --------------- Screenshot --------------- */
+.card-pad {
+    padding: 18px;
+}
 
-.project-actions{
+/* ============================================================================
+   HERO SECTION
+   ============================================================================ */
+
+.hero {
+    padding: 18px;
+}
+
+.hero h1 {
+    margin: 0 0 8px;
+    font-size: 26px;
+    letter-spacing: 0.2px;
+}
+
+.hero p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.55;
+}
+
+.hero .actions {
     margin-top: 14px;
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
 }
 
-.lightbox{
+/* ============================================================================
+   KPI BADGES (Projekt-Anzahl etc.)
+   ============================================================================ */
+
+.kpis {
+    margin-top: 16px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+/* ============================================================================
+   PROJEKT-LISTE
+   ============================================================================ */
+
+.list {
+    display: grid;
+    gap: 14px;
+}
+
+/* Projekt-Item: Titel */
+.item h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+/* Projekt-Item: Beschreibung */
+.item p {
+    margin: 8px 0 0;
+    color: var(--muted);
+    line-height: 1.55;
+}
+
+/* Tags unter jedem Projekt (Technologie-Stack) */
+.tags {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* ============================================================================
+   FORM ELEMENTS
+   ============================================================================ */
+
+/* Such-Input für Projekt-Filter */
+.input {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text);
+}
+
+/* ============================================================================
+   UTILITIES
+   ============================================================================ */
+
+/* Kleine Texte (z.B. Metadaten) */
+.small {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* Horizontale Trennlinie */
+hr.sep {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 14px 0;
+}
+
+/* ============================================================================
+   PROJEKT-AKTIONEN (Repo, Demo, Screenshot etc.)
+   ============================================================================ */
+
+.project-actions {
+    margin-top: 14px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Hervorhebung für alle Projekt-Buttons (Repo/Demo/Screenshot) */
+.project-actions .btn {
+    border: 1px solid rgba(59, 130, 246, 0.65);
+    background: linear-gradient(180deg, rgba(59, 130, 246, 0.35), rgba(59, 130, 246, 0.18));
+    box-shadow: 0 12px 30px rgba(59, 130, 246, 0.22);
+}
+
+/* ============================================================================
+   FILTER-BUTTONS (Website / KI-Projekte)
+   ============================================================================ */
+
+.section-filter {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* Basis-Styling für Filter-Buttons */
+.section-filter .btn {
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: background 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+/* Hover-Effekt für Filter-Buttons */
+.section-filter .btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-1px);
+}
+
+/* Aktiver Filter (Angular setzt class="primary") */
+.section-filter .btn.primary {
+    border-color: rgba(168, 85, 247, 0.75);
+    background: rgba(168, 85, 247, 0.18);
+    box-shadow: 0 10px 26px rgba(168, 85, 247, 0.2);
+}
+
+/* Anzahl-Badge in Filter-Buttons */
+.section-filter .count {
+    margin-left: 8px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(0, 0, 0, 0.25);
+    font-size: 0.85em;
+}
+
+/* ============================================================================
+   LIGHTBOX (Screenshot-Vollansicht)
+   ============================================================================ */
+
+/* Overlay über gesamte Seite */
+.lightbox {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,.65);
+    background: rgba(0, 0, 0, 0.65);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -40,17 +191,19 @@ hr.sep{ border: none; border-top: 1px solid var(--border); margin: 14px 0; }
     z-index: 2000;
 }
 
-.lightbox-inner{
+/* Lightbox-Container */
+.lightbox-inner {
     width: min(1100px, 96vw);
     max-height: 90vh;
     overflow: hidden;
     border-radius: 16px;
     border: 1px solid var(--border);
     background: var(--panel, #111);
-    box-shadow: 0 18px 50px rgba(0,0,0,.45);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
 }
 
-.lightbox-bar{
+/* Kopfzeile mit Schließen-Button */
+.lightbox-bar {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -59,7 +212,8 @@ hr.sep{ border: none; border-top: 1px solid var(--border); margin: 14px 0; }
     border-bottom: 1px solid var(--border);
 }
 
-.lightbox-close{
+/* Schließen-Button */
+.lightbox-close {
     width: 34px;
     height: 34px;
     border-radius: 10px;
@@ -69,7 +223,8 @@ hr.sep{ border: none; border-top: 1px solid var(--border); margin: 14px 0; }
     cursor: pointer;
 }
 
-.lightbox-img{
+/* Screenshot-Bild in voller Größe */
+.lightbox-img {
     width: 100%;
     height: auto;
     display: block;
@@ -77,100 +232,25 @@ hr.sep{ border: none; border-top: 1px solid var(--border); margin: 14px 0; }
     object-fit: contain;
 }
 
-/*Filter*/
-.section-filter{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-}
+/* ============================================================================
+   RESPONSIVE: MOBILE
+   ============================================================================ */
 
-.section-filter .btn{
-    width: 100%;
-    justify-content: center;
-    padding: 10px 12px;
-}
-
-.section-filter .count{
-    margin-left: 8px;
-    font-size: 12px;
-    color: var(--muted);
-    opacity: .9;
-}
-
-/* ----------------------------------------------------------------------------------------------------------*/
-/* Alle Projekt-Buttons hervorheben (Repo/Demo/Screenshot/...) */
-/* ----------------------------------------------------------------------------------------------------------*/
-.project-actions .btn{
-    border: 1px solid rgba(59,130,246,.65);
-    background: linear-gradient(180deg, rgba(59,130,246,.35), rgba(59,130,246,.18));
-    box-shadow: 0 12px 30px rgba(59,130,246,.22);
-}
-
-
-/* ----------------------------------------------------------------------------------------------------------*/
-/* Filter-Buttons: anderer Look als .project-actions */
-/* ----------------------------------------------------------------------------------------------------------*/
-.section-filter .btn{
-    border: 1px solid rgba(255,255,255,.18);
-    background: rgba(255,255,255,.04);
-    border-radius: 12px;
-    padding: 10px 14px;
-    font-weight: 600;
-    transition: background .15s ease, border-color .15s ease, transform .15s ease, box-shadow .15s ease;
-}
-
-.section-filter .btn:hover{
-    background: rgba(255,255,255,.08);
-    transform: translateY(-1px);
-}
-
-/* aktiver Filter (Angular setzt class="primary") */
-.section-filter .btn.primary{
-    border-color: rgba(168,85,247,.75); /* andere Accent-Farbe (lila) */
-    background: rgba(168,85,247,.18);
-    box-shadow: 0 10px 26px rgba(168,85,247,.20);
-}
-
-/* optional: Count optisch absetzen */
-.section-filter .count{
-    margin-left: 8px;
-    padding: 2px 8px;
-    border-radius: 999px;
-    border: 1px solid rgba(255,255,255,.18);
-    background: rgba(0,0,0,.25);
-    font-size: .85em;
-}
-
-/* Responsive Layout für die Filter-Buttons */
-.section-filter{
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    align-items: center;
-}
-
-/* optional: damit Text nicht unschön umbricht */
-.section-filter .btn{
-    white-space: nowrap;
-}
-
-/* Mobile: Buttons untereinander und volle Breite */
-@media (max-width: 640px){
-    .section-filter{
+/* Mobile: Filter-Buttons stapeln und volle Breite */
+@media (max-width: 640px) {
+    .section-filter {
         flex-direction: column;
         align-items: stretch;
     }
 
-    .section-filter .btn{
+    .section-filter .btn {
         width: 100%;
         display: flex;
-        justify-content: space-between; /* Text links, Count rechts */
+        justify-content: space-between;
         align-items: center;
     }
 
-    .section-filter .count{
+    .section-filter .count {
         margin-left: 12px;
     }
 }
-
-

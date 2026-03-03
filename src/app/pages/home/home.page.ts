@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
-import { SectionComponent } from '../../shared/section.component';
-import { PROFILE} from '../../data/portfolio-data';
+import {Component} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {RouterLink} from '@angular/router';
+import {SectionComponent} from '../../shared/section.component';
+import {PROFILE} from '../../data/portfolio-data';
 
 @Component({
   standalone: true,

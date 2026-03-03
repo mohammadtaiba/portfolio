@@ -1,137 +1,202 @@
 <div class="page">
-
     <div class="card card-pad">
-        <h1 style="margin:0 0 6px; font-size:24px;">Projekte</h1>
-        <p class="small" style="margin:0;"></p>
-        <div class="grid cols-2" style="margin-top:14px;">
+        <h1 style="margin: 0 0 6px; font-size: 24px">Projekte</h1>
+        <p class="small" style="margin: 0"></p>
+        <div class="grid cols-2" style="margin-top: 14px">
             <!-- Suche -->
             <div>
-                <label class="small">Suche</label>
+                <label class="small" for="project-search">Suche</label>
 
-                <div style="display:flex; gap:8px; align-items:center; margin-top:8px">
-                    <input class="input" [(ngModel)]="q" placeholder="z. B. KI, Angular, Python..."/>
-                    <button class="btn" type="button" *ngIf="q.trim()" (click)="clearQuery()">❌</button>
+                <div style="display: flex; gap: 8px; align-items: center; margin-top: 8px">
+                    <input
+                            id="project-search"
+                            class="input"
+                            [(ngModel)]="q"
+                            placeholder="z. B. KI, Angular, Python..."
+                            aria-label="Projekte durchsuchen"
+                    />
+                    <button
+                            class="btn"
+                            type="button"
+                            *ngIf="q.trim()"
+                            (click)="clearQuery()"
+                            aria-label="Suche löschen"
+                    >❌
+                    </button>
                 </div>
             </div>
 
             <!-- Filter -->
             <div>
-                <label class="small">Bereich</label>
+                <span class="small" id="filter-label">Filter</span>
 
-                <div class="section-filter" style="margin-top:8px;">
-                    <button class="btn"
+                <div class="section-filter" style="margin-top: 8px" role="group" aria-labelledby="filter-label">
+                    <button
+                            class="btn"
                             type="button"
                             (click)="setSection('web')"
-                            [class.primary]="section==='web'">
+                            [class.primary]="section === 'web'"
+                            aria-pressed="{{ section === 'web' }}"
+                    >
                         Webanwendungen <span class="count">{{ filteredWebsite.length }}</span>
                     </button>
 
-                    <button class="btn"
+                    <button
+                            class="btn"
                             type="button"
                             (click)="setSection('ki')"
-                            [class.primary]="section==='ki'">
+                            [class.primary]="section === 'ki'"
+                            aria-pressed="{{ section === 'ki' }}"
+                    >
                         KI-Agents <span class="count">{{ filteredKi.length }}</span>
-                    </button>
-
-                    <button class="btn"
-                            type="button"
-                            (click)="setSection('backend')"
-                            [class.primary]="section==='backend'">
-                        Backend-Services <span class="count">{{ filteredBackend.length }}</span>
                     </button>
                 </div>
 
-                <div class="small" style="margin-top:8px;" *ngIf="section">
+                <div class="small" style="margin-top: 8px" *ngIf="section">
                     Tipp: Aktiven Button erneut anklicken: Filter aus.
                 </div>
             </div>
-
-
         </div>
     </div>
 
-    <app-section title="Webanwendungen" subtitle="" *ngIf="!section || section==='web'">
+    <app-section title="Webanwendungen" subtitle="" *ngIf="!section || section === 'web'">
         <div class="list">
             <div class="card card-pad item" *ngFor="let p of filteredWebsite">
                 <h3>{{ p.title }}</h3>
                 <p>{{ p.description }}</p>
-                <div class="tags"><span class="pill" *ngFor="let t of p.tags">{{ t }}</span></div>
+                <div class="tags">
+                    <span class="pill" *ngFor="let t of p.tags">{{ t }}</span>
+                </div>
 
-                <hr class="sep">
+                <hr class="sep"/>
 
-                <div class="small" style="margin-bottom:6px;">Highlights</div>
-                <ul style="margin:0; padding-left: 18px; color: var(--muted); line-height: 1.6;">
+                <div class="small" style="margin-bottom: 6px">Highlights</div>
+                <ul style="margin: 0; padding-left: 18px; color: var(--muted); line-height: 1.6">
                     <li *ngFor="let h of p.highlights">{{ h }}</li>
                 </ul>
 
-                <div class="actions project-actions" style="margin-top:6px;">
-                    <a class="btn" *ngIf="p.repo" [href]="p.repo" target="_blank" rel="noreferrer noopener">Repo</a>
-                    <a class="btn" *ngIf="p.demo" [href]="p.demo" target="_blank" rel="noreferrer noopener">Demo</a>
+                <div class="actions project-actions" style="margin-top: 6px">
+                    <a class="btn" *ngIf="p.repo" [href]="p.repo" target="_blank" rel="noreferrer noopener"
+                    >Repo</a
+                    >
+                    <a class="btn" *ngIf="p.demo" [href]="p.demo" target="_blank" rel="noreferrer noopener"
+                    >Demo</a
+                    >
 
-                    <button class="btn" type="button" *ngIf="p.imageUrl"   (click)="openLightbox(p.imageUrl,   p.title)">Screenshot</button>
-                    <button class="btn" type="button" *ngIf="p.archiUrl"   (click)="openLightbox(p.archiUrl,   p.title)">Architektur</button>
-                    <button class="btn" type="button" *ngIf="p.siteMapUrl" (click)="openLightbox(p.siteMapUrl, p.title)">Sitemap</button>
-                    <button class="btn" type="button" *ngIf="p.flussdiagrammUrl" (click)="openLightbox(p.flussdiagrammUrl, p.title)">Flussdiagramm</button>
-                    <button class="btn" type="button" *ngIf="p.erModellUrl" (click)="openLightbox(p.erModellUrl, p.title)">ER-Modell</button>
+                    <button
+                            class="btn"
+                            type="button"
+                            *ngIf="p.imageUrl"
+                            (click)="openLightbox(p.imageUrl, p.title)"
+                    >
+                        Screenshot
+                    </button>
+                    <button
+                            class="btn"
+                            type="button"
+                            *ngIf="p.archiUrl"
+                            (click)="openLightbox(p.archiUrl, p.title)"
+                    >
+                        Architektur
+                    </button>
+                    <button
+                            class="btn"
+                            type="button"
+                            *ngIf="p.siteMapUrl"
+                            (click)="openLightbox(p.siteMapUrl, p.title)"
+                    >
+                        Sitemap
+                    </button>
+                    <button
+                            class="btn"
+                            type="button"
+                            *ngIf="p.flussdiagrammUrl"
+                            (click)="openLightbox(p.flussdiagrammUrl, p.title)"
+                    >
+                        Flussdiagramm
+                    </button>
+                    <button
+                            class="btn"
+                            type="button"
+                            *ngIf="p.erModellUrl"
+                            (click)="openLightbox(p.erModellUrl, p.title)"
+                    >
+                        ER-Modell
+                    </button>
                 </div>
             </div>
         </div>
     </app-section>
 
-    <app-section title="KI-Agents" subtitle="" *ngIf="!section || section==='ki'">
+    <app-section title="KI-Agents" subtitle="" *ngIf="!section || section === 'ki'">
         <div class="list">
             <div class="card card-pad item" *ngFor="let p of filteredKi">
                 <!-- gleicher Card-Inhalt wie oben -->
                 <h3>{{ p.title }}</h3>
                 <p>{{ p.description }}</p>
-                <div class="tags"><span class="pill" *ngFor="let t of p.tags">{{ t }}</span></div>
-                <hr class="sep">
-                <div class="small" style="margin-bottom:6px;">Highlights</div>
-                <ul style="margin:0; padding-left: 18px; color: var(--muted); line-height: 1.6;">
-                    <li *ngFor="let h of p.highlights">{{ h }}</li>
-                </ul>
-                <div class="actions project-actions" style="margin-top:6px;">
-                    <a class="btn" *ngIf="p.repo" [href]="p.repo" target="_blank" rel="noreferrer noopener">Repo</a>
-                    <a class="btn" *ngIf="p.demo" [href]="p.demo" target="_blank" rel="noreferrer noopener">Demo</a>
-                    <button class="btn" type="button" *ngIf="p.imageUrl"   (click)="openLightbox(p.imageUrl,   p.title)">Screenshot</button>
-                    <button class="btn" type="button" *ngIf="p.archiUrl"   (click)="openLightbox(p.archiUrl,   p.title)">Architektur</button>
-                    <button class="btn" type="button" *ngIf="p.siteMapUrl" (click)="openLightbox(p.siteMapUrl, p.title)">Sitemap</button>
-                    <button class="btn" type="button" *ngIf="p.flussdiagrammUrl" (click)="openLightbox(p.flussdiagrammUrl, p.title)">Flussdiagramm</button>
-                    <button class="btn" type="button" *ngIf="p.erModellUrl" (click)="openLightbox(p.erModellUrl, p.title)">ER-Modell</button>
+                <div class="tags">
+                    <span class="pill" *ngFor="let t of p.tags">{{ t }}</span>
                 </div>
-            </div>
-        </div>
-    </app-section>
-
-    <app-section title="Backend-Services" subtitle="" *ngIf="!section || section==='backend'">
-        <div class="list">
-            <div class="card card-pad item" *ngFor="let p of filteredBackend">
-                <!-- gleicher Card-Inhalt wie oben -->
-                <h3>{{ p.title }}</h3>
-                <p>{{ p.description }}</p>
-                <div class="tags"><span class="pill" *ngFor="let t of p.tags">{{ t }}</span></div>
-                <hr class="sep">
-                <div class="small" style="margin-bottom:6px;">Highlights</div>
-                <ul style="margin:0; padding-left: 18px; color: var(--muted); line-height: 1.6;">
+                <hr class="sep"/>
+                <div class="small" style="margin-bottom: 6px">Highlights</div>
+                <ul style="margin: 0; padding-left: 18px; color: var(--muted); line-height: 1.6">
                     <li *ngFor="let h of p.highlights">{{ h }}</li>
                 </ul>
-                <div class="actions project-actions" style="margin-top:6px;">
-                    <a class="btn" *ngIf="p.repo" [href]="p.repo" target="_blank" rel="noreferrer noopener">Repo</a>
-                    <a class="btn" *ngIf="p.demo" [href]="p.demo" target="_blank" rel="noreferrer noopener">Demo</a>
-                    <button class="btn" type="button" *ngIf="p.imageUrl"   (click)="openLightbox(p.imageUrl,   p.title)">Screenshot</button>
-                    <button class="btn" type="button" *ngIf="p.archiUrl"   (click)="openLightbox(p.archiUrl,   p.title)">Architektur</button>
-                    <button class="btn" type="button" *ngIf="p.siteMapUrl" (click)="openLightbox(p.siteMapUrl, p.title)">Sitemap</button>
-                    <button class="btn" type="button" *ngIf="p.flussdiagrammUrl" (click)="openLightbox(p.flussdiagrammUrl, p.title)">Flussdiagramm</button>
-                    <button class="btn" type="button" *ngIf="p.erModellUrl" (click)="openLightbox(p.erModellUrl, p.title)">ER-Modell</button>
+                <div class="actions project-actions" style="margin-top: 6px">
+                    <a class="btn" *ngIf="p.repo" [href]="p.repo" target="_blank" rel="noreferrer noopener"
+                    >Repo</a
+                    >
+                    <a class="btn" *ngIf="p.demo" [href]="p.demo" target="_blank" rel="noreferrer noopener"
+                    >Demo</a
+                    >
+                    <button
+                            class="btn"
+                            type="button"
+                            *ngIf="p.imageUrl"
+                            (click)="openLightbox(p.imageUrl, p.title)"
+                    >
+                        Screenshot
+                    </button>
+                    <button
+                            class="btn"
+                            type="button"
+                            *ngIf="p.archiUrl"
+                            (click)="openLightbox(p.archiUrl, p.title)"
+                    >
+                        Architektur
+                    </button>
+                    <button
+                            class="btn"
+                            type="button"
+                            *ngIf="p.siteMapUrl"
+                            (click)="openLightbox(p.siteMapUrl, p.title)"
+                    >
+                        Sitemap
+                    </button>
+                    <button
+                            class="btn"
+                            type="button"
+                            *ngIf="p.flussdiagrammUrl"
+                            (click)="openLightbox(p.flussdiagrammUrl, p.title)"
+                    >
+                        Flussdiagramm
+                    </button>
+                    <button
+                            class="btn"
+                            type="button"
+                            *ngIf="p.erModellUrl"
+                            (click)="openLightbox(p.erModellUrl, p.title)"
+                    >
+                        ER-Modell
+                    </button>
                 </div>
             </div>
         </div>
     </app-section>
 
     <div class="card card-pad" *ngIf="noResults">
-        <p style="margin:0;">Keine Treffer. Versuch andere Tags oder Suchbegriffe.</p>
+        <p style="margin: 0">Keine Treffer. Versuch andere Tags oder Suchbegriffe.</p>
     </div>
-
 
     <!-- Screenshot anzeigen -->
     <div class="lightbox" *ngIf="lightboxUrl" (click)="closeLightbox()">
@@ -141,7 +206,7 @@
                 <button type="button" class="lightbox-close" (click)="closeLightbox()">✕</button>
             </div>
 
-            <img class="lightbox-img" [src]="lightboxUrl" [alt]="lightboxTitle + ' – Screenshot'">
+            <img class="lightbox-img" [src]="lightboxUrl" [alt]="lightboxTitle + ' – Screenshot'"/>
         </div>
     </div>
 </div>

@@ -3,18 +3,19 @@
         <div class="hero-grid">
             <!-- LINKS: Text -->
             <div class="hero-copy">
-                <h1 style="margin:0 0 6px; font-size:24px;">Lebenslauf (CV)</h1>
-                <h2 style="margin:0 0 6px; font-size:20px;"> {{ profile.role }} </h2>
+                <h1 style="margin: 0 0 6px; font-size: 24px">Lebenslauf (CV)</h1>
+                <h2 style="margin: 0 0 6px; font-size: 20px">{{ profile.role }}</h2>
 
-                <div class="actions" style="margin-top: 12px;">
-                    <a style="margin-top:18px;" class="btn primary" [href]="cvUrl" download>CV herunterladen (PDF)</a>
+                <div class="actions" style="margin-top: 12px">
+                    <a style="margin-top: 18px" class="btn primary" [href]="cvUrl" download
+                    >CV herunterladen (PDF)</a
+                    >
                 </div>
-                <div class="actions" style="margin-top: 12px; margin-right: 10px;">
+                <div class="actions" style="margin-top: 12px; margin-right: 10px">
                     <a class="btn" routerLink="/projects">Projekte</a>
                     <a class="btn" routerLink="/skills">Skills</a>
                     <a class="btn" routerLink="/contact">Kontakt</a>
                 </div>
-
             </div>
 
             <!-- RECHTS: Foto (wie auf Home) -->
@@ -29,14 +30,15 @@
     <app-section title="Akademische Laufbahn">
         <div class="list">
             <div class="card card-pad" *ngFor="let e of cv.education">
-                <h3 style="margin:0 0 4px;">{{ e.title }}</h3>
+                <h3 style="margin: 0 0 4px">{{ e.title }}</h3>
 
-                <div class="divider" aria-hidden="true"></div> <!-- Trennungslinie -->
+                <div class="divider" aria-hidden="true"></div>
+                <!-- Trennungslinie -->
 
-                <div class="kpis" style="margin-top: 8px;">
+                <div class="kpis" style="margin-top: 8px">
                     <span class="pill">{{ e.school }} │ {{ e.period }}</span>
                 </div>
-                <ul style="margin:10px 0 0; padding-left: 18px; color: var(--muted); line-height: 1.6;">
+                <ul style="margin: 10px 0 0; padding-left: 18px; color: var(--muted); line-height: 1.6">
                     <li *ngFor="let b of e.bullets">
                         <strong>{{ b.label }}:</strong> {{ b.text }}
                     </li>
@@ -48,15 +50,16 @@
     <app-section title="Berufserfahrung">
         <div class="list">
             <div class="card card-pad" *ngFor="let e of cv.experience">
-                <h3 style="margin:0 0 4px;">{{ e.title }}</h3>
+                <h3 style="margin: 0 0 4px">{{ e.title }}</h3>
 
-                <div class="divider" aria-hidden="true"></div> <!-- Trennungslinie -->
+                <div class="divider" aria-hidden="true"></div>
+                <!-- Trennungslinie -->
 
-                <div class="kpis" style="margin-top: 8px;">
+                <div class="kpis" style="margin-top: 8px">
                     <span class="pill">{{ e.company }} │ {{ e.period }}</span>
                 </div>
 
-                <ul style="margin:10px 0 0; padding-left: 18px; color: var(--muted); line-height: 1.6;">
+                <ul style="margin: 10px 0 0; padding-left: 18px; color: var(--muted); line-height: 1.6">
                     <li *ngFor="let b of e.bullets">
                         <strong>{{ b.label }}:</strong> {{ b.text }}
                     </li>
@@ -64,6 +67,4 @@
             </div>
         </div>
     </app-section>
-
-
 </div>

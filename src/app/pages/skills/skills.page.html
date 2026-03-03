@@ -1,19 +1,16 @@
 <div class="page">
     <div class="card card-pad">
-    <h1 style="margin:0 0 6px; font-size:24px;">Skills</h1>
+        <h1 style="margin: 0 0 6px; font-size: 24px">Skills</h1>
     </div>
-
-
-
 
     <app-section title="" subtitle="">
         <div class="grid cols-2">
-          <div class="card card-pad" *ngFor="let g of groups">
-            <h3 style="margin:0 0 10px;">{{ g.group }}</h3>
-            <div class="tags">
-              <span class="pill" *ngFor="let s of g.items">{{ s }}</span>
+            <div class="card card-pad" *ngFor="let g of groups">
+                <h3 style="margin: 0 0 10px">{{ g.group }}</h3>
+                <div class="tags">
+                    <span class="pill" *ngFor="let s of g.items">{{ s }}</span>
+                </div>
             </div>
-          </div>
         </div>
     </app-section>
 </div>
