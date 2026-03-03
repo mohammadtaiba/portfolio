@@ -2,24 +2,24 @@ name: Format Check & Auto-Fix
 
 on:
     pull_request:
-      branches: [ main ]
+        branches: [ main ]
 
 permissions:
-  contents: write
+    contents: write
 
 jobs:
     format-check:
         runs-on: ubuntu-latest
         steps:
-          - uses: actions/checkout@v4
+            - uses: actions/checkout@v4
 
-          - uses: actions/setup-node@v4
+            - uses: actions/setup-node@v4
               with:
                   node-version: '20'
                   cache: 'npm'
 
-          - run: npm ci
+            - run: npm ci
 
-          # Check (bei Dependabot soll es rot sein, wenn nicht formatiert)
+            # Check (bei Dependabot soll es rot sein, wenn nicht formatiert)
             - name: Check Formatting
               run: npm run format:check
