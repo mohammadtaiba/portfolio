@@ -33,56 +33,64 @@
 
     <app-section title="Akademische Laufbahn">
         <div class="list">
-            <div class="card card-pad" *ngFor="let e of cv.education">
-                <h3 style="margin: 0 0 4px">{{ e.title }}</h3>
+            @for (e of cv.education; track $index) {
+                <div class="card card-pad">
+                    <h3 style="margin: 0 0 4px">{{ e.title }}</h3>
 
-                <div class="divider" aria-hidden="true"></div>
-                <!-- Trennungslinie -->
+                    <div class="divider" aria-hidden="true"></div>
+                    <!-- Trennungslinie -->
 
-                <div class="kpis" style="margin-top: 8px">
-                    <span class="pill">{{ e.school }} │ {{ e.period }}</span>
+                    <div class="kpis" style="margin-top: 8px">
+                        <span class="pill">{{ e.school }} │ {{ e.period }}</span>
+                    </div>
+                    <ul
+                        style="
+                            margin: 10px 0 0;
+                            padding-left: 18px;
+                            color: var(--muted);
+                            line-height: 1.6;
+                        "
+                    >
+                        @for (b of e.bullets; track $index) {
+                            <li>
+                                <strong>{{ b.label }}:</strong> {{ b.text }}
+                            </li>
+                        }
+                    </ul>
                 </div>
-                <ul
-                    style="
-                        margin: 10px 0 0;
-                        padding-left: 18px;
-                        color: var(--muted);
-                        line-height: 1.6;
-                    "
-                >
-                    <li *ngFor="let b of e.bullets">
-                        <strong>{{ b.label }}:</strong> {{ b.text }}
-                    </li>
-                </ul>
-            </div>
+            }
         </div>
     </app-section>
 
     <app-section title="Berufserfahrung">
         <div class="list">
-            <div class="card card-pad" *ngFor="let e of cv.experience">
-                <h3 style="margin: 0 0 4px">{{ e.title }}</h3>
+            @for (e of cv.experience; track $index) {
+                <div class="card card-pad">
+                    <h3 style="margin: 0 0 4px">{{ e.title }}</h3>
 
-                <div class="divider" aria-hidden="true"></div>
-                <!-- Trennungslinie -->
+                    <div class="divider" aria-hidden="true"></div>
+                    <!-- Trennungslinie -->
 
-                <div class="kpis" style="margin-top: 8px">
-                    <span class="pill">{{ e.company }} │ {{ e.period }}</span>
+                    <div class="kpis" style="margin-top: 8px">
+                        <span class="pill">{{ e.company }} │ {{ e.period }}</span>
+                    </div>
+
+                    <ul
+                        style="
+                            margin: 10px 0 0;
+                            padding-left: 18px;
+                            color: var(--muted);
+                            line-height: 1.6;
+                        "
+                    >
+                        @for (b of e.bullets; track $index) {
+                            <li>
+                                <strong>{{ b.label }}:</strong> {{ b.text }}
+                            </li>
+                        }
+                    </ul>
                 </div>
-
-                <ul
-                    style="
-                        margin: 10px 0 0;
-                        padding-left: 18px;
-                        color: var(--muted);
-                        line-height: 1.6;
-                    "
-                >
-                    <li *ngFor="let b of e.bullets">
-                        <strong>{{ b.label }}:</strong> {{ b.text }}
-                    </li>
-                </ul>
-            </div>
+            }
         </div>
     </app-section>
 </div>

@@ -15,15 +15,16 @@
                         placeholder="z. B. KI, Angular, Python..."
                         aria-label="Projekte durchsuchen"
                     />
-                    <button
-                        class="btn"
-                        type="button"
-                        *ngIf="q.trim()"
-                        (click)="clearQuery()"
-                        aria-label="Suche löschen"
-                    >
-                        ❌
-                    </button>
+                    @if (q.trim()) {
+                        <button
+                            class="btn"
+                            type="button"
+                            (click)="clearQuery()"
+                            aria-label="Suche löschen"
+                        >
+                            ❌
+                        </button>
+                    }
                 </div>
             </div>
 
@@ -31,18 +32,13 @@
             <div>
                 <span class="small" id="filter-label">Filter</span>
 
-                <div
-                    class="section-filter"
-                    style="margin-top: 8px"
-                    role="group"
-                    aria-labelledby="filter-label"
-                >
+                <div class="section-filter" style="margin-top: 8px">
                     <button
                         class="btn"
                         type="button"
                         (click)="setSection('web')"
                         [class.primary]="section === 'web'"
-                        aria-pressed="{{ section === 'web' }}"
+                        [attr.aria-pressed]="section === 'web'"
                     >
                         Webanwendungen <span class="count">{{ filteredWebsite.length }}</span>
                     </button>
@@ -52,187 +48,227 @@
                         type="button"
                         (click)="setSection('ki')"
                         [class.primary]="section === 'ki'"
-                        aria-pressed="{{ section === 'ki' }}"
+                        [attr.aria-pressed]="section === 'ki'"
                     >
                         KI-Agents <span class="count">{{ filteredKi.length }}</span>
                     </button>
                 </div>
 
-                <div class="small" style="margin-top: 8px" *ngIf="section">
-                    Tipp: Aktiven Button erneut anklicken: Filter aus.
-                </div>
+                @if (section) {
+                    <div class="small" style="margin-top: 8px">
+                        Tipp: Aktiven Button erneut anklicken: Filter aus.
+                    </div>
+                }
             </div>
         </div>
     </div>
 
-    <app-section title="Webanwendungen" subtitle="" *ngIf="!section || section === 'web'">
-        <div class="list">
-            <div class="card card-pad item" *ngFor="let p of filteredWebsite">
-                <h3>{{ p.title }}</h3>
-                <p>{{ p.description }}</p>
-                <div class="tags">
-                    <span class="pill" *ngFor="let t of p.tags">{{ t }}</span>
-                </div>
+    @if (!section || section === 'web') {
+        <app-section title="Webanwendungen" subtitle="">
+            <div class="list">
+                @for (p of filteredWebsite; track $index) {
+                    <div class="card card-pad item">
+                        <h3>{{ p.title }}</h3>
+                        <p>{{ p.description }}</p>
+                        <div class="tags">
+                            @for (t of p.tags; track $index) {
+                                <span class="pill">{{ t }}</span>
+                            }
+                        </div>
 
-                <hr class="sep" />
+                        <hr class="sep" />
 
-                <div class="small" style="margin-bottom: 6px">Highlights</div>
-                <ul style="margin: 0; padding-left: 18px; color: var(--muted); line-height: 1.6">
-                    <li *ngFor="let h of p.highlights">{{ h }}</li>
-                </ul>
+                        <div class="small" style="margin-bottom: 6px">Highlights</div>
+                        <ul
+                            style="margin: 0; padding-left: 18px; color: var(--muted); line-height: 1.6"
+                        >
+                            @for (h of p.highlights; track $index) {
+                                <li>{{ h }}</li>
+                            }
+                        </ul>
 
-                <div class="actions project-actions" style="margin-top: 6px">
-                    <a
-                        class="btn"
-                        *ngIf="p.repo"
-                        [href]="p.repo"
-                        target="_blank"
-                        rel="noreferrer noopener"
-                        >Repo</a
-                    >
-                    <a
-                        class="btn"
-                        *ngIf="p.demo"
-                        [href]="p.demo"
-                        target="_blank"
-                        rel="noreferrer noopener"
-                        >Demo</a
-                    >
+                        <div class="actions project-actions" style="margin-top: 6px">
+                            @if (p.repo) {
+                                <a
+                                    class="btn"
+                                    [href]="p.repo"
+                                    target="_blank"
+                                    rel="noreferrer noopener"
+                                >Repo</a
+                                >
+                            }
+                            @if (p.demo) {
+                                <a
+                                    class="btn"
+                                    [href]="p.demo"
+                                    target="_blank"
+                                    rel="noreferrer noopener"
+                                >Demo</a
+                                >
+                            }
 
-                    <button
-                        class="btn"
-                        type="button"
-                        *ngIf="p.imageUrl"
-                        (click)="openLightbox(p.imageUrl, p.title)"
-                    >
-                        Screenshot
-                    </button>
-                    <button
-                        class="btn"
-                        type="button"
-                        *ngIf="p.archiUrl"
-                        (click)="openLightbox(p.archiUrl, p.title)"
-                    >
-                        Architektur
-                    </button>
-                    <button
-                        class="btn"
-                        type="button"
-                        *ngIf="p.siteMapUrl"
-                        (click)="openLightbox(p.siteMapUrl, p.title)"
-                    >
-                        Sitemap
-                    </button>
-                    <button
-                        class="btn"
-                        type="button"
-                        *ngIf="p.flussdiagrammUrl"
-                        (click)="openLightbox(p.flussdiagrammUrl, p.title)"
-                    >
-                        Flussdiagramm
-                    </button>
-                    <button
-                        class="btn"
-                        type="button"
-                        *ngIf="p.erModellUrl"
-                        (click)="openLightbox(p.erModellUrl, p.title)"
-                    >
-                        ER-Modell
-                    </button>
-                </div>
+                            @if (p.imageUrl) {
+                                <button
+                                    class="btn"
+                                    type="button"
+                                    (click)="openLightbox(p.imageUrl, p.title)"
+                                >
+                                    Screenshot
+                                </button>
+                            }
+                            @if (p.archiUrl) {
+                                <button
+                                    class="btn"
+                                    type="button"
+                                    (click)="openLightbox(p.archiUrl, p.title)"
+                                >
+                                    Architektur
+                                </button>
+                            }
+                            @if (p.siteMapUrl) {
+                                <button
+                                    class="btn"
+                                    type="button"
+                                    (click)="openLightbox(p.siteMapUrl, p.title)"
+                                >
+                                    Sitemap
+                                </button>
+                            }
+                            @if (p.flussdiagrammUrl) {
+                                <button
+                                    class="btn"
+                                    type="button"
+                                    (click)="openLightbox(p.flussdiagrammUrl, p.title)"
+                                >
+                                    Flussdiagramm
+                                </button>
+                            }
+                            @if (p.erModellUrl) {
+                                <button
+                                    class="btn"
+                                    type="button"
+                                    (click)="openLightbox(p.erModellUrl, p.title)"
+                                >
+                                    ER-Modell
+                                </button>
+                            }
+                        </div>
+                    </div>
+                }
             </div>
-        </div>
-    </app-section>
+        </app-section>
+    }
 
-    <app-section title="KI-Agents" subtitle="" *ngIf="!section || section === 'ki'">
-        <div class="list">
-            <div class="card card-pad item" *ngFor="let p of filteredKi">
-                <!-- gleicher Card-Inhalt wie oben -->
-                <h3>{{ p.title }}</h3>
-                <p>{{ p.description }}</p>
-                <div class="tags">
-                    <span class="pill" *ngFor="let t of p.tags">{{ t }}</span>
-                </div>
-                <hr class="sep" />
-                <div class="small" style="margin-bottom: 6px">Highlights</div>
-                <ul style="margin: 0; padding-left: 18px; color: var(--muted); line-height: 1.6">
-                    <li *ngFor="let h of p.highlights">{{ h }}</li>
-                </ul>
-                <div class="actions project-actions" style="margin-top: 6px">
-                    <a
-                        class="btn"
-                        *ngIf="p.repo"
-                        [href]="p.repo"
-                        target="_blank"
-                        rel="noreferrer noopener"
-                        >Repo</a
-                    >
-                    <a
-                        class="btn"
-                        *ngIf="p.demo"
-                        [href]="p.demo"
-                        target="_blank"
-                        rel="noreferrer noopener"
-                        >Demo</a
-                    >
-                    <button
-                        class="btn"
-                        type="button"
-                        *ngIf="p.imageUrl"
-                        (click)="openLightbox(p.imageUrl, p.title)"
-                    >
-                        Screenshot
-                    </button>
-                    <button
-                        class="btn"
-                        type="button"
-                        *ngIf="p.archiUrl"
-                        (click)="openLightbox(p.archiUrl, p.title)"
-                    >
-                        Architektur
-                    </button>
-                    <button
-                        class="btn"
-                        type="button"
-                        *ngIf="p.siteMapUrl"
-                        (click)="openLightbox(p.siteMapUrl, p.title)"
-                    >
-                        Sitemap
-                    </button>
-                    <button
-                        class="btn"
-                        type="button"
-                        *ngIf="p.flussdiagrammUrl"
-                        (click)="openLightbox(p.flussdiagrammUrl, p.title)"
-                    >
-                        Flussdiagramm
-                    </button>
-                    <button
-                        class="btn"
-                        type="button"
-                        *ngIf="p.erModellUrl"
-                        (click)="openLightbox(p.erModellUrl, p.title)"
-                    >
-                        ER-Modell
-                    </button>
-                </div>
+    @if (!section || section === 'ki') {
+        <app-section title="KI-Agents" subtitle="">
+            <div class="list">
+                @for (p of filteredKi; track $index) {
+                    <div class="card card-pad item">
+                        <!-- gleicher Card-Inhalt wie oben -->
+                        <h3>{{ p.title }}</h3>
+                        <p>{{ p.description }}</p>
+                        <div class="tags">
+                            @for (t of p.tags; track $index) {
+                                <span class="pill">{{ t }}</span>
+                            }
+                        </div>
+                        <hr class="sep" />
+                        <div class="small" style="margin-bottom: 6px">Highlights</div>
+                        <ul
+                            style="margin: 0; padding-left: 18px; color: var(--muted); line-height: 1.6"
+                        >
+                            @for (h of p.highlights; track $index) {
+                                <li>{{ h }}</li>
+                            }
+                        </ul>
+                        <div class="actions project-actions" style="margin-top: 6px">
+                            @if (p.repo) {
+                                <a
+                                    class="btn"
+                                    [href]="p.repo"
+                                    target="_blank"
+                                    rel="noreferrer noopener"
+                                >Repo</a
+                                >
+                            }
+                            @if (p.demo) {
+                                <a
+                                    class="btn"
+                                    [href]="p.demo"
+                                    target="_blank"
+                                    rel="noreferrer noopener"
+                                >Demo</a
+                                >
+                            }
+                            @if (p.imageUrl) {
+                                <button
+                                    class="btn"
+                                    type="button"
+                                    (click)="openLightbox(p.imageUrl, p.title)"
+                                >
+                                    Screenshot
+                                </button>
+                            }
+                            @if (p.archiUrl) {
+                                <button
+                                    class="btn"
+                                    type="button"
+                                    (click)="openLightbox(p.archiUrl, p.title)"
+                                >
+                                    Architektur
+                                </button>
+                            }
+                            @if (p.siteMapUrl) {
+                                <button
+                                    class="btn"
+                                    type="button"
+                                    (click)="openLightbox(p.siteMapUrl, p.title)"
+                                >
+                                    Sitemap
+                                </button>
+                            }
+                            @if (p.flussdiagrammUrl) {
+                                <button
+                                    class="btn"
+                                    type="button"
+                                    (click)="openLightbox(p.flussdiagrammUrl, p.title)"
+                                >
+                                    Flussdiagramm
+                                </button>
+                            }
+                            @if (p.erModellUrl) {
+                                <button
+                                    class="btn"
+                                    type="button"
+                                    (click)="openLightbox(p.erModellUrl, p.title)"
+                                >
+                                    ER-Modell
+                                </button>
+                            }
+                        </div>
+                    </div>
+                }
             </div>
-        </div>
-    </app-section>
+        </app-section>
+    }
 
-    <div class="card card-pad" *ngIf="noResults">
-        <p style="margin: 0">Keine Treffer. Versuch andere Tags oder Suchbegriffe.</p>
-    </div>
+    @if (noResults) {
+        <div class="card card-pad">
+            <p style="margin: 0">Keine Treffer. Versuch andere Tags oder Suchbegriffe.</p>
+        </div>
+    }
 
     <!-- Screenshot anzeigen -->
-    <div class="lightbox" *ngIf="lightboxUrl" (click)="closeLightbox()">
-        <div class="lightbox-inner" (click)="$event.stopPropagation()">
-            <div class="lightbox-bar">
-                <div class="small">{{ lightboxTitle }}</div>
-                <button type="button" class="lightbox-close" (click)="closeLightbox()">✕</button>
-            </div>
+    @if (lightboxUrl) {
+        <div class="lightbox">
+            <div class="lightbox-inner">
+                <div class="lightbox-bar">
+                    <div class="small">{{ lightboxTitle }}</div>
+                    <button type="button" class="lightbox-close" (click)="closeLightbox()">✕</button>
+                </div>
 
-            <img class="lightbox-img" [src]="lightboxUrl" [alt]="lightboxTitle + ' – Screenshot'" />
+                <img class="lightbox-img" [src]="lightboxUrl" [alt]="lightboxTitle + ' - Screenshot'" />
+            </div>
         </div>
-    </div>
+    }
 </div>

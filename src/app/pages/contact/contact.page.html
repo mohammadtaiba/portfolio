@@ -52,8 +52,10 @@
             </div>
         </div>
 
-        <div class="card card-pad" *ngIf="copied" style="margin-top: 12px">
-            <span>✅ Kopiert: {{ copied }}</span>
-        </div>
+        @if (copied) {
+            <div class="card card-pad" style="margin-top: 12px">
+                <span>✅ Kopiert: {{ copied }}</span>
+            </div>
+        }
     </app-section>
 </div>
