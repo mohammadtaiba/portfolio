@@ -1,7 +1,6 @@
 # Portfolio (Angular)
 
 [![Code Quality Checks](https://github.com/moham/portfolio/actions/workflows/code-quality.yml/badge.svg)](https://github.com/moham/portfolio/actions/workflows/code-quality.yml)
-[![Format Check](https://github.com/moham/portfolio/actions/workflows/auto-format.yml/badge.svg)](https://github.com/moham/portfolio/actions/workflows/auto-format.yml)
 
 ## Voraussetzungen
 
@@ -45,21 +44,11 @@ npm run lint
 npm run lint:fix
 ```
 
-### Formatting
-
-```bash
-# Code formatieren
-npm run format
-
-# Format check (ohne Änderungen)
-npm run format:check
-```
-
 ### CI/CD
 
 - ✅ Automatische Code Quality Checks bei Push & PR
-- ✅ ESLint & Prettier Integration
-- ✅ Build Tests auf Node 18 & 20
+- ✅ ESLint Integration
+- ✅ Build Tests auf Node 20
 - ✅ TypeScript Compilation Checks
 - ✅ Dependency Security Audits
 - ✅ Dependabot für automatische Updates

@@ -10,19 +10,16 @@ Dieser Ordner enthält GitHub-spezifische Konfigurationen und Automatisierungen 
 
 Führt Code Quality Checks bei jedem Push und Pull Request aus:
 
-- ✅ Prettier Code Formatting Check
 - ✅ ESLint Linting
 - ✅ TypeScript Compilation Check
-- ✅ Build Tests auf Node 18 & 20
+- ✅ Build Test auf Node 20
 - ✅ Dependency Security Audit
 
 #### 2. **auto-format.yml**
 
-Automatischer Code Formatter für Pull Requests:
+Zusätzlicher Pull-Request-Check:
 
-- Prüft Code Formatting
-- Formatiert Code automatisch mit Prettier
-- Committed und pusht Änderungen
+- Führt ESLint für PRs aus
 
 ### Issue Templates (`ISSUE_TEMPLATE/`)
 
@@ -45,12 +42,6 @@ npm run lint
 
 # Linting mit Auto-Fix
 npm run lint:fix
-
-# Code formatieren
-npm run format
-
-# Format Check (ohne Änderungen)
-npm run format:check
 ```
 
 ### GitHub Actions
@@ -65,7 +56,3 @@ Die Workflows werden automatisch ausgelöst bei:
 ### ESLint
 
 Konfiguration: `eslint.config.js` im Root
-
-### Prettier
-
-Konfiguration: `.prettierrc.json` im Root
