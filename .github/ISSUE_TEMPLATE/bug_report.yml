@@ -1,0 +1,60 @@
+name: 🐛 Bug Report
+description: Melde einen Bug im Portfolio
+title: "[BUG]: "
+labels: [ "bug", "needs-triage" ]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Danke, dass du einen Bug meldest! Bitte fülle die folgenden Felder aus.
+
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: Beschreibung des Bugs
+      description: Eine klare und präzise Beschreibung des Problems
+      placeholder: Beschreibe was passiert ist...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Schritte zur Reproduktion
+      description: Wie kann der Bug reproduziert werden?
+      placeholder: |
+        1. Gehe zu '...'
+        2. Klicke auf '...'
+        3. Scrolle nach '...'
+        4. Siehe Fehler
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Erwartetes Verhalten
+      description: Was sollte stattdessen passieren?
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: Füge Screenshots hinzu, falls relevant
+
+  - type: input
+    id: browser
+    attributes:
+      label: Browser
+      placeholder: z.B. Chrome 121, Firefox 122, Safari 17
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Zusätzlicher Kontext
+      description: Weitere relevante Informationen
+

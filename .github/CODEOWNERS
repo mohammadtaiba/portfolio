@@ -1,0 +1,16 @@
+# Code Owners für automatische Review-Requests
+
+# Default owner für alles
+* @moham
+
+# Frontend Code
+/src/** @moham
+
+# Workflows und CI/CD
+/.github/** @moham
+
+# Konfigurationsdateien
+/*.json @moham
+/*.js @moham
+/*.ts @moham
+
