@@ -2,6 +2,20 @@
 
 [![Code Quality Checks](https://github.com/moham/portfolio/actions/workflows/code-quality.yml/badge.svg)](https://github.com/moham/portfolio/actions/workflows/code-quality.yml)
 
+## Was ist das?
+
+Dies ist das persönliche Portfolio von **Mohammad Taiba**, einem Full-Stack-Entwickler aus Erfurt, Deutschland.
+
+Die Webanwendung wurde mit **Angular** als Single-Page Application (SPA) entwickelt und präsentiert:
+
+- **Projekte** – Eine Übersicht realisierter Webprojekte und Anwendungen (mit Suche und Tag-Filter)
+- **Skills** – Technologien und Fähigkeiten
+- **Bücher** – Gelesene Fachliteratur mit Learnings
+- **CV** – Lebenslauf
+- **Kontakt** – Kontaktmöglichkeiten
+
+Die Anwendung ist unter [https://mohammad-taiba.netlify.app/](https://mohammad-taiba.netlify.app/) live erreichbar.
+
 ## Voraussetzungen
 
 1. Node.js (LTS) installieren:
