@@ -95,7 +95,7 @@ export const WEBSITE_PROJECTS: Project[] = [
         title: 'Portfolio │ Eigenes Projekt',
         description:
             'Professionelles Portfolio zur Präsentation von Projekten, Skills, Büchern und Lebenslauf.',
-        tags: ['Angular', 'TypeScript', 'CSS', 'HTML', 'Netlify'],
+        tags: ['Angular', 'TypeScript', 'CSS', 'HTML', 'cloudflare'],
         highlights: [
             'Portfolio als Angular SPA mit Standalone-Komponenten und Router umgesetzt',
             'Routing-Struktur mit Lazy Loading pro Seite via Router `loadComponent` implementiert',
@@ -103,7 +103,7 @@ export const WEBSITE_PROJECTS: Project[] = [
             'Projektübersicht mit Suche und Tag-Filter implementiert',
             'Responsives Layout, klare Navigation (Desktop + Mobile Menü)',
         ],
-        demo: 'https://mohammad-taiba.netlify.app/',
+        demo: 'https://mohammad-taiba.de/',
         imageUrl: 'assets/projects/portfolio.png',
     },
     {

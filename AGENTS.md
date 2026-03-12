@@ -46,7 +46,7 @@ npm run lint:fix
 
 ### Deployment-Kontext
 
-- Zielplattform: Netlify.
+- Zielplattform: cloudflare.
 - SPA-Redirects in `src/_redirects` beachten.
 - Asset- und Budget-Konfiguration in `angular.json` beachten.
 

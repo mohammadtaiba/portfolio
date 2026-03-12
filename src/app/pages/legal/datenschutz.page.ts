@@ -27,7 +27,7 @@ import { CommonModule } from '@angular/common';
 
                 <h3 style="margin:0 0 8px;">2. Hosting</h3>
                 <p style="margin:0; color: var(--muted); line-height:1.7;">
-                    Platzhalter: Nenne hier deinen Hoster (z. B. Vercel/Netlify) und beschreibe
+                    Platzhalter: Nenne hier deinen Hoster (z. B. Vercel/Netlify/cloudflare) und beschreibe
                     kurz, welche Daten verarbeitet werden.
                 </p>
 
