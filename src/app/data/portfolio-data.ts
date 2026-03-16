@@ -53,7 +53,7 @@ export const PROFILE = {
         'Ich entwickle skalierbare Full-Stack-Systeme und KI-gestützte Lösungen zur Digitalisierung und Automatisierung von Geschäftsprozessen. Mein Fokus liegt auf sauberer Architektur, Sicherheit und nachhaltiger Wartbarkeit – für messbaren Mehrwert im produktiven Einsatz.',
     links: {
         github: 'https://github.com/mohammadtaiba',
-        linkedin: 'https://www.linkedin.com/in/mohammad-taiba-a30700323/DE',
+        linkedin: 'https://www.linkedin.com/in/mohammad-taiba',
         website: 'https://mohammadtaiba.dev',
     },
     focus: [
