@@ -45,18 +45,31 @@ export interface SkillGroup {
  */
 export const PROFILE = {
     name: 'Mohammad Taiba',
-    role: 'Full-Stack Entwickler',
+    role: 'AI-Engineer',
     location: 'Erfurt, Deutschland',
     email: 'mohammadtaiba55@gmail.com',
     photoUrl: 'assets/profile.jpg',
     shortPitch:
-        'Ich entwickle skalierbare Full-Stack-Systeme und KI-gestützte Lösungen zur Digitalisierung und Automatisierung von Geschäftsprozessen. Mein Fokus liegt auf sauberer Architektur, Sicherheit und nachhaltiger Wartbarkeit – für messbaren Mehrwert im produktiven Einsatz.',
+        'Ich entwickle KI-gestützte Anwendungen und RAG-Systeme zur Automatisierung von Wissensarbeit und internen Prozessen. Mein Fokus liegt auf zuverlässigem Retrieval, sauberer Pipeline-Architektur, produktionsnaher Umsetzung und wartbarer Integration in bestehende Systeme.',
     links: {
         github: 'https://github.com/mohammadtaiba',
         linkedin: 'https://www.linkedin.com/in/mohammad-taiba',
         website: 'https://mohammadtaiba.dev',
     },
     focus: [
+
+        {
+            title: 'KI-Agents',
+            subtitle:
+                'Entwicklung von KI-gestützten Wissenssystemen und RAG-Anwendungen mit automatisierter Ingestion, Vektorsuche und produktionsnaher Weboberfläche – für schnellere Informationsbereitstellung, weniger manuelle Recherche und robuste interne Supportprozesse.',
+            bullets: [
+                'Wissen ist auf PDFs, Webseiten und internen Dokumenten verteilt',
+                'Informationen sind schwer auffindbar und kosten manuelle Recherchezeit',
+                'Support- und Wissensprozesse sind langsam und fehleranfällig',
+                'KI-Antworten sind ohne sauberes Retrieval unzuverlässig',
+                'Dokumentenaufnahme, Indexierung und Aktualisierung fehlen oder sind manuell',
+            ],
+        },
         {
             title: 'Webanwendungen',
             subtitle:
@@ -69,17 +82,6 @@ export const PROFILE = {
                 'Fehlende Schnittstellen/Integrationen (REST APIs)',
                 'Kein stabiler Deployment-Prozess (CI/CD) und kein Monitoring im Betrieb',
                 'Manuelle, fehleranfällige Prozesse statt automatisierter Workflows',
-            ],
-        },
-        {
-            title: 'KI-Agents',
-            subtitle:
-                'Entwicklung KI-gestützter Wissenssysteme zur Automatisierung interner Supportprozesse, schnelleren Informationsbereitstellung und Reduzierung manueller Recherchezeiten.',
-            bullets: [
-                'Manuelle, ineffiziente Prozesse',
-                'Verteiltes Wissen in PDFs & Dokumenten',
-                'Langsame, schwer wartbare Legacy-Systeme',
-                'Fehlende Automatisierung interner Workflows',
             ],
         },
     ] as FocusItem[],
@@ -257,6 +259,16 @@ export const KI_PROJECTS: Project[] = [
 /** Fachliteratur mit praktischen Erkenntnissen und Anwendungsbezug */
 export const BOOKS: Book[] = [
     {
+        title: 'Full Stack Development with Spring Boot 3 and React',
+        author: 'Juha Hinkula',
+        takeaways: [
+            'Aufbau moderner Full-Stack-Anwendungen mit Spring Boot Backend und React Frontend',
+            'Entwicklung und Nutzung von REST APIs mit JPA, Hibernate und relationalen Datenbanken',
+            'Einsatz moderner React-Techniken (Hooks, TypeScript, API-Integration)',
+        ],
+        appliedIn: 'Verständnis für moderne Full-Stack-Architektur mit Spring Boot und React vertieft.',
+    },
+    {
         title: 'A Philosophy of Software Design',
         author: 'John Ousterhout',
         takeaways: [
@@ -397,7 +409,7 @@ export const CV = {
 
     experience: [
         {
-            title: 'Praktikum als KI-Entwickler',
+            title: 'Praktikum als AI Engineer',
             company: 'topdev GmbH, Erfurt',
             period: '10/2025 – 02/2026',
             bullets: [

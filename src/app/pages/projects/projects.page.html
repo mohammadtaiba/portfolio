@@ -36,6 +36,16 @@
                     <button
                         class="btn"
                         type="button"
+                        (click)="setSection('ki')"
+                        [class.primary]="section === 'ki'"
+                        [attr.aria-pressed]="section === 'ki'"
+                    >
+                        KI-Agents <span class="count">{{ filteredKi.length }}</span>
+                    </button>
+
+                    <button
+                        class="btn"
+                        type="button"
                         (click)="setSection('web')"
                         [class.primary]="section === 'web'"
                         [attr.aria-pressed]="section === 'web'"
@@ -43,15 +53,7 @@
                         Webanwendungen <span class="count">{{ filteredWebsite.length }}</span>
                     </button>
 
-                    <button
-                        class="btn"
-                        type="button"
-                        (click)="setSection('ki')"
-                        [class.primary]="section === 'ki'"
-                        [attr.aria-pressed]="section === 'ki'"
-                    >
-                        KI-Agents <span class="count">{{ filteredKi.length }}</span>
-                    </button>
+
                 </div>
 
                 @if (section) {
@@ -62,6 +64,104 @@
             </div>
         </div>
     </div>
+
+    @if (!section || section === 'ki') {
+        <app-section title="KI-Agents" subtitle="">
+            <div class="list">
+                @for (p of filteredKi; track $index) {
+                    <div class="card card-pad item">
+                        <!-- gleicher Card-Inhalt wie oben -->
+                        <h3>{{ p.title }}</h3>
+                        <p>{{ p.description }}</p>
+                        <div class="tags">
+                            @for (t of p.tags; track $index) {
+                                <span class="pill">{{ t }}</span>
+                            }
+                        </div>
+                        <hr class="sep" />
+                        <div class="small" style="margin-bottom: 6px">Highlights</div>
+                        <ul
+                            style="
+                                margin: 0;
+                                padding-left: 18px;
+                                color: var(--muted);
+                                line-height: 1.6;
+                            "
+                        >
+                            @for (h of p.highlights; track $index) {
+                                <li>{{ h }}</li>
+                            }
+                        </ul>
+                        <div class="actions project-actions" style="margin-top: 6px">
+                            @if (p.repo) {
+                                <a
+                                    class="btn"
+                                    [href]="p.repo"
+                                    target="_blank"
+                                    rel="noreferrer noopener"
+                                >Repo</a
+                                >
+                            }
+                            @if (p.demo) {
+                                <a
+                                    class="btn"
+                                    [href]="p.demo"
+                                    target="_blank"
+                                    rel="noreferrer noopener"
+                                >Demo</a
+                                >
+                            }
+                            @if (p.imageUrl) {
+                                <button
+                                    class="btn"
+                                    type="button"
+                                    (click)="openLightbox(p.imageUrl, p.title)"
+                                >
+                                    Screenshot
+                                </button>
+                            }
+                            @if (p.archiUrl) {
+                                <button
+                                    class="btn"
+                                    type="button"
+                                    (click)="openLightbox(p.archiUrl, p.title)"
+                                >
+                                    Architektur
+                                </button>
+                            }
+                            @if (p.siteMapUrl) {
+                                <button
+                                    class="btn"
+                                    type="button"
+                                    (click)="openLightbox(p.siteMapUrl, p.title)"
+                                >
+                                    Sitemap
+                                </button>
+                            }
+                            @if (p.flussdiagrammUrl) {
+                                <button
+                                    class="btn"
+                                    type="button"
+                                    (click)="openLightbox(p.flussdiagrammUrl, p.title)"
+                                >
+                                    Flussdiagramm
+                                </button>
+                            }
+                            @if (p.erModellUrl) {
+                                <button
+                                    class="btn"
+                                    type="button"
+                                    (click)="openLightbox(p.erModellUrl, p.title)"
+                                >
+                                    ER-Modell
+                                </button>
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+        </app-section>
+    }
 
     @if (!section || section === 'web') {
         <app-section title="Webanwendungen" subtitle="">
@@ -164,103 +264,6 @@
         </app-section>
     }
 
-    @if (!section || section === 'ki') {
-        <app-section title="KI-Agents" subtitle="">
-            <div class="list">
-                @for (p of filteredKi; track $index) {
-                    <div class="card card-pad item">
-                        <!-- gleicher Card-Inhalt wie oben -->
-                        <h3>{{ p.title }}</h3>
-                        <p>{{ p.description }}</p>
-                        <div class="tags">
-                            @for (t of p.tags; track $index) {
-                                <span class="pill">{{ t }}</span>
-                            }
-                        </div>
-                        <hr class="sep" />
-                        <div class="small" style="margin-bottom: 6px">Highlights</div>
-                        <ul
-                            style="
-                                margin: 0;
-                                padding-left: 18px;
-                                color: var(--muted);
-                                line-height: 1.6;
-                            "
-                        >
-                            @for (h of p.highlights; track $index) {
-                                <li>{{ h }}</li>
-                            }
-                        </ul>
-                        <div class="actions project-actions" style="margin-top: 6px">
-                            @if (p.repo) {
-                                <a
-                                    class="btn"
-                                    [href]="p.repo"
-                                    target="_blank"
-                                    rel="noreferrer noopener"
-                                >Repo</a
-                                >
-                            }
-                            @if (p.demo) {
-                                <a
-                                    class="btn"
-                                    [href]="p.demo"
-                                    target="_blank"
-                                    rel="noreferrer noopener"
-                                >Demo</a
-                                >
-                            }
-                            @if (p.imageUrl) {
-                                <button
-                                    class="btn"
-                                    type="button"
-                                    (click)="openLightbox(p.imageUrl, p.title)"
-                                >
-                                    Screenshot
-                                </button>
-                            }
-                            @if (p.archiUrl) {
-                                <button
-                                    class="btn"
-                                    type="button"
-                                    (click)="openLightbox(p.archiUrl, p.title)"
-                                >
-                                    Architektur
-                                </button>
-                            }
-                            @if (p.siteMapUrl) {
-                                <button
-                                    class="btn"
-                                    type="button"
-                                    (click)="openLightbox(p.siteMapUrl, p.title)"
-                                >
-                                    Sitemap
-                                </button>
-                            }
-                            @if (p.flussdiagrammUrl) {
-                                <button
-                                    class="btn"
-                                    type="button"
-                                    (click)="openLightbox(p.flussdiagrammUrl, p.title)"
-                                >
-                                    Flussdiagramm
-                                </button>
-                            }
-                            @if (p.erModellUrl) {
-                                <button
-                                    class="btn"
-                                    type="button"
-                                    (click)="openLightbox(p.erModellUrl, p.title)"
-                                >
-                                    ER-Modell
-                                </button>
-                            }
-                        </div>
-                    </div>
-                }
-            </div>
-        </app-section>
-    }
 
     @if (noResults) {
         <div class="card card-pad">
