@@ -9,8 +9,8 @@
         <nav class="nav-desktop" aria-label="Hauptnavigation">
             <a routerLink="/projects" routerLinkActive="active">Projekte</a>
             <a routerLink="/skills" routerLinkActive="active">Skills</a>
-            <a routerLink="/books" routerLinkActive="active">Bücher</a>
-            <a routerLink="/cv" routerLinkActive="active">CV</a>
+            <!--            <a routerLink="/books" routerLinkActive="active">Bücher</a>-->
+            <!--            <a routerLink="/cv" routerLinkActive="active">CV</a>-->
             <!--            <a routerLink="/about" routerLinkActive="active">Über mich</a>-->
             <a routerLink="/contact" routerLinkActive="active">Kontakt</a>
         </nav>
@@ -20,9 +20,9 @@
             <div class="mobile-panel card">
                 <a routerLink="/projects">Projekte</a>
                 <a routerLink="/skills">Skills</a>
-                <a routerLink="/books">Bücher</a>
-                <a routerLink="/cv">CV</a>
-                <a routerLink="/about">Über mich</a>
+                <!--                <a routerLink="/books">Bücher</a>-->
+                <!--                <a routerLink="/cv">CV</a>-->
+                <!--                <a routerLink="/about">Über mich</a>-->
                 <a routerLink="/contact">Kontakt</a>
             </div>
         </details>
@@ -37,12 +37,7 @@
 
 <footer class="footer">
     <div class="container footer-inner">
-        <div class="muted">
-            ©
-            <a routerLink="/"> {{ profile.name }}</a>
-            ·
-            <a routerLink="/contact"> kontakt </a>
-        </div>
+        <span class="footer-copy">&copy; 2026 {{ profile.name }}</span>
         <div class="footer-links">
             <a [href]="profile.links.github" target="_blank" rel="noreferrer">GitHub</a>
             <a [href]="profile.links.linkedin" target="_blank" rel="noreferrer">LinkedIn</a>

@@ -45,44 +45,41 @@ export interface SkillGroup {
  */
 export const PROFILE = {
     name: 'Mohammad Taiba',
-    role: 'AI-Engineer',
+    role: 'AI Engineer | Full-Stack Developer',
     location: 'Erfurt, Deutschland',
     email: 'mohammadtaiba55@gmail.com',
     photoUrl: 'assets/profile.jpg',
-    shortPitch:
-        'Ich entwickle KI-gestützte Anwendungen und RAG-Systeme zur Automatisierung von Wissensarbeit und internen Prozessen. Mein Fokus liegt auf zuverlässigem Retrieval, sauberer Pipeline-Architektur, produktionsnaher Umsetzung und wartbarer Integration in bestehende Systeme.',
+    pitchDetail:
+        'Mein Fokus liegt auf modularer Architektur, sauberen Datenpipelines, skalierbarer Backend-Entwicklung und produktionsreifer Integration in bestehende Systeme.',
     links: {
         github: 'https://github.com/mohammadtaiba',
         linkedin: 'https://www.linkedin.com/in/mohammad-taiba',
         website: 'https://mohammadtaiba.dev',
     },
     focus: [
-
         {
-            title: 'KI-Agents',
+            title: 'KI-gestützte Anwendungen',
             subtitle:
-                'Entwicklung von KI-gestützten Wissenssystemen und RAG-Anwendungen mit automatisierter Ingestion, Vektorsuche und produktionsnaher Weboberfläche – für schnellere Informationsbereitstellung, weniger manuelle Recherche und robuste interne Supportprozesse.',
-            bullets: [
-                'Wissen ist auf PDFs, Webseiten und internen Dokumenten verteilt',
-                'Informationen sind schwer auffindbar und kosten manuelle Recherchezeit',
-                'Support- und Wissensprozesse sind langsam und fehleranfällig',
-                'KI-Antworten sind ohne sauberes Retrieval unzuverlässig',
-                'Dokumentenaufnahme, Indexierung und Aktualisierung fehlen oder sind manuell',
-            ],
+                'Integration von LLMs, Automatisierung und intelligenter Datenverarbeitung in moderne Webanwendungen.',
+            bullets: [],
         },
         {
-            title: 'Webanwendungen',
+            title: 'AI Agents & Automatisierung',
             subtitle:
-                'Entwicklung performanter, sicherer und wartbarer Websysteme – von der Anforderungsanalyse bis zum produktiven Betrieb – zur Digitalisierung von Kernprozessen und messbarer Effizienzsteigerung.',
-            bullets: [
-                'Fehlende Rollen- & Rechtekonzepte',
-                'Langsame, schlecht skalierende Anwendungen bei wachsender Nutzerzahl',
-                'Fehlende Validierung, Logging und Audit-Trails',
-                'Schwer wartbarer Code ohne saubere Architektur, Tests und Standards',
-                'Fehlende Schnittstellen/Integrationen (REST APIs)',
-                'Kein stabiler Deployment-Prozess (CI/CD) und kein Monitoring im Betrieb',
-                'Manuelle, fehleranfällige Prozesse statt automatisierter Workflows',
-            ],
+                'Entwicklung strukturierter Workflows mit Tool-Nutzung, API-Integrationen und menschlicher Kontrolle.',
+            bullets: [],
+        },
+        {
+            title: 'RAG & Wissenssysteme',
+            subtitle:
+                'Aufbereitung, Suche und Nutzung verteilter Informationen aus Dokumenten, Webseiten und internen Quellen.',
+            bullets: [],
+        },
+        {
+            title: 'Moderne Webanwendungen',
+            subtitle:
+                'Entwicklung produktionsnaher Webanwendungen mit Backend-Architektur, Rollen- und Rechtesystemen, APIs, Logging und skalierbarer Umsetzung.',
+            bullets: [],
         },
     ] as FocusItem[],
 };

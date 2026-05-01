@@ -3,19 +3,20 @@
         <div class="hero-grid">
             <!-- LINKS: Text -->
             <div class="hero-copy">
-                <div class="pill">Verfügbar für IT-Stellen in der Softwareentwicklung</div>
-                <br />
-                <br />
-                <h1>{{ profile.role }}</h1>
-                <p>{{ profile.shortPitch }}</p>
-                <div class="kpis">
-                    <span class="pill">{{ profile.location }}</span>
+                <div class="hero-badges">
+                    <span class="status-badge">
+                        <span class="status-dot" aria-hidden="true"></span>
+                        Verfügbar
+                    </span>
                 </div>
 
+                <h1>{{ profile.role }}</h1>
+
+                <p class="hero-pitch">{{ profile.pitchDetail }}</p>
+
                 <div class="actions">
-                    <a class="btn primary" routerLink="/projects">Projekte</a>
-                    <a class="btn" routerLink="/cv">CV</a>
-                    <a class="btn" routerLink="/contact">Kontakt</a>
+                    <a class="btn primary" routerLink="/projects">Projekte ansehen</a>
+                    <a class="btn" href="assets/cv.pdf" download="Mohammad_Taiba_CV.pdf">CV herunterladen</a>
                 </div>
             </div>
 
@@ -32,49 +33,15 @@
         </div>
     </div>
 
-    <app-section title="Wertbeitrag" subtitle="">
-        <div class="grid cols-1">
+    <section class="focus-section">
+        <h2 class="focus-heading">Was ich entwickle</h2>
+        <div class="focus-grid">
             @for (f of profile.focus; track $index) {
-                <div class="card card-pad item">
-                    <h3>{{ f.title }}</h3>
-                    <div class="divider" aria-hidden="true"></div>
-
-                    <p style="margin-top: 15px">
-                        <strong>Typische Probleme und Herausforderungen, die ich löse: </strong>
-                    </p>
-
-                    <ul
-                        style="
-                            margin: 8px 0 0;
-                            padding-left: 25px;
-                            color: var(--muted);
-                            line-height: 1.6;
-                        "
-                    >
-                        @for (b of f.bullets; track $index) {
-                            <li>
-                                @if (b.includes(':')) {
-                                    <strong>{{ b.split(':')[0] }}:</strong>
-                                    {{ b.split(':').slice(1).join(':').trim() }}
-                                } @else {
-                                    {{ b }}
-                                }
-                            </li>
-                        }
-                    </ul>
-
-                    <p
-                        style="
-                            margin-top: 15px;
-                            white-space: pre-line;
-                            color: var(--muted);
-                            line-height: 1.6;
-                        "
-                    >
-                        <strong>Lösung:</strong> {{ f.subtitle }}
-                    </p>
+                <div class="focus-card">
+                    <span class="focus-title-pill">{{ focusIcons[$index] }} {{ f.title }}</span>
+                    <p class="focus-desc">{{ f.subtitle }}</p>
                 </div>
             }
         </div>
-    </app-section>
+    </section>
 </div>
