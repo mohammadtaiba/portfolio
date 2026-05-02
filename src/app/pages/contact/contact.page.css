@@ -2,6 +2,47 @@
     padding: 6px 0;
 }
 
+.contact-intro h1 {
+    margin: 0 0 6px;
+    font-size: 24px;
+}
+
+.intro-text {
+    margin: 0;
+}
+
+.item-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.item-icon {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    color: var(--brand);
+    background: rgba(110, 231, 255, 0.1);
+    border: 1px solid rgba(110, 231, 255, 0.22);
+}
+
+.item-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.item-head h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.copy-hint {
+    margin-top: 12px;
+}
+
 .hero {
     padding: 18px;
 }
@@ -39,11 +80,6 @@
 .list {
     display: grid;
     gap: 14px;
-}
-
-.item h3 {
-    margin: 0;
-    font-size: 16px;
 }
 
 .item p {
