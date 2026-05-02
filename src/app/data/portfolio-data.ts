@@ -48,7 +48,7 @@ export const PROFILE = {
     role: 'AI Engineer │ Full-Stack Developer',
     location: 'Erfurt, Deutschland',
     email: 'mohammadtaiba55@gmail.com',
-    photoUrl: 'assets/profile.jpg',
+    photoUrl: 'assets/profile.png',
     pitchTags: ['Webanwendungen', 'RAG-Systeme', 'Automatisierung', 'KI-Webanwendungen', 'LLMs'],
     pitchDetail:
         'Mein Fokus liegt auf modularer Architektur, sauberen Datenpipelines, skalierbarer Backend-Entwicklung und produktionsreifer Integration in bestehende Systeme.',
