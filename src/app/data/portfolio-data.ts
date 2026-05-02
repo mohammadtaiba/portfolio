@@ -45,10 +45,11 @@ export interface SkillGroup {
  */
 export const PROFILE = {
     name: 'Mohammad Taiba',
-    role: 'AI Engineer | Full-Stack Developer',
+    role: 'AI Engineer │ Full-Stack Developer',
     location: 'Erfurt, Deutschland',
     email: 'mohammadtaiba55@gmail.com',
     photoUrl: 'assets/profile.jpg',
+    pitchTags: ['Webanwendungen', 'RAG-Systeme', 'Automatisierung', 'KI-Webanwendungen', 'LLMs'],
     pitchDetail:
         'Mein Fokus liegt auf modularer Architektur, sauberen Datenpipelines, skalierbarer Backend-Entwicklung und produktionsreifer Integration in bestehende Systeme.',
     links: {
