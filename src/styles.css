@@ -78,7 +78,7 @@ a {
 }
 
 /* GLOBAL Hover-Effekt für alle normalen Links */
-a:not(.btn):not(.brand) {
+a:not(.btn):not(.brand):not(.brand-name) {
     background-image: linear-gradient(var(--brand), var(--brand));
     background-repeat: no-repeat;
     background-position: 0 100%;
@@ -89,14 +89,13 @@ a:not(.btn):not(.brand) {
     padding-bottom: 2px;
 }
 
-a:not(.btn):not(.brand):hover {
+a:not(.btn):not(.brand):not(.brand-name):hover {
     color: var(--brand);
     background-size: 100% 2px;
 }
 
-/* Buttons und Brand bleiben ohne Underline */
-.btn:hover,
-.brand:hover {
+/* Buttons bleiben ohne Underline */
+.btn:hover {
     text-decoration: none;
 }
 

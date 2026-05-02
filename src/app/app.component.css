@@ -162,7 +162,8 @@
         opacity 0.15s ease;
 }
 
-.brand:hover .brand-name::after {
+.brand-name:hover::after,
+.brand-name:focus-visible::after {
     transform: scaleX(1);
     opacity: 1;
 }
