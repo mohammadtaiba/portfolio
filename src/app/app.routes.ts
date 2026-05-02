@@ -10,11 +10,11 @@ export const routes: Routes = [
         path: 'skills',
         loadComponent: () => import('./pages/skills/skills.page').then((m) => m.SkillsPage),
     },
-    {
-        path: 'books',
-        loadComponent: () => import('./pages/books/books.page').then((m) => m.BooksPage),
-    },
-    { path: 'cv', loadComponent: () => import('./pages/cv/cv.page').then((m) => m.CvPage) },
+    // {
+    //     path: 'books',
+    //     loadComponent: () => import('./pages/books/books.page').then((m) => m.BooksPage),
+    // },
+    // { path: 'cv', loadComponent: () => import('./pages/cv/cv.page').then((m) => m.CvPage) },
     {
         path: 'contact',
         loadComponent: () => import('./pages/contact/contact.page').then((m) => m.ContactPage),

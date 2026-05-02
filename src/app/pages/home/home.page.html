@@ -15,8 +15,8 @@
                 <p class="hero-pitch">{{ profile.pitchDetail }}</p>
 
                 <div class="actions">
-                    <a class="btn primary" routerLink="/projects">Projekte ansehen</a>
-                    <a class="btn" href="assets/cv.pdf" target="_blank" rel="noopener noreferrer">CV ansehen</a>
+                    <a class="btn" routerLink="/projects">Projekte ansehen</a>
+                    <a class="btn" href="assets/cv.pdf" target="_blank" rel="noopener noreferrer">CV öffnen</a>
                 </div>
             </div>
 
@@ -42,6 +42,17 @@
                     <p class="focus-desc">{{ f.subtitle }}</p>
                 </div>
             }
+        </div>
+
+        <div class="focus-cta-wrap">
+            <a
+                class="btn primary focus-cta"
+                routerLink="/projects"
+                aria-label="Alle Projekte ansehen — zur Projektübersicht"
+            >
+                <span class="focus-cta-text">Alle Projekte ansehen</span>
+                <span class="focus-cta-icon" aria-hidden="true">→</span>
+            </a>
         </div>
     </section>
 </div>
