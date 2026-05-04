@@ -201,32 +201,38 @@ export const WEBSITE_PROJECTS: Project[] = [
 /** KI-Projekte: RAG-Chatbots und LLM-basierte Systeme */
 export const KI_PROJECTS: Project[] = [
     {
-        title: 'RAG-Chatbot │ topdev GmbH, Erfurt',
+        title: 'Intelligenter Behörden-Chatbot │ topdev GmbH, Erfurt',
         description:
-            'Entwicklung eines RAG-Chatbots für die Lehrer- und Schülerdatenbank (LUSD), der interne Informationen per semantischer Suche zuverlässig beantwortet.',
+            'Entwicklung eines RAG-Chatbots für Schulministerium Hessen, der interne Informationen per semantischer Suche zuverlässig beantwortet.',
         tags: [
             'Python',
             'LangChain',
-            'Streamlit (UI)',
+            'PyTorch',
+            'Streamlit',
             'ChromaDB',
-            'Pipeline-Automatisierung',
+            'MS Azure',
+            'MCP',
             'API',
             'Docker',
             'Monitoring',
             'Auth',
+            'Tests',
         ],
         highlights: [
-            'Interaktive Streamlit-Weboberfläche umgesetzt',
-            'LangChain-Pipeline automatisiert (Dokumentquellen: Word, Excel, PDF, HTML → Markdown-Konvertierung → Indexierung in einer Vektordatenbank)',
-            'Qualitätssicherung mit Pytest-Tests',
-            'Logging & Monitoring integriert',
+            'Aufbereitung von LLM-Trainingsdaten, Evaluation von Modellanpassungen',
+            'Umsetzung von Chunking, Embeddings, Vektordatenbank-Anbindung und Retrieval-Strategien',
+            'Aufbau automatisierter Pipelines ',
             'Zugriffsschutz durch Authentifizierung',
+            'Konzeption MCP-basierter Agentic-AI-Workflows mit Microsoft Azure',
+            'Interaktive Streamlit-Weboberfläche umgesetzt',
+            'Qualitätssicherung durch Prompt Engineering, Tests, Logging, Monitoring',
+
         ],
         demo: 'https://lusd-ki-bot.topdev.de/',
         imageUrl: 'assets/projects/lusd_chatbot.png',
     },
     {
-        title: 'RAG-Chatbot │ Bachelorarbeit',
+        title: 'Nachhaltigkeitsassistent│ Bachelorarbeit',
         description:
             'GPT-basierter RAG-Chatbot zur Analyse von Nachhaltigkeitsberichten – automatisierte Dokumentenaufnahme und aktuelle Vektor-Wissensbasis für präzises Retrieval.',
         tags: [
@@ -234,9 +240,9 @@ export const KI_PROJECTS: Project[] = [
             'LangChain',
             'Streamlit (UI)',
             'ChromaDB',
-            'Pipeline-Automatisierung',
-            'Scraping',
             'Evaluation',
+            'Pipeline-Automatisierung',
+            'Web Scraping',
         ],
         highlights: [
             'Automatisierte Ingestion aus URLs und Uploads mit Umwandlung nach Markdown und Bereinigung.',
@@ -345,7 +351,7 @@ export const SKILL_GROUPS: SkillGroup[] = [
     { group: 'Backend', items: ['Node.js', 'Express', 'Spring Boot', 'REST APIs'] },
 
     { group: 'Datenbanken', items: ['MySQL', 'MariaDB', 'MongoDB', 'ChromaDB'] },
-    { group: 'KI & LLM', items: ['RAG', 'LangChain', 'Prompt Engineering', 'Streamlit'] },
+    { group: 'KI & LLM', items: ['RAG', 'LangChain', 'Pytorch', 'MCP', 'Prompt Engineering', 'Streamlit', 'Low-Code'] },
 
     { group: 'Tools', items: ['Git', 'Docker', 'GitLab CI/CD', 'Jira', 'MS Office'] },
     {
