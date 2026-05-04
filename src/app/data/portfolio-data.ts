@@ -351,7 +351,10 @@ export const SKILL_GROUPS: SkillGroup[] = [
     { group: 'Backend', items: ['Node.js', 'Express', 'Spring Boot', 'REST APIs'] },
 
     { group: 'Datenbanken', items: ['MySQL', 'MariaDB', 'MongoDB', 'ChromaDB'] },
-    { group: 'KI & LLM', items: ['RAG', 'LangChain', 'Pytorch', 'MCP', 'Prompt Engineering', 'Streamlit', 'Low-Code'] },
+    {
+        group: 'KI & Automatisierung',
+        items: ['RAG', 'LangChain', 'PyTorch', 'MCP', 'Prompt Engineering', 'Streamlit', 'Low-Code'],
+    },
 
     { group: 'Tools', items: ['Git', 'Docker', 'GitLab CI/CD', 'Jira', 'MS Office'] },
     {
