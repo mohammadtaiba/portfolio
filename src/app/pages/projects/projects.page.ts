@@ -19,7 +19,15 @@ export class ProjectsPage {
     private applySearch(list: Project[]): Project[] {
         const q = this.q.trim().toLowerCase();
         return list.filter((p) => {
-            const haystack = (p.title + ' ' + p.description + ' ' + p.tags.join(' ')).toLowerCase();
+            const haystack = (
+                p.title +
+                ' ' +
+                p.description +
+                ' ' +
+                p.tags.join(' ') +
+                ' ' +
+                (p.videoUrl ?? '')
+            ).toLowerCase();
             return !q || haystack.includes(q);
         });
     }
@@ -48,17 +56,14 @@ export class ProjectsPage {
         return this.filteredWebsite.length === 0 && this.filteredKi.length === 0;
     }
 
-    lightboxUrl: string | null = null;
-    lightboxTitle = '';
+    lightbox: { kind: 'image' | 'video'; url: string; title: string } | null = null;
 
-    openLightbox(url: string | undefined, title: string) {
+    openLightbox(url: string | undefined, title: string, kind: 'image' | 'video' = 'image') {
         if (!url) return;
-        this.lightboxUrl = url;
-        this.lightboxTitle = title;
+        this.lightbox = { kind, url, title };
     }
 
     closeLightbox() {
-        this.lightboxUrl = null;
-        this.lightboxTitle = '';
+        this.lightbox = null;
     }
 }

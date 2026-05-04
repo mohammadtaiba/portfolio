@@ -111,6 +111,15 @@
                                 >Demo</a
                                 >
                             }
+                            @if (p.videoUrl) {
+                                <button
+                                    class="btn action-btn action-btn--video"
+                                    type="button"
+                                    (click)="openLightbox(p.videoUrl, p.title, 'video')"
+                                >
+                                    Video
+                                </button>
+                            }
                             @if (p.imageUrl) {
                                 <button
                                     class="btn action-btn action-btn--screenshot"
@@ -212,6 +221,15 @@
                                 >
                             }
 
+                            @if (p.videoUrl) {
+                                <button
+                                    class="btn action-btn action-btn--video"
+                                    type="button"
+                                    (click)="openLightbox(p.videoUrl, p.title, 'video')"
+                                >
+                                    Video
+                                </button>
+                            }
                             @if (p.imageUrl) {
                                 <button
                                     class="btn action-btn action-btn--screenshot"
@@ -271,22 +289,40 @@
         </div>
     }
 
-    <!-- Screenshot anzeigen -->
-    @if (lightboxUrl) {
-        <div class="lightbox">
+    <!-- Screenshot oder Video (Lightbox) -->
+    @if (lightbox) {
+        <div class="lightbox" role="dialog" aria-modal="true" [attr.aria-label]="lightbox.title">
             <div class="lightbox-inner">
                 <div class="lightbox-bar">
-                    <div class="small">{{ lightboxTitle }}</div>
-                    <button type="button" class="lightbox-close" (click)="closeLightbox()">
+                    <div class="small">{{ lightbox.title }}</div>
+                    <button
+                        type="button"
+                        class="lightbox-close"
+                        (click)="closeLightbox()"
+                        aria-label="Schließen"
+                    >
                         ✕
                     </button>
                 </div>
 
-                <img
-                    class="lightbox-img"
-                    [src]="lightboxUrl"
-                    [alt]="lightboxTitle + ' - Screenshot'"
-                />
+                @if (lightbox.kind === 'image') {
+                    <img
+                        class="lightbox-img"
+                        [src]="lightbox.url"
+                        [alt]="lightbox.title + ' - Screenshot'"
+                    />
+                } @else {
+                    <video
+                        class="lightbox-video"
+                        controls
+                        playsinline
+                        preload="metadata"
+                        [attr.aria-label]="lightbox.title + ' - Video'"
+                    >
+                        <source [src]="lightbox.url" />
+                        Dein Browser unterstützt das Abspielen dieses Videos nicht.
+                    </video>
+                }
             </div>
         </div>
     }

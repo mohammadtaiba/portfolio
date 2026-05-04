@@ -15,6 +15,7 @@ export interface Project {
     highlights: string[];
     demo?: string;
     repo?: string;
+    videoUrl?: string;
     imageUrl?: string;
     archiUrl?: string;
     siteMapUrl?: string;

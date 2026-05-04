@@ -328,6 +328,14 @@ hr.sep {
     object-fit: contain;
 }
 
+/* Projekt-Video in der Lightbox */
+.lightbox-video {
+    width: 100%;
+    max-height: calc(90vh - 48px);
+    display: block;
+    background: #000;
+}
+
 /* ============================================================================
    RESPONSIVE: MOBILE
    ============================================================================ */
