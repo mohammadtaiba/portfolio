@@ -202,9 +202,9 @@ export const WEBSITE_PROJECTS: Project[] = [
 /** KI-Projekte: RAG-Chatbots und LLM-basierte Systeme */
 export const KI_PROJECTS: Project[] = [
     {
-        title: 'documentsAI.APP │ SaaS (Coming Soon ...)',
+        title: 'documentsAI.APP │ SaaS · In Entwicklung',
         description:
-            '',
+            'Eine produktionsnahe RAG-SaaS-Chatbot-Plattform für sicheres Dokumenten-Q&A.',
         tags: [
             'Python',
             'LangChain',
@@ -213,16 +213,22 @@ export const KI_PROJECTS: Project[] = [
             'API',
             'Docker',
             'Monitoring',
-            'Auth',
+            'OAuth2',
             'Tests',
+            'Cloudflare',
         ],
         highlights: [
-            '',
+            'Benutzerfreundliche KI-Plattform für sicheres Chatten mit eigenen Dokumenten.',
+            'Nutzer erstellen unbegrenzte Arbeitsbereiche, laden unbegrenzt Dateien hoch und chatten gezielt mit ihrem Wissen.',
+            'Einfaches Rollen- und Zugriffsmanagement für den Einsatz im Unternehmen.',
+            'DSGVO-orientierte Datenverarbeitung für den professionellen Einsatz.',
+            'Spart Zeit durch schnelle, präzise Antworten auf interne Inhalte.',
+            'Stabile, skalierbare Architektur.',
         ],
         videoUrl: 'assets/projects/documentsAI-App.mp4',
     },
     {
-        title: 'Intelligenter Behörden-Chatbot │ topdev GmbH, Erfurt',
+        title: 'Intelligenter Behörden-Chatbot │ Projekt für topdev GmbH',
         description:
             'Entwicklung eines RAG-Chatbots für Schulministerium Hessen, der interne Informationen per semantischer Suche zuverlässig beantwortet.',
         tags: [
