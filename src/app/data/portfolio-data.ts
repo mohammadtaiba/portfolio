@@ -202,6 +202,26 @@ export const WEBSITE_PROJECTS: Project[] = [
 /** KI-Projekte: RAG-Chatbots und LLM-basierte Systeme */
 export const KI_PROJECTS: Project[] = [
     {
+        title: 'documentsAI.APP │ SaaS (Coming Soon ...)',
+        description:
+            '',
+        tags: [
+            'Python',
+            'LangChain',
+            'Streamlit',
+            'ChromaDB',
+            'API',
+            'Docker',
+            'Monitoring',
+            'Auth',
+            'Tests',
+        ],
+        highlights: [
+            '',
+        ],
+        videoUrl: 'assets/projects/documentsAI-App.mp4',
+    },
+    {
         title: 'Intelligenter Behörden-Chatbot │ topdev GmbH, Erfurt',
         description:
             'Entwicklung eines RAG-Chatbots für Schulministerium Hessen, der interne Informationen per semantischer Suche zuverlässig beantwortet.',
@@ -235,7 +255,7 @@ export const KI_PROJECTS: Project[] = [
     {
         title: 'Nachhaltigkeitsassistent│ Bachelorarbeit',
         description:
-            'GPT-basierter RAG-Chatbot zur Analyse von Nachhaltigkeitsberichten – automatisierte Dokumentenaufnahme und aktuelle Vektor-Wissensbasis für präzises Retrieval.',
+            'GPT-basierter RAG-Chatbot zur Analyse von Nachhaltigkeitsberichten, der sein Wissen automatisch aktualisiert, indexiert und bereitstellt.',
         tags: [
             'Python',
             'LangChain',
