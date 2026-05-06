@@ -46,7 +46,7 @@ export interface SkillGroup {
  */
 export const PROFILE = {
     name: 'Mohammad Taiba',
-    role: 'AI Engineer │ Full-Stack Developer',
+    role: 'Full-Stack Developer | AI Solutions Engineer',
     location: 'Erfurt, Deutschland',
     email: 'mohammadtaiba55@gmail.com',
     photoUrl: 'assets/profile.png',
