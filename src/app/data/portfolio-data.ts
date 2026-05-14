@@ -93,6 +93,33 @@ export const PROFILE = {
 /** Webprojekte: Portfolio, Dashboards, Shops etc. */
 export const WEBSITE_PROJECTS: Project[] = [
     {
+        title: 'Mini-Prüfprotokoll-App │ Eigenes Projekt',
+        description:
+            'Kleine Fullstack-Anwendung zur Erstellung, Anzeige, Bearbeitung und Verwaltung von Prüfprotokollen mit moderner Weboberfläche und REST-API.',
+        tags: [
+            'Angular',
+            '.NET',
+            'C#',
+            'TypeScript',
+            'HTML',
+            'CSS',
+            'Entity Framework Core',
+            'SQLite',
+            'Unit Tests',
+        ],
+        highlights: [
+            'Angular-App mit Routing für Liste, Detailansicht sowie Erstellen/Bearbeiten von Prüfprotokollen umgesetzt',
+            'REST-API mit ASP.NET Core Web API für CRUD-Endpunkte entwickelt',
+            'Klare Backend-Struktur mit Controller, Service und Repository implementiert',
+            'SQLite-Datenbank über Entity Framework Core angebunden und Seed-Daten integriert',
+            'Formularvalidierung für Pflichtfelder und Statusauswahl umgesetzt',
+            'Responsives, schlichtes UI ohne externe UI-Bibliothek erstellt',
+            'Einfache Unit-Tests für Backend-Service und Angular-Formularvalidierung ergänzt',
+        ],
+        repo: 'https://github.com/mohammadtaiba/mini-pruefprotokoll-app',
+        imageUrl: 'assets/projects/mini-pruefprotokoll-app.png',
+    },
+    {
         title: 'Portfolio │ Eigenes Projekt',
         description:
             'Professionelles Portfolio zur Präsentation von Projekten, Skills, Büchern und Lebenslauf.',
