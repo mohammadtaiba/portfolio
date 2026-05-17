@@ -60,6 +60,12 @@ export const PROFILE = {
     },
     focus: [
         {
+            title: 'Moderne Webanwendungen',
+            subtitle:
+                'Entwicklung produktionsnaher Webanwendungen mit Backend-Architektur, Rollen- und Rechtesystemen, APIs, Logging und skalierbarer Umsetzung.',
+            bullets: [],
+        },
+        {
             title: 'KI-gestützte Anwendungen',
             subtitle:
                 'Integration von LLMs, Automatisierung und intelligenter Datenverarbeitung in moderne Webanwendungen.',
@@ -77,12 +83,7 @@ export const PROFILE = {
                 'Aufbereitung, Suche und Nutzung verteilter Informationen aus Dokumenten, Webseiten und internen Quellen.',
             bullets: [],
         },
-        {
-            title: 'Moderne Webanwendungen',
-            subtitle:
-                'Entwicklung produktionsnaher Webanwendungen mit Backend-Architektur, Rollen- und Rechtesystemen, APIs, Logging und skalierbarer Umsetzung.',
-            bullets: [],
-        },
+
     ] as FocusItem[],
 };
 
