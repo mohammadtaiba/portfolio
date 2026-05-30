@@ -94,7 +94,7 @@ export const PROFILE = {
 /** Webprojekte: Portfolio, Dashboards, Shops etc. */
 export const WEBSITE_PROJECTS: Project[] = [
     {
-        title: 'Mini-Prüfprotokoll-App │ Eigenes Projekt',
+        title: 'Prüfprotokoll-App │ Eigenes Projekt',
         description:
             'Kleine Fullstack-Anwendung zur Erstellung, Anzeige, Bearbeitung und Verwaltung von Prüfprotokollen mit moderner Weboberfläche und REST-API.',
         tags: [
@@ -118,7 +118,7 @@ export const WEBSITE_PROJECTS: Project[] = [
             'Einfache Unit-Tests für Backend-Service und Angular-Formularvalidierung ergänzt',
         ],
         repo: 'https://github.com/mohammadtaiba/mini-pruefprotokoll-app',
-        imageUrl: 'assets/projects/mini-pruefprotokoll-app.png',
+        imageUrl: 'assets/projects/pruefprotokoll-app.png',
     },
     {
         title: 'Portfolio │ Eigenes Projekt',
