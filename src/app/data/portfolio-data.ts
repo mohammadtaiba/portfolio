@@ -136,7 +136,7 @@ export const WEBSITE_PROJECTS: Project[] = [
         imageUrl: 'assets/projects/portfolio.png',
     },
     {
-        title: 'Finance Dashboard │ FH-Projekt (selbstständig)',
+        title: 'Finance Dashboard │ FH-Projekt',
         description:
             'Entwicklung einer Finanzverwaltungsanwendung, mit der Nutzer Transaktionen, Produkte und wichtige Leistungskennzahlen (KPIs) in einer modernen Weblösung mit Frontend und Backend verwalten können.',
         tags: [
@@ -158,7 +158,7 @@ export const WEBSITE_PROJECTS: Project[] = [
         archiUrl: 'assets/projects/Architektur_indexlive.png',
     },
     {
-        title: 'Fahrzeugverkauf & -vermietung │ FH-Teamprojekt',
+        title: 'Fahrzeugverkauf & -vermietung │ FH-Projekt',
         description: 'Backend für einen Autohandel mit Verkauf und Vermietung.',
         tags: [
             'Java',
@@ -181,7 +181,7 @@ export const WEBSITE_PROJECTS: Project[] = [
         imageUrl: 'assets/projects/carhub360.png',
     },
     {
-        title: 'Data‑Science-Projekt │ FH-Projekt (selbstständig)',
+        title: 'Data‑Science-Projekt │ FH-Projekt',
         description:
             'Das Projekt verfolgt das Ziel, das Preisverhalten und die Volatilität von Bitcoin im Vergleich zu Gold zu analysieren, um Rückschlüsse auf Stabilität, Risiko und Anlageverhalten zu ziehen.',
         tags: [
@@ -207,7 +207,7 @@ export const WEBSITE_PROJECTS: Project[] = [
         imageUrl: 'assets/projects/datavision.png',
     },
     {
-        title: 'Online‑Shop für PC‑Games │ FH-Teamprojekt',
+        title: 'Online‑Shop für PC‑Games │ FH-Projekt',
         description: 'Entwicklung eines Online-Shops für Videospiele, spezialisiert auf PC-Spiele.',
         tags: ['PHP', 'MySQL', 'HTML', 'CSS', 'JavaScript', 'MVC'],
         highlights: [
@@ -230,7 +230,7 @@ export const WEBSITE_PROJECTS: Project[] = [
 /** KI-Projekte: RAG-Chatbots und LLM-basierte Systeme */
 export const KI_PROJECTS: Project[] = [
     {
-        title: 'documentsAI.APP │ SaaS · In Entwicklung',
+        title: 'documentsAI.APP │ Eigenes Projekt · In Entwicklung',
         description:
             'Eine produktionsnahe RAG-SaaS-Chatbot-Plattform für sicheres Dokumenten-Q&A.',
         tags: [
@@ -289,7 +289,7 @@ export const KI_PROJECTS: Project[] = [
         imageUrl: 'assets/projects/lusd_chatbot.png',
     },
     {
-        title: 'Nachhaltigkeitsassistent│ Bachelorarbeit',
+        title: 'Nachhaltigkeitsassistent│ FH-Projekt',
         description:
             'GPT-basierter RAG-Chatbot zur Analyse von Nachhaltigkeitsberichten, der sein Wissen automatisch aktualisiert, indexiert und bereitstellt.',
         tags: [
