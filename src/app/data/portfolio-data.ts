@@ -107,6 +107,7 @@ export const WEBSITE_PROJECTS: Project[] = [
             'Entity Framework Core',
             'SQLite',
             'Unit Tests',
+            'Docker',
         ],
         highlights: [
             'Angular-App mit Routing für Liste, Detailansicht sowie Erstellen/Bearbeiten von Prüfprotokollen umgesetzt',
