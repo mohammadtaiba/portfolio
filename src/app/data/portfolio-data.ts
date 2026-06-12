@@ -96,7 +96,7 @@ export const WEBSITE_PROJECTS: Project[] = [
     {
         title: 'Prüfprotokoll-App │ Eigenes Projekt',
         description:
-            'Kleine Fullstack-Anwendung zur Erstellung, Anzeige, Bearbeitung und Verwaltung von Prüfprotokollen mit moderner Weboberfläche und REST-API.',
+            'Fullstack-Anwendung zur Erstellung, Anzeige, Bearbeitung und Verwaltung von Prüfprotokollen mit moderner Weboberfläche und REST-API.',
         tags: [
             'Angular',
             '.NET',
@@ -124,7 +124,7 @@ export const WEBSITE_PROJECTS: Project[] = [
     {
         title: 'Portfolio │ Eigenes Projekt',
         description:
-            'Professionelles Portfolio zur Präsentation von Projekten, Skills, Büchern und Lebenslauf.',
+            'Professionelles Portfolio als Angular SPA zur Präsentation von eigenen Projekten und Skills.',
         tags: ['Angular', 'TypeScript', 'CSS', 'HTML', 'cloudflare'],
         highlights: [
             'Portfolio als Angular SPA mit Standalone-Komponenten und Router umgesetzt',
