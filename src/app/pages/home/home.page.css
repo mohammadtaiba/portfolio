@@ -186,10 +186,6 @@
     transition: background 0.2s;
 }
 
-.focus-card:hover {
-    background: rgba(255, 255, 255, 0.02);
-}
-
 .focus-title-pill {
     display: inline-block;
     margin: 0 0 10px;
