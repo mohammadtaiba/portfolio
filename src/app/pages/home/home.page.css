@@ -183,12 +183,11 @@
     border-radius: 16px;
     padding: 22px 20px;
     position: relative;
-    transition: border-color 0.2s, transform 0.2s;
+    transition: background 0.2s;
 }
 
 .focus-card:hover {
-    border-color: var(--brand);
-    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.02);
 }
 
 .focus-title-pill {

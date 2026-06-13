@@ -10,5 +10,5 @@ import { PROFILE } from '../../data/portfolio-data';
 })
 export class HomePage {
     profile = PROFILE;
-    focusIcons = ['🌐', '🤖', '⚙️', '🔍'];
+    focusIcons = ['🌐', '⚙️', '🗄️', '🤖'];
 }

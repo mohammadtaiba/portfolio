@@ -46,7 +46,7 @@ export interface SkillGroup {
  */
 export const PROFILE = {
     name: 'Mohammad Taiba',
-    role: 'Full-Stack Developer',
+    role: 'Full-Stack Softwareentwickler',
     location: 'Erfurt, Deutschland',
     email: 'mohammadtaiba55@gmail.com',
     photoUrl: 'assets/profile.png',
@@ -60,27 +60,27 @@ export const PROFILE = {
     },
     focus: [
         {
-            title: 'Moderne Webanwendungen',
+            title: 'Webanwendungen',
             subtitle:
-                'Entwicklung produktionsnaher Webanwendungen mit Backend-Architektur, Rollen- und Rechtesystemen, APIs, Logging und skalierbarer Umsetzung.',
+                'Entwicklung praxisnaher Webanwendungen, die Daten übersichtlich erfassen, verwalten und für Nutzer verständlich darstellen.',
             bullets: [],
         },
         {
-            title: 'KI-gestützte Anwendungen',
+            title: 'Backend & APIs',
             subtitle:
-                'Integration von LLMs, Automatisierung und intelligenter Datenverarbeitung in moderne Webanwendungen.',
+                'Umsetzung von Anwendungslogik, Schnittstellen, Datenverarbeitung und rollenbasierten Funktionen.',
             bullets: [],
         },
         {
-            title: 'AI Agents & Automatisierung',
+            title: 'Datenbanken',
             subtitle:
-                'Entwicklung strukturierter Workflows mit Tool-Nutzung, API-Integrationen und menschlicher Kontrolle.',
+                'Modellierung, Speicherung und Abfrage von Daten für Geschäftsprozesse und Webanwendungen.',
             bullets: [],
         },
         {
-            title: 'RAG & Wissenssysteme',
+            title: 'KI-gestützte Funktionen',
             subtitle:
-                'Aufbereitung, Suche und Nutzung verteilter Informationen aus Dokumenten, Webseiten und internen Quellen.',
+                'Integration von dokumentenbasierter Suche, automatisierter Analyse und unterstützenden Assistenzfunktionen.',
             bullets: [],
         },
 
