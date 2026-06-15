@@ -100,3 +100,11 @@ Bei Pushes und Pull Requests auf `main` werden automatische Prüfungen ausgefüh
 ## Projektstatus
 
 Das Portfolio wird fortlaufend weiterentwickelt und an neue Projekte, Inhalte und technische Verbesserungen angepasst.
+
+## License
+
+Copyright © 2026 Mohammad Taiba. All rights reserved.
+
+This repository is publicly available for portfolio and review purposes only.
+No permission is granted to use, copy, modify, distribute, sublicense, or sell
+any part of this project without prior written permission from the author.
