@@ -1,54 +1,102 @@
-# Portfolio (Angular)
+# Portfolio
 
-[![Code Quality Checks](https://github.com/moham/portfolio/actions/workflows/code-quality.yml/badge.svg)](https://github.com/moham/portfolio/actions/workflows/code-quality.yml)
+[![Code Quality Checks](https://github.com/mohammadtaiba/portfolio/actions/workflows/code-quality.yml/badge.svg)](https://github.com/mohammadtaiba/portfolio/actions/workflows/code-quality.yml)
+
+Persönliche Portfolio-Webseite zur strukturierten Präsentation meiner Projekte, technischen Schwerpunkte und Kontaktmöglichkeiten im Bereich Softwareentwicklung.
+
+## Überblick
+
+Dieses Repository enthält den Quellcode meines Portfolio-Projekts. Die Anwendung ist als moderne Angular Single Page Application umgesetzt und legt den Fokus auf eine klare Projektübersicht, eine responsive Benutzeroberfläche und eine saubere Codebasis.
+
+## Funktionen
+
+- Präsentation ausgewählter Softwareprojekte
+- Übersicht technischer Schwerpunkte und Fähigkeiten
+- Responsive Darstellung für Desktop, Tablet und Smartphone
+- Strukturierte Angular-Komponentenarchitektur
+- Automatisierte Code-Quality-Prüfungen über GitHub Actions
+
+## Tech Stack
+
+- Angular 21
+- TypeScript
+- HTML
+- CSS
+- ESLint / angular-eslint
+- GitHub Actions
 
 ## Voraussetzungen
 
-1. Node.js (LTS) installieren:
+- Node.js LTS
+- npm
+
+Installation unter Windows:
 
 ```bash
 winget install OpenJS.NodeJS.LTS
 ```
 
-2. Abhängigkeiten installieren:
+## Installation
+
+Repository klonen:
+
+```bash
+git clone https://github.com/mohammadtaiba/portfolio.git
+cd portfolio
+```
+
+Abhängigkeiten installieren:
 
 ```bash
 npm install
 ```
 
-## Dev-Server starten
+## Entwicklung
+
+Dev-Server starten:
 
 ```bash
 npm start
 ```
 
-Öffnen: http://localhost:4200
+Die Anwendung ist anschließend unter folgender Adresse erreichbar:
 
-## Build (Production)
+```text
+http://localhost:4200
+```
+
+## Build
+
+Production-Build erstellen:
 
 ```bash
 npm run build
 ```
 
-Output: `dist/`
+Der Build wird im Ordner `dist/` erzeugt.
 
-## 🔍 Code Quality
+## NPM-Skripte
 
-### Linting
+| Befehl | Beschreibung |
+| --- | --- |
+| `npm start` | Startet den lokalen Angular-Dev-Server |
+| `npm run build` | Erstellt einen Production-Build |
+| `npm run lint` | Führt ESLint-Prüfungen aus |
+| `npm run lint:fix` | Behebt automatisch behebbare ESLint-Probleme |
+| `npm test` | Startet die Tests |
 
-```bash
-# Code linting
-npm run lint
+## Code Quality & CI
 
-# Auto-fix linting issues
-npm run lint:fix
-```
+Bei Pushes und Pull Requests auf `main` werden automatische Prüfungen ausgeführt:
 
-### CI/CD
+- Installation der Abhängigkeiten mit `npm ci`
+- ESLint-Prüfung
+- Angular Production-Build
+- TypeScript-Compilation-Check mit `tsc --noEmit`
+- Dependency Security Check mit `npm audit`
+- Prüfung auf veraltete Pakete mit `npm outdated`
+- Upload des Build-Outputs als GitHub-Actions-Artefakt
 
-- ✅ Automatische Code Quality Checks bei Push & PR
-- ✅ ESLint Integration
-- ✅ Build Tests auf Node 20
-- ✅ TypeScript Compilation Checks
-- ✅ Dependency Security Audits
-- ✅ Dependabot für automatische Updates
+## Projektstatus
+
+Das Portfolio wird fortlaufend weiterentwickelt und an neue Projekte, Inhalte und technische Verbesserungen angepasst.
