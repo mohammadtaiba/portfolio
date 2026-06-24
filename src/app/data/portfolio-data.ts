@@ -87,6 +87,33 @@ export const PROFILE = {
 /** Webprojekte: Portfolio, Dashboards, Shops etc. */
 export const WEBSITE_PROJECTS: Project[] = [
     {
+        title: 'EnergyFlow-Dashboard │ Eigenes Projekt · In Entwicklung',
+        description:
+            'Webanwendung zur Erfassung, Verwaltung und Auswertung von Energieverbrauchsdaten für Standorte, Energiezähler, Messwerte und Grenzwerte.',
+        tags: [
+            'Vue 3',
+            'TypeScript',
+            'Java 21',
+            'Spring Boot',
+            'Spring Data JPA',
+            'RESTful API',
+            'PostgreSQL',
+            'Docker',
+            'CI/CD'
+        ],
+        highlights: [
+            'Vue-Frontend für die Standortverwaltung mit angebundener Spring-Boot-REST-API umgesetzt',
+            'CRUD-Funktionen für Standorte implementiert: Anzeigen, Abrufen, Erstellen, Bearbeiten und Löschen',
+            'Spring-Boot-Backend mit klarer Layer-Struktur aus Controller, Service, Repository, Entity und DTO aufgebaut',
+            'PostgreSQL-Datenbank über Docker Compose eingerichtet und mit dem Backend verbunden',
+            'REST-Endpunkte für Standortdaten entwickelt und getestet',
+            'Grundstruktur für Energiezähler, Messwerte, Grenzwertlogik und Dashboard-Auswertungen vorbereitet',
+            'Lokales Entwicklungssetup mit getrenntem Frontend, Backend und Datenbank dokumentiert',
+        ],
+        repo: 'https://github.com/mohammadtaiba/EnergyFlow-Dashboard',
+        imageUrl: 'assets/projects/site-management.png',
+    },
+    {
         title: 'Prüfprotokoll-App │ Eigenes Projekt',
         description:
             'Fullstack-Anwendung zur Erstellung, Anzeige, Bearbeitung und Verwaltung von Prüfprotokollen mit moderner Weboberfläche und REST-API.',
@@ -98,9 +125,10 @@ export const WEBSITE_PROJECTS: Project[] = [
             'HTML',
             'CSS',
             'Entity Framework Core',
-            'SQLite',
+            'PostgreSQL',
             'Unit Tests',
             'Docker',
+            'CI/CD',
         ],
         highlights: [
             'Angular-App mit Routing für Liste, Detailansicht sowie Erstellen/Bearbeiten von Prüfprotokollen umgesetzt',
@@ -118,7 +146,7 @@ export const WEBSITE_PROJECTS: Project[] = [
         title: 'Portfolio │ Eigenes Projekt',
         description:
             'Professionelles Portfolio als Angular SPA zur Präsentation von eigenen Projekten und Skills.',
-        tags: ['Angular', 'TypeScript', 'CSS', 'HTML', 'cloudflare'],
+        tags: ['Angular', 'TypeScript', 'CSS', 'HTML', 'cloudflare', 'CI/CD'],
         highlights: [
             'Portfolio als Angular SPA mit Standalone-Komponenten und Router umgesetzt',
             'Routing-Struktur mit Lazy Loading pro Seite via Router `loadComponent` implementiert',
@@ -284,7 +312,7 @@ export const KI_PROJECTS: Project[] = [
         imageUrl: 'assets/projects/lusd_chatbot.png',
     },
     {
-        title: 'Nachhaltigkeitsassistent│ FH-Projekt',
+        title: 'Bachelorarbeit │ FH-Projekt',
         description:
             'GPT-basierter RAG-Chatbot zur Analyse von Nachhaltigkeitsberichten, der sein Wissen automatisch aktualisiert, indexiert und bereitstellt.',
         tags: [
