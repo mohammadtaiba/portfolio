@@ -1,107 +1,139 @@
 # Portfolio
 
 [![Code Quality Checks](https://github.com/mohammadtaiba/portfolio/actions/workflows/code-quality.yml/badge.svg)](https://github.com/mohammadtaiba/portfolio/actions/workflows/code-quality.yml)
+[![Angular](https://img.shields.io/badge/Angular-21-DD0031?logo=angular)](https://angular.dev/)
+[![Cloudflare Ready](https://img.shields.io/badge/Cloudflare-Ready-F38020?logo=cloudflare)](https://www.cloudflare.com/)
+[![License](https://img.shields.io/badge/License-Portfolio-blue)](#lizenz)
 
-Persönliche Portfolio-Webseite zur strukturierten Präsentation meiner Projekte, technischen Schwerpunkte und Kontaktmöglichkeiten im Bereich Softwareentwicklung.
+Persönliche Portfolio-Webseite zur Präsentation meiner Projekte, technischen Schwerpunkte und Kontaktmöglichkeiten. Die Anwendung ist als moderne Angular 21 Single-Page-App mit Standalone Components, Lazy Loading und zentral gepflegten Inhaltsdaten umgesetzt.
 
-## Überblick
+## Inhaltsverzeichnis
 
-Dieses Repository enthält den Quellcode meines Portfolio-Projekts. Die Anwendung ist als moderne Angular Single Page Application umgesetzt und legt den Fokus auf eine klare Projektübersicht, eine responsive Benutzeroberfläche und eine saubere Codebasis.
+- [Projektziel](#projektziel)
+- [Highlights](#highlights)
+- [Screenshots](#screenshots)
+- [Tech Stack](#tech-stack)
+- [Projektstruktur](#projektstruktur)
+- [Lokale Entwicklung](#lokale-entwicklung)
+- [Deployment](#deployment)
+- [Hinweise zur Pflege](#hinweise-zur-pflege)
+- [Lizenz](#lizenz)
 
-## Funktionen
+## Projektziel
 
-- Präsentation ausgewählter Softwareprojekte
-- Übersicht technischer Schwerpunkte und Fähigkeiten
-- Responsive Darstellung für Desktop, Tablet und Smartphone
-- Strukturierte Angular-Komponentenarchitektur
-- Automatisierte Code-Quality-Prüfungen über GitHub Actions
+Dieses Repository bildet mein persönliches Portfolio ab. Ziel ist eine klare, moderne und responsiv nutzbare Oberfläche, mit der Besucher schnell einen Überblick über meine Projekte, Skills und den Kontakt erhalten.
+
+## Highlights
+
+- Moderne Angular-21-SPA mit Standalone Components und file-based Routing
+- Zentrale Datenhaltung in `src/app/data/portfolio-data.ts`
+- Projektseite mit Suche, Kategorie-Filter und Lightbox für Screenshots, Videos und Architekturmaterial
+- Klare Trennung von Navigation, Seiten und Shared UI über wiederverwendbare Komponenten
+- Responsives Layout für Desktop und Smartphone
+- Cloudflare-taugliche SPA-Redirects über `src/_redirects`
+- GitHub-Actions-gestützte Qualitätsprüfungen
+
+## Screenshots
+
+### Startseite
+
+<img src="docs/screenshots/portfolio.png" alt="Startseite des Portfolios" width="900">
+
+Die Startseite bündelt Profil, Schwerpunkte und direkte Einstiege zu Projekten und Kontakt.
+
+### Projekte
+
+<img src="docs/screenshots/projekte.png" alt="Projekte-Seite mit Suche und Filter" width="900">
+
+Die Projektseite enthält eine Suche nach Projektnamen, Technologien und Stichworten sowie Filter für Webanwendungen und KI-Agents.
+
+### Responsive Ansicht
+
+<img src="docs/screenshots/portfolio-responsive.png" alt="Responsive Ansicht auf dem Smartphone" width="420">
+
+Die mobile Ansicht bleibt übersichtlich und nutzt die verfügbare Fläche effizient.
 
 ## Tech Stack
 
-- Angular 21
-- TypeScript
-- HTML
-- CSS
-- ESLint / angular-eslint
-- GitHub Actions
+| Bereich | Technologie |
+| --- | --- |
+| Frontend | Angular 21, TypeScript, HTML, CSS |
+| Architektur | Standalone Components, Angular Router, Lazy Loading |
+| Styling | Globale Design-Tokens in `src/styles.css` |
+| Tooling | Angular CLI, npm, ESLint, angular-eslint |
+| Deployment | Cloudflare / SPA Redirects |
+| CI/CD | GitHub Actions |
 
-## Voraussetzungen
+## Projektstruktur
+
+```text
+src/
+  app/
+    app.component.*
+    app.routes.ts
+    data/portfolio-data.ts
+    pages/
+    shared/section.component.ts
+  assets/
+    profile.png
+    projects/
+docs/
+  screenshots/
+```
+
+## Lokale Entwicklung
+
+### Voraussetzungen
 
 - Node.js LTS
 - npm
 
-Installation unter Windows:
-
-```bash
-winget install OpenJS.NodeJS.LTS
-```
-
-## Installation
-
-Repository klonen:
+### Installation
 
 ```bash
 git clone https://github.com/mohammadtaiba/portfolio.git
 cd portfolio
-```
-
-Abhängigkeiten installieren:
-
-```bash
 npm install
 ```
 
-## Entwicklung
-
-Dev-Server starten:
+### Starten
 
 ```bash
 npm start
 ```
 
-Die Anwendung ist anschließend unter folgender Adresse erreichbar:
+Die Anwendung läuft danach unter `http://localhost:4200`.
 
-```text
-http://localhost:4200
-```
-
-## Build
-
-Production-Build erstellen:
+### Build
 
 ```bash
 npm run build
 ```
 
-Der Build wird im Ordner `dist/` erzeugt.
+### Linting
 
-## NPM-Skripte
+```bash
+npm run lint
+npm run lint:fix
+```
 
-| Befehl | Beschreibung |
-| --- | --- |
-| `npm start` | Startet den lokalen Angular-Dev-Server |
-| `npm run build` | Erstellt einen Production-Build |
-| `npm run lint` | Führt ESLint-Prüfungen aus |
-| `npm run lint:fix` | Behebt automatisch behebbare ESLint-Probleme |
-| `npm test` | Startet die Tests |
+### Tests
 
-## Code Quality & CI
+```bash
+npm test
+```
 
-Bei Pushes und Pull Requests auf `main` werden automatische Prüfungen ausgeführt:
+## Deployment
 
-- Installation der Abhängigkeiten mit `npm ci`
-- ESLint-Prüfung
-- Angular Production-Build
-- TypeScript-Compilation-Check mit `tsc --noEmit`
-- Dependency Security Check mit `npm audit`
-- Prüfung auf veraltete Pakete mit `npm outdated`
-- Upload des Build-Outputs als GitHub-Actions-Artefakt
+Für ein Hosting auf Cloudflare sind die SPA-Redirects bereits vorbereitet. Die Datei `src/_redirects` sorgt dafür, dass direkte Aufrufe auf Routen wie `/projects` korrekt auf `index.html` zurückgeführt werden.
 
-## Projektstatus
+## Hinweise zur Pflege
 
-Das Portfolio wird fortlaufend weiterentwickelt und an neue Projekte, Inhalte und technische Verbesserungen angepasst.
+- Inhalte werden zentral in `src/app/data/portfolio-data.ts` gepflegt.
+- Neue Seiten sollten als Standalone Pages umgesetzt und über `src/app/app.routes.ts` lazy geladen werden.
+- Bei Routing-Änderungen immer die mobile Navigation und das Scroll-Verhalten mitprüfen.
 
-## License
+## Lizenz
 
 Copyright © 2026 Mohammad Taiba. All rights reserved.
 
