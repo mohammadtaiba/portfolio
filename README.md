@@ -17,7 +17,7 @@ Persönliche Portfolio-Webseite zur Präsentation meiner Projekte, technischen S
 - [Lokale Entwicklung](#lokale-entwicklung)
 - [Deployment](#deployment)
 - [Hinweise zur Pflege](#hinweise-zur-pflege)
-- [Lizenz](#lizenz)
+- [License](#License)
 
 ## Projektziel
 
@@ -133,10 +133,8 @@ Für ein Hosting auf Cloudflare sind die SPA-Redirects bereits vorbereitet. Die 
 - Neue Seiten sollten als Standalone Pages umgesetzt und über `src/app/app.routes.ts` lazy geladen werden.
 - Bei Routing-Änderungen immer die mobile Navigation und das Scroll-Verhalten mitprüfen.
 
-## Lizenz
+## License
 
-Copyright © 2026 Mohammad Taiba. All rights reserved.
+Copyright (c) 2026 Mohammad Taiba. All rights reserved.
 
-This repository is publicly available for portfolio and review purposes only.
-No permission is granted to use, copy, modify, distribute, sublicense, or sell
-any part of this project without prior written permission from the author.
+This project is published for portfolio and review purposes only. See [LICENSE](./LICENSE).
